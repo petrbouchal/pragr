@@ -9,6 +9,12 @@ testfn(x)
 \arguments{
 \item{x}{the input}
 }
+\value{
+nothing
+}
 \description{
 testfn
+}
+\examples{
+print(x)
 }
