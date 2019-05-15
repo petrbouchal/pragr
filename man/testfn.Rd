@@ -16,5 +16,6 @@ nothing
 testfn
 }
 \examples{
+x <- "hello"
 print(x)
 }

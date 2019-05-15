@@ -7,6 +7,7 @@
 #' @export
 #'
 #' @examples
+#' x <- "hello"
 #' print(x)
 testfn <- function(x) {
   print(x)
