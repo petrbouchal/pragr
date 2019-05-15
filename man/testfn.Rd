@@ -7,7 +7,7 @@
 testfn(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{the input}
 }
 \description{
 testfn

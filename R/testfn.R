@@ -1,7 +1,7 @@
 
 #' testfn
 #'
-#' @param x
+#' @param x the input
 #'
 #' @return
 #' @export
