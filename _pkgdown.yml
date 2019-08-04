@@ -1,4 +1,6 @@
 destination: docs
+url: https://petrbouchal.github.io/pragr
+title: "pragr: tools for Prague's geodata"
 development:
-  mode: devel
+  mode: auto
   version_label: danger
