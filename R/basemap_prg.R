@@ -33,7 +33,7 @@ image_services <- list(ortofoto = list(url = "MAP/letecke_snimky_posledni_snimko
 # x %in% names(tiletypes[[tile_type]][['maxsizes']])
 
 
-#' Show map services available in `basemap_prg`
+#' Show map services available in `basemap_prg()`
 #'
 #' @return a data frame with name and URL
 #' @export

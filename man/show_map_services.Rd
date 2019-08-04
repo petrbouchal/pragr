@@ -2,7 +2,7 @@
 % Please edit documentation in R/basemap_prg.R
 \name{show_map_services}
 \alias{show_map_services}
-\title{Show map services available in \code{basemap_prg}}
+\title{Show map services available in \code{basemap_prg()}}
 \usage{
 show_map_services()
 }
@@ -10,5 +10,5 @@ show_map_services()
 a data frame with name and URL
 }
 \description{
-Show map services available in \code{basemap_prg}
+Show map services available in \code{basemap_prg()}
 }

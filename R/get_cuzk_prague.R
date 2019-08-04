@@ -3,7 +3,7 @@
 #' @param date Date of file, must be last day of month. Defaults to end of previous month.
 #' @param path Where to save the downloaded zip file and unzipped xml file
 #' @param cachetime Redownload if the zip file found in path exists and is older than cachetime. Defaults to 32. Set to 0 to always redownload. Only checks existence and timestamp of downloaded zip file, not unzipped file.
-#'
+#' @keywords internal
 #' @return string Path to downloaded and unzipped file incl. path
 get_cuzk_prague <- function(date = strftime(lubridate::rollback(Sys.Date()),
                                                                 format = "%Y%m%d"),
