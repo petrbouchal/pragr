@@ -6,6 +6,8 @@
 \alias{pragr-package}
 \title{pragr: Tools for visualising Prague data}
 \description{
+\if{html}{\figure{logo.png}{options: align='right'}}
+
 What the package does (one paragraph).
 }
 \seealso{

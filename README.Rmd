@@ -14,6 +14,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+# pkgdown <img src="man/figures/logo.png" align="right" />
+
 # pragr: use Prague geodata in R 
 
 <!-- badges: start -->
@@ -21,7 +23,7 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/petrbouchal/pragr.svg?branch=master)](https://travis-ci.org/petrbouchal/pragr)
 <!-- badges: end -->
 
-📦 `pragr` makes Prague raster geodata accessible for use in R via 📦 `ggplot2`. 
+📦 `pragr` aims to provide tools for visualising data about Prague. Currently, it makes Prague raster geodata accessible for use in R via 📦 `ggplot2`. 
 
 ## Installation
 
@@ -42,7 +44,7 @@ The basic logic of these two functions is that given a simple feature dataset, t
 
 It relies on the REST API of ArcGis map/image services that power the geoportal. 
 
-The approach draws heavily on code provided by [@yutannihilation](https://github.com/yutannihilation) in her [blog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
+The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her [blog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
 
 The approach should be generalisable to other ArcGis-driven servers with the same REST API, though the package as it now is assumes a projected CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 
@@ -78,7 +80,7 @@ ggplot() +
 
 # What's in a name?
 
-The name of the package refers to [Karel Prager](https://en.wikipedia.org/wiki/Karel_Prager), a renowned Czech modernist architect. Among other things, he designed - and for a long time worked in - the office buildings in which the Institute for Planning and Development, Prague's public urban planning body, is housed today.
+The name of the package refers to [Karel Prager](https://en.wikipedia.org/wiki/Karel_Prager), a renowned Czech modernist architect. Among other things, he designed - and for a long time worked in - the office buildings in which the [Institute for Planning and Development](https://iprpraha.cz), Prague's public urban planning body, is housed today.
 
 The institute's excellent data team develops and maintains the data and software infrastructure for Prague's geographical data on which this package - and much of Prague's planning, government and business - relies.
 
@@ -113,6 +115,7 @@ Common
 - [ ] generalise image caching logic
 - [ ] merge and reorganise service spec list 
 - [ ] expose list of all services via a dedicated function
+- [ ] add notes on data sources, Leaflet etc.
 
 `prg_basemap`
 
@@ -142,3 +145,8 @@ Minor enhancements
 - [ ] expose Prague bbox
 - [ ] Prague-shaped favicon/hex icon?
 
+# Acknowledgments
+
+- The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her [blog post]
+- logo designed using the 📦 bunny by @[dmi3kno](https://github.com/dmi3kno) following his [blog post]([https://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/])
+- most importantly, IPR Praha for the data!
