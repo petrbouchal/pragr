@@ -50,10 +50,10 @@ show_map_services <- function() {
 #' @param image_service map service from which to draw the map; `show_map_services()` provides a list.
 #' @param layer layer from map service to use, see https://mpp.praha.eu/arcgis/rest/services/
 #' @param size longer side of the downloaded image in pixels
-#' @param alpha transparency
+#' @param alpha transparency of the tile
 #' @param buffer distance between feature end and image end; for EPSG 5514 in meters.
 #'
-#' @return annotation object for ggplot
+#' @return list including raster annotation layers for ggplot2
 #' @examples
 #' @export
 #'

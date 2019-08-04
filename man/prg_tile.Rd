@@ -7,18 +7,18 @@
 prg_tile(data, tile_service, zoom = 6, alpha = 1, buffer = 0)
 }
 \arguments{
-\item{data}{DESCRIPTION.}
+\item{data}{sf data frame from which to extract the bounding box}
 
-\item{tile_service}{DESCRIPTION.}
+\item{tile_service}{map service from which to draw the map, or a URL of a service.}
 
-\item{zoom}{DESCRIPTION.}
+\item{zoom}{zoom level, from 0 to the service's limit}
 
-\item{alpha}{DESCRIPTION.}
+\item{alpha}{transparency of the tiles.}
 
-\item{buffer}{DESCRIPTION.}
+\item{buffer}{distance between feature end and tile end; for EPSG 5514 in meters.}
 }
 \value{
-annotation object for ggplot
+list including raster annotation layers for ggplot2
 }
 \description{
 Include raster tiles for Prague in ggplot2

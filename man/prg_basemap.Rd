@@ -16,12 +16,12 @@ prg_basemap(data, image_service = "ortofoto", layer = "", size = 900,
 
 \item{size}{longer side of the downloaded image in pixels}
 
-\item{alpha}{transparency}
+\item{alpha}{transparency of the tile}
 
 \item{buffer}{distance between feature end and image end; for EPSG 5514 in meters.}
 }
 \value{
-annotation object for ggplot
+list including raster annotation layers for ggplot2
 }
 \description{
 Include raster maps from Prague geoportal in your ggplot map
