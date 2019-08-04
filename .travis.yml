@@ -1,6 +1,19 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
+
+warnings_are_errors: false
+
+addons:
+  apt:
+    packages:
+      - libudunits2-dev
+
+r_github_packages:
+  - r-lib/covr
+  - r-quantities/errors
+  - JanCaha/CzechData
+
 cache: packages
 before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
 deploy:
