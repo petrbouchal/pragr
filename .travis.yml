@@ -4,10 +4,24 @@ language: R
 
 warnings_are_errors: false
 
+r_packages:
+  - sp
+  - sf
+  - rgdal
+  - rgeos
+
 addons:
   apt:
     packages:
       - libudunits2-dev
+      - libgdal-dev
+      - libgeos-dev
+      - libproj-dev
+      - libudunits2-dev
+      - libv8-dev
+      - libprotobuf-dev
+      - protobuf-compiler
+      - libjq-dev
 
 r_github_packages:
   - r-lib/covr
