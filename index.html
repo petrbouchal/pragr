@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">pragr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -71,31 +71,146 @@
 
     
     
-<p><a href="https://petrbouchal.github.io/pragr" class="uri">https://petrbouchal.github.io/pragr</a></p>
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<div id="pragr" class="section level1">
+<div id="pragr-use-prague-geodata-in-r" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#pragr" class="anchor"></a>pragr</h1></div>
+<a href="#pragr-use-prague-geodata-in-r" class="anchor"></a>pragr: use Prague geodata in R</h1></div>
 <!-- badges: start -->
-<p><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> <a href="https://travis-ci.org/petrbouchal/pragr"><img src="https://travis-ci.org/petrbouchal/pragr.svg?branch=master" alt="Travis build status"></a> <!-- badges: end --></p>
-<p>The goal of pragr is to …</p>
+
+<p>📦 <code>pragr</code> makes Prague raster geodata accessible for use in R via 📦 <code>ggplot2</code>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of pragr from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"pragr"</span>)</a></code></pre></div>
+<p>You can install the current version of pragr from GitHub with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"petrbouchal/pragr"</span>)</a></code></pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="what-it-does" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(pragr)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">## basic example code</a></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date.</p>
-<p>You can also embed plots, for example:</p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub!</p>
+<a href="#what-it-does" class="anchor"></a>What it does</h2>
+<p>Currently, the 📦 enables you to do two things:</p>
+<ol style="list-style-type: decimal">
+<li>Add raster tiles from the Prague geoportal to a <code>ggplot2</code> object (<code><a href="reference/prg_tile.html">prg_tile()</a></code>)</li>
+<li>Add other raster layer to a <code>ggplot2</code> object (<code><a href="reference/prg_basemap.html">prg_basemap()</a></code>)</li>
+</ol>
+<p>The basic logic of these two functions is that given a simple feature dataset, they provide the tiles or image to create the base map for those coordinates.</p>
+<p>It relies on the REST API of ArcGis map/image services that power the geoportal.</p>
+<p>The approach draws heavily on code provided by <span class="citation">[@yutannihilation]</span>(<a href="https://github.com/yutannihilation" class="uri">https://github.com/yutannihilation</a>) in her <a href="https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/">blog post</a> on using OpenStreetMap tiles in 📦 <code>ggplot2</code>.</p>
+<p>The approach should be generalisable to other ArcGis-driven servers with the same REST API, though the package as it now is assumes a projected CRS measured in meters, specifically the Krovak crs (EPSG 5514).</p>
 </div>
+</div>
+<div id="usage" class="section level1">
+<h1 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(pragr)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(dplyr)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; Attaching package: 'dplyr'</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; The following objects are masked from 'package:stats':</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;     filter, lag</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; The following objects are masked from 'package:base':</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;     intersect, setdiff, setequal, union</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sf)</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; Linking to GEOS 3.5.1, GDAL 2.2.2, PROJ 4.9.2</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">praha1 &lt;-<span class="st"> </span>CzechData<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/CzechData/topics/load_RUIAN_settlement">load_RUIAN_settlement</a></span>(prg_kod, <span class="st">"MOMC_P"</span>, <span class="dt">WGS84 =</span> F) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(nazev <span class="op">==</span><span class="st"> 'Praha 1'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/prg_tile.html">prg_tile</a></span>(<span class="dt">data =</span> praha1, <span class="dt">zoom =</span> <span class="dv">10</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>, <span class="dt">buffer =</span> <span class="dv">200</span>,</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">           <span class="dt">tile_service =</span> <span class="st">'orto'</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> praha1, <span class="dt">fill =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/reexports.html">alpha</a></span>(<span class="st">"red"</span>, <span class="fl">0.6</span>), <span class="dt">colour =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>()</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16217</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16218</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16219</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16217</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16218</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16219</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">#&gt; Adding alpha channel to tile image.</span></a></code></pre></div>
+<p><img src="reference/figures/README-example-tiles-1.png" width="100%"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/prg_basemap.html">prg_basemap</a></span>(<span class="dt">data =</span> praha1, <span class="dt">alpha =</span> <span class="fl">.8</span>, <span class="dt">buffer =</span> <span class="dv">200</span>,</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">              <span class="dt">image_service =</span> <span class="st">'archiv'</span>, <span class="dt">layer =</span> <span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> praha1, <span class="dt">fill =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/reexports.html">alpha</a></span>(<span class="st">"red"</span>, <span class="fl">0.6</span>), <span class="dt">colour =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>()</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; Adding alpha channel to basemap image.</span></a></code></pre></div>
+<p><img src="reference/figures/README-example-base-1.png" width="100%"></p>
+</div>
+<div id="whats-in-a-name" class="section level1">
+<h1 class="hasAnchor">
+<a href="#whats-in-a-name" class="anchor"></a>What’s in a name?</h1>
+<p>The name of the package refers to <a href="https://en.wikipedia.org/wiki/Karel_Prager">Karel Prager</a>, a renowned Czech modernist architect. Among other things, he designed - and for a long time worked in - the office buildings in which the Institute for Planning and Development, Prague’s public urban planning body, is housed today.</p>
+<p>The institute’s excellent data team develops and maintains the data and software infrastructure for Prague’s geographical data on which this package - and much of Prague’s planning, government and business - relies.</p>
+<p>Prag is of course how the city was once called by its many German-speaking inhabitants.</p>
+</div>
+<div id="data-sources" class="section level1">
+<h1 class="hasAnchor">
+<a href="#data-sources" class="anchor"></a>Data sources:</h1>
+<p>Most map/image services are accessible via <a href="http://www.geoportalpraha.cz/cs/clanek/22/mapove-sluzby" class="uri">http://www.geoportalpraha.cz/cs/clanek/22/mapove-sluzby</a></p>
+<p>A more technical route to lists of services is via</p>
+<ul>
+<li><a href="https://mpp.praha.eu/arcgis/rest/services/" class="uri">https://mpp.praha.eu/arcgis/rest/services/</a></li>
+<li><a href="https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services" class="uri">https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services</a></li>
+<li><a href="http://mpp.iprpraha.cz/arcgis/rest/services/" class="uri">http://mpp.iprpraha.cz/arcgis/rest/services/</a></li>
+</ul>
+<p>For some of the services, shortcut notation is implemented for use in the tile/basemap functions.</p>
+<div id="note-on-geodata-about-prague" class="section level2">
+<h2 class="hasAnchor">
+<a href="#note-on-geodata-about-prague" class="anchor"></a>Note on geodata about Prague</h2>
+</div>
+</div>
+<div id="see-also" class="section level1">
+<h1 class="hasAnchor">
+<a href="#see-also" class="anchor"></a>See also:</h1>
+<ul>
+<li><a href="https://github.com/JanCaha/CzechData">CzechData</a></li>
+</ul>
+</div>
+<div id="todo" class="section level1">
+<h1 class="hasAnchor">
+<a href="#todo" class="anchor"></a>TODO</h1>
+<p>Common</p>
+<ul>
+<li>[ ] improve temp file saving so that conflicts are minimised</li>
+<li>[ ] implement cache expiry (do not redownload before N days)</li>
+<li>[ ] generalise image caching logic</li>
+<li>[ ] merge and reorganise service spec list</li>
+<li>[ ] expose list of all services via a dedicated function</li>
+</ul>
+<p><code>prg_basemap</code></p>
+<ul>
+<li>[ ] add <code>verbose</code> parameter</li>
+<li>[ ] rewrite to use JSON spec (sizing, image format)</li>
+<li>[ ] allow ‘max’ as a value of the size parameter</li>
+<li>[ ] implement url option for service parameter</li>
+<li>[ ] make prg_basemap resilient to JPEGs</li>
+<li>[ ] check URL paramteres in base</li>
+<li>[x] test alpha logic in basemap</li>
+<li>[ ] implement automatic choice/choice cascade of format for base</li>
+</ul>
+<p><code>prg_tile</code></p>
+<ul>
+<li>[ ] add <code>verbose</code> parameter</li>
+<li>[x] implement alpha in prg_tile</li>
+<li>[ ] check URL parameters in tile</li>
+<li>[ ] implement automatic zooming for tiles</li>
+<li>[ ] implement automatic choice/choice cascade of format for tile</li>
+</ul>
+<p>Minor enhancements</p>
+<ul>
+<li>[ ] reexport CzechData fns + data relevant to Prague</li>
+<li>[ ] create CzechData wrappers for Prague (settlement, cadastre, registers/conversion tab les)</li>
+<li>[ ] expose precise 5514 CRS</li>
+<li>[ ] expose/reexport Prague codes</li>
+<li>[ ] expose Prague bbox</li>
+<li>[ ] Prague-shaped favicon/hex icon?</li>
+</ul>
 </div>
   </div>
 
@@ -123,7 +238,14 @@
 </ul>
 </div>
 
-      </div>
+      <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://travis-ci.org/petrbouchal/pragr"><img src="https://travis-ci.org/petrbouchal/pragr.svg?branch=master" alt="Travis build status"></a></li>
+</ul>
+</div>
+</div>
 
 </div>
 
