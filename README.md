@@ -53,7 +53,9 @@ library(pragr)
 library(dplyr)
 library(sf)
 library(ggplot2)
+```
 
+``` r
 praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>% 
   filter(nazev == 'Praha 1')
 ```
@@ -78,7 +80,7 @@ ggplot() +
 #> Adding alpha channel to tile image.
 ```
 
-<img src="man/figures/README-example tiles-1.png" width="100%" />
+<img src="man/figures/README-example-tiles-1.png" width="100%" />
 
 ``` r
 ggplot() +
@@ -89,7 +91,7 @@ ggplot() +
 #> Adding alpha channel to basemap image.
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-example-base-1.png" width="100%" />
 
 # What’s in a name?
 

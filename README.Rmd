@@ -48,18 +48,19 @@ The approach should be generalisable to other ArcGis-driven servers with the sam
 
 # Usage
 
-```{r}
+```{r setup}
 library(pragr)
 library(dplyr)
 library(sf)
 library(ggplot2)
+```
 
+```{r load-data}
 praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>% 
   filter(nazev == 'Praha 1')
 ```
 
-
-```{r example tiles}
+```{r example-tiles}
 ggplot() +
   prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
            tile_service = 'orto') + 
@@ -67,7 +68,7 @@ ggplot() +
   theme_void()
 ```
 
-```{r}
+```{r example-base}
 ggplot() +
   prg_basemap(data = praha1, alpha = .8, buffer = 200,
               image_service = 'archiv', layer = 6) + 
