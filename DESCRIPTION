@@ -13,7 +13,6 @@ URL: https://github.com/petrbouchal/pragr
 BugReports: https://github.com/petrbouchal/pragr/issues
 Suggests: 
     pkgdown,
-    CzechData,
     ggsn
 Imports: 
     lubridate,
@@ -32,4 +31,7 @@ Imports:
     magrittr,
     tibble,
     here,
-    abind
+    abind,
+    CzechData (>= 0.2.2)
+Remotes:  
+    JanCaha/CzechData
