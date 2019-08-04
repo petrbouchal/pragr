@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/index.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/get_cuzk_prague.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/pragr-package.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/prg_basemap.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/prg_kod.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/prg_tile.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/show_map_services.html</loc>
+  </url>
+</urlset>
