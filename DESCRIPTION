@@ -12,4 +12,24 @@ RoxygenNote: 6.1.1
 URL: https://github.com/petrbouchal/pragr
 BugReports: https://github.com/petrbouchal/pragr/issues
 Suggests: 
-    pkgdown
+    pkgdown,
+    CzechData,
+    ggsn
+Imports: 
+    lubridate,
+    sf,
+    ggplot2,
+    grid,
+    jsonlite,
+    dplyr,
+    stringr,
+    tidyr,
+    purrr,
+    png,
+    jpeg,
+    curl,
+    httr,
+    magrittr,
+    tibble,
+    here,
+    abind

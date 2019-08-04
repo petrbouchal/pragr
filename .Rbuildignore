@@ -3,3 +3,9 @@
 ^README\.Rmd$
 ^LICENSE\.md$
 ^\.travis\.yml$
+^data-raw$
+^docs$
+^prep$
+^temp$
+^_pkgdown\.yml$
+^pkgdown$
