@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# pragr <a href='https:/petrbouchal.github.io/pragr'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
+
 # pragr: use Prague geodata in R
 
 <!-- badges: start -->
@@ -11,7 +13,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://travis-ci.org/petrbouchal/pragr.svg?branch=master)](https://travis-ci.org/petrbouchal/pragr)
 <!-- badges: end -->
 
-📦 `pragr` makes Prague raster geodata accessible for use in R via 📦
+📦 `pragr` aims to provide tools for visualising data about Prague.
+Currently, it makes Prague raster geodata accessible for use in R via 📦
 `ggplot2`.
 
 ## Installation
@@ -35,12 +38,20 @@ dataset, they provide the tiles or image to create the base map for
 those coordinates.
 
 It relies on the REST API of ArcGis map/image services that power the
-geoportal.
+geoportal:
+
+, using documentation for the following operations (endpoints): [Image
+Tile
+endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
+- [Export Image
+endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
+- [Export Map (image)
+endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
 The approach draws heavily on code provided by
-\[@yutannihilation\](<https://github.com/yutannihilation>) in her [blog
-post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using
-OpenStreetMap tiles in 📦 `ggplot2`.
+@[yutannihilation](https://github.com/yutannihilation) in her islog
+post\](<https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/>) on
+using OpenStreetMap tiles in 📦 `ggplot2`.
 
 The approach should be generalisable to other ArcGis-driven servers with
 the same REST API, though the package as it now is assumes a projected
@@ -51,8 +62,24 @@ CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 ``` r
 library(pragr)
 library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 library(sf)
+#> Linking to GEOS 3.6.1, GDAL 2.1.3, PROJ 4.9.3
 library(ggplot2)
+#> Want to understand how all the pieces fit together? See the R for
+#> Data Science book: http://r4ds.had.co.nz/
+#> 
+#> Attaching package: 'ggplot2'
+#> The following object is masked from 'package:crayon':
+#> 
+#>     %+%
 ```
 
 ``` r
@@ -98,9 +125,9 @@ ggplot() +
 The name of the package refers to [Karel
 Prager](https://en.wikipedia.org/wiki/Karel_Prager), a renowned Czech
 modernist architect. Among other things, he designed - and for a long
-time worked in - the office buildings in which the Institute for
-Planning and Development, Prague’s public urban planning body, is housed
-today.
+time worked in - the office buildings in which the [Institute for
+Planning and Development](https://iprpraha.cz), Prague’s public urban
+planning body, is housed today.
 
 The institute’s excellent data team develops and maintains the data and
 software infrastructure for Prague’s geographical data on which this
@@ -139,6 +166,7 @@ Common
   - [ ] generalise image caching logic
   - [ ] merge and reorganise service spec list
   - [ ] expose list of all services via a dedicated function
+  - [ ] add notes on data sources, Leaflet etc.
 
 `prg_basemap`
 
@@ -167,4 +195,14 @@ Minor enhancements
   - [ ] expose precise 5514 CRS
   - [ ] expose/reexport Prague codes
   - [ ] expose Prague bbox
-  - [ ] Prague-shaped favicon/hex icon?
+  - [x] Prague-shaped favicon/hex icon?
+
+# Acknowledgments
+
+  - The approach draws heavily on code provided by
+    @[yutannihilation](https://github.com/yutannihilation) in her \[blog
+    post\]
+  - logo designed using the 📦 bunny by
+    @[dmi3kno](https://github.com/dmi3kno) following his [blog
+    post](%5Bhttps://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/%5D)
+  - most importantly, IPR Praha for the data\!

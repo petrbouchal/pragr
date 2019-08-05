@@ -48,7 +48,7 @@ It relies on the REST API of ArcGis map/image services that power the geoportal:
 - [Export Image endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
 - [Export Map (image) endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
-The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her [blog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
+The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her islog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
 
 The approach should be generalisable to other ArcGis-driven servers with the same REST API, though the package as it now is assumes a projected CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 
