@@ -32,3 +32,19 @@ https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services?f=html&cach
 - ortofoto 1945
 - ortofoto 1953
 
+Geostat
+
+- https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/population-distribution-demography/geostat
+
+Territorial tyoplogies https://ec.europa.eu/eurostat/statistics-explained/index.php/Territorial_typologies
+
+# Eurostat statistical atlas
+
+http://ec.europa.eu/eurostat/statistical-atlas/gis/viewer/?config=REF-GRID.json&mids=2,3,7&o=1,0.5,1&ch=4,5&center=49.9978,14.76067,7&
+
+Global human settlement
+
+INSPIRE geoportál
+
+- plochy vod? https://geoportal.gov.cz/web/guest/eshop/gallery#mainProductPanelId:productDetailPanelId
+
