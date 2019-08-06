@@ -19,7 +19,7 @@ Currently, it makes Prague raster geodata accessible for use in R via 📦
 
 ## Installation
 
-You can install the current version of pragr from GitHub with:
+You can install the current version of pr`agr f`rom GitHub with:
 
 ``` r
 remotes::install_github("petrbouchal/pragr")
@@ -29,8 +29,8 @@ remotes::install_github("petrbouchal/pragr")
 
 Currently, the 📦 enables you to do two things:
 
-1)  Add raster tiles from the Prague geoportal to a `ggplot2` object
-    (`prg_tile()`)
+1)  Add raster tiles from the Prague geoopen data portal to a `ggplot2`
+    object (`prg_tile()`)
 2)  Add other raster layer to a `ggplot2` object (`prg_basemap()`)
 
 The basic logic of these two functions is that given a simple feature
@@ -49,9 +49,9 @@ endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
 endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
 The approach draws heavily on code provided by
-@[yutannihilation](https://github.com/yutannihilation) in her islog
-post\](<https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/>) on
-using OpenStreetMap tiles in 📦 `ggplot2`.
+@[yutannihilation](https://github.com/yutannihilation) in his [blog
+post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using
+OpenStreetMap tiles in 📦 `ggplot2`.
 
 The approach should be generalisable to other ArcGis-driven servers with
 the same REST API, though the package as it now is assumes a projected
@@ -62,24 +62,8 @@ CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 ``` r
 library(pragr)
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 library(sf)
-#> Linking to GEOS 3.6.1, GDAL 2.1.3, PROJ 4.9.3
 library(ggplot2)
-#> Want to understand how all the pieces fit together? See the R for
-#> Data Science book: http://r4ds.had.co.nz/
-#> 
-#> Attaching package: 'ggplot2'
-#> The following object is masked from 'package:crayon':
-#> 
-#>     %+%
 ```
 
 ``` r
@@ -199,10 +183,12 @@ Minor enhancements
 
 # Acknowledgments
 
+  - Most importantly, IPR Praha for the providing dataopen \!
   - The approach draws heavily on code provided by
     @[yutannihilation](https://github.com/yutannihilation) in her \[blog
     post\]
   - logo designed using the 📦 bunny by
     @[dmi3kno](https://github.com/dmi3kno) following his [blog
     post](%5Bhttps://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/%5D)
-  - most importantly, IPR Praha for the data\!
+  - font in logo is Trivia Serif by [František
+    Štorm](https://stormtype.com)

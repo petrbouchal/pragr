@@ -26,8 +26,7 @@ knitr::opts_chunk$set(
 📦 `pragr` aims to provide tools for visualising data about Prague. Currently, it makes Prague raster geodata accessible for use in R via 📦 `ggplot2`. 
 
 ## Installation
-
-You can install the current version of pragr from GitHub with:
+You can install the current version of pr`agr f`rom GitHub with:
 
 ``` r
 remotes::install_github("petrbouchal/pragr")
@@ -37,7 +36,7 @@ remotes::install_github("petrbouchal/pragr")
 
 Currently, the 📦 enables you to do two things:
 
-1) Add raster tiles from the Prague geoportal to a `ggplot2` object (`prg_tile()`)
+1) Add raster tiles from the Prague geoopen data portal to a `ggplot2` object (`prg_tile()`)
 2) Add other raster layer to a `ggplot2` object (`prg_basemap()`)
 
 The basic logic of these two functions is that given a simple feature dataset, they provide the tiles or image to create the base map for those coordinates.
@@ -48,7 +47,7 @@ It relies on the REST API of ArcGis map/image services that power the geoportal:
 - [Export Image endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
 - [Export Map (image) endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
-The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her islog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
+The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in his [blog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
 
 The approach should be generalisable to other ArcGis-driven servers with the same REST API, though the package as it now is assumes a projected CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 
@@ -151,6 +150,7 @@ Minor enhancements
 
 # Acknowledgments
 
+- Most importantly, IPR Praha for the providing dataopen !
 - The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her [blog post]
 - logo designed using the 📦 bunny by @[dmi3kno](https://github.com/dmi3kno) following his [blog post]([https://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/])
-- most importantly, IPR Praha for the data!
+- font in logo is Trivia Serif by [František Štorm](https://stormtype.com)
