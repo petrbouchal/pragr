@@ -52,9 +52,9 @@ img_hex %>%
   image_scale("200x200") %>%
   image_write(here::here("logo.png"), density = 600)
 
-img_hex %>%
-  image_scale("400x400") %>%
-  image_write(here::here("logo.png"), density = 600)
+img_hex_for_pkgdown <- img_hex %>%
+  image_scale("480x556") %>%
+  image_write(here::here("temp/logo.png"), density = 600, quality = 100)
 
 img_hex_gh <- img_hex %>%
   image_scale("400x400")
