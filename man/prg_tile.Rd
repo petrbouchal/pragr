@@ -4,7 +4,8 @@
 \alias{prg_tile}
 \title{Prague tiles for ggplot2 plots}
 \usage{
-prg_tile(data, tile_service, zoom = 6, alpha = 1, buffer = 0)
+prg_tile(data, tile_service, zoom = 6, alpha = 1, buffer = 0,
+  verbose = F)
 }
 \arguments{
 \item{data}{sf data frame from which to extract the bounding box}
@@ -16,6 +17,8 @@ prg_tile(data, tile_service, zoom = 6, alpha = 1, buffer = 0)
 \item{alpha}{transparency of the tiles.}
 
 \item{buffer}{distance between feature end and tile end; for EPSG 5514 in meters.}
+
+\item{verbose}{display information on tile URLs and image processing.}
 }
 \value{
 list including raster annotation layers for ggplot2

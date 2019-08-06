@@ -5,7 +5,7 @@
 \title{Prague base maps for ggplot2}
 \usage{
 prg_basemap(data, image_service = "ortofoto", layer = "", size = 900,
-  alpha = 1, buffer = 0)
+  alpha = 1, buffer = 0, verbose = F)
 }
 \arguments{
 \item{data}{sf data frame from which to extract the bounding box}
@@ -19,6 +19,8 @@ prg_basemap(data, image_service = "ortofoto", layer = "", size = 900,
 \item{alpha}{transparency of the tile}
 
 \item{buffer}{distance between feature end and image end; for EPSG 5514 in meters.}
+
+\item{verbose}{display information on image URLs and image processing.}
 }
 \value{
 list including raster annotation layers for ggplot2

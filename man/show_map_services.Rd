@@ -7,7 +7,7 @@
 show_map_services()
 }
 \value{
-a data frame with name and URL
+a data frame containing name and URL of each service
 }
 \description{
 Show map services available in \code{basemap_prg()}

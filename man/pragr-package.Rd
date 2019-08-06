@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right'}}
 
-What the package does (one paragraph).
+Use Prague geodata in R
 }
 \seealso{
 Useful links:
