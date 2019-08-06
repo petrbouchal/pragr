@@ -134,26 +134,13 @@
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/prg_tile.html">prg_tile</a></span>(<span class="dt">data =</span> praha1, <span class="dt">zoom =</span> <span class="dv">10</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>, <span class="dt">buffer =</span> <span class="dv">200</span>,</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">           <span class="dt">tile_service =</span> <span class="st">'orto'</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> praha1, <span class="dt">fill =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/reexports.html">alpha</a></span>(<span class="st">"red"</span>, <span class="fl">0.6</span>), <span class="dt">colour =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>()</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16217</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16218</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16219</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16217</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16218</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16219</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; Adding alpha channel to tile image.</span></a>
-<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">#&gt; Adding alpha channel to tile image.</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>()</a></code></pre></div>
 <p><img src="reference/figures/README-example-tiles-1.png" width="100%"></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/prg_basemap.html">prg_basemap</a></span>(<span class="dt">data =</span> praha1, <span class="dt">alpha =</span> <span class="fl">.8</span>, <span class="dt">buffer =</span> <span class="dv">200</span>,</a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">              <span class="dt">image_service =</span> <span class="st">'archiv'</span>, <span class="dt">layer =</span> <span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="dt">data =</span> praha1, <span class="dt">fill =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/reexports.html">alpha</a></span>(<span class="st">"red"</span>, <span class="fl">0.6</span>), <span class="dt">colour =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>()</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; Adding alpha channel to basemap image.</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>()</a></code></pre></div>
 <p><img src="reference/figures/README-example-base-1.png" width="100%"></p>
 </div>
 <div id="whats-in-a-name" class="section level1">
@@ -177,6 +164,7 @@
 <div id="note-on-geodata-about-prague" class="section level2">
 <h2 class="hasAnchor">
 <a href="#note-on-geodata-about-prague" class="anchor"></a>Note on geodata about Prague</h2>
+<p>[To be added]</p>
 </div>
 </div>
 <div id="see-also" class="section level1">
@@ -186,52 +174,11 @@
 <li><a href="https://github.com/JanCaha/CzechData">CzechData</a></li>
 </ul>
 </div>
-<div id="todo" class="section level1">
-<h1 class="hasAnchor">
-<a href="#todo" class="anchor"></a>TODO</h1>
-<p>Common</p>
-<ul>
-<li>[ ] improve temp file saving so that conflicts are minimised</li>
-<li>[ ] implement cache expiry (do not redownload before N days)</li>
-<li>[ ] generalise image caching logic</li>
-<li>[ ] merge and reorganise service spec list</li>
-<li>[ ] expose list of all services via a dedicated function</li>
-<li>[ ] add notes on data sources, Leaflet etc.</li>
-</ul>
-<p><code>prg_basemap</code></p>
-<ul>
-<li>[ ] add <code>verbose</code> parameter</li>
-<li>[ ] rewrite to use JSON spec (sizing, image format)</li>
-<li>[ ] allow ‘max’ as a value of the size parameter</li>
-<li>[ ] implement url option for service parameter</li>
-<li>[ ] make prg_basemap resilient to JPEGs</li>
-<li>[ ] check URL paramteres in base</li>
-<li>[x] test alpha logic in basemap</li>
-<li>[ ] implement automatic choice/choice cascade of format for base</li>
-</ul>
-<p><code>prg_tile</code></p>
-<ul>
-<li>[ ] add <code>verbose</code> parameter</li>
-<li>[x] implement alpha in prg_tile</li>
-<li>[ ] check URL parameters in tile</li>
-<li>[ ] implement automatic zooming for tiles</li>
-<li>[ ] implement automatic choice/choice cascade of format for tile</li>
-</ul>
-<p>Minor enhancements</p>
-<ul>
-<li>[ ] reexport CzechData fns + data relevant to Prague</li>
-<li>[ ] create CzechData wrappers for Prague (settlement, cadastre, registers/conversion tab les)</li>
-<li>[ ] expose precise 5514 CRS</li>
-<li>[ ] expose/reexport Prague codes</li>
-<li>[ ] expose Prague bbox</li>
-<li>[x] Prague-shaped favicon/hex icon?</li>
-</ul>
-</div>
 <div id="acknowledgments" class="section level1">
 <h1 class="hasAnchor">
 <a href="#acknowledgments" class="anchor"></a>Acknowledgments</h1>
 <ul>
-<li>Most importantly, IPR Praha for the providing dataopen !</li>
+<li>Most importantly, IPR Praha for providing the open data !</li>
 <li>The approach draws heavily on code provided by @<a href="https://github.com/yutannihilation">yutannihilation</a> in her [blog post]</li>
 <li>logo designed using the 📦 bunny by @<a href="https://github.com/dmi3kno">dmi3kno</a> following his <a href="%5Bhttps://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/%5D">blog post</a>
 </li>
