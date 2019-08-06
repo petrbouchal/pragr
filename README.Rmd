@@ -122,7 +122,7 @@ Common
 
 `prg_basemap`
 
-- [ ] add `verbose` parameter
+- [x] add `verbose` parameter
 - [ ] rewrite to use JSON spec (sizing, image format)
 - [ ] allow 'max' as a value of the size parameter
 - [ ] implement url option for service parameter
@@ -133,7 +133,7 @@ Common
 
 `prg_tile`
 
-- [ ] add `verbose` parameter
+- [x] add `verbose` parameter
 - [x] implement alpha in prg_tile
 - [ ] check URL parameters in tile
 - [ ] implement automatic zooming for tiles

@@ -31,9 +31,9 @@ krovak2xy <- function(x, y, zoom, spec) {
               y = ceiling(y_out)))
 }
 
-get_tile <- function(url, spec) {
+get_tile <- function(url, spec, verbose) {
   # build a local path
-  print(url)
+  if(verbose) print(url)
   if (stringr::str_detect(spec$tileInfo$format, "JP"))
   { image_fn <- jpeg::readJPEG
     image_ext <- "jpg"
@@ -55,7 +55,7 @@ get_tile <- function(url, spec) {
     h <- curl::new_handle()
     curl::handle_setheaders(h, `User-Agent` = "R script")
 
-    curl::curl_download(url, destfile = local_img)
+    curl::curl_download(url, destfile = local_img, quiet = !verbose)
   }
   image_fn(local_img)
 }
@@ -77,12 +77,13 @@ tile_services <- list(
 #' @param zoom zoom level, from 0 to the service's limit
 #' @param alpha transparency of the tiles.
 #' @param buffer distance between feature end and tile end; for EPSG 5514 in meters.
+#' @param verbose display information on tile URLs and image processing.
 #'
 #' @return list including raster annotation layers for ggplot2
 #' @examples
 #' @export
 #'
-prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0) {
+prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0, verbose = F) {
   service_is_url <- !(tile_service %in% names(pragr:::tile_services)) &
     stringr::str_detect(tile_service, "http[s]+://.*/(Image|Map)Server")
   stopifnot((tile_service %in% names(pragr:::tile_services) | service_is_url),
@@ -106,12 +107,12 @@ prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0) {
   tiles$srv_url <- url
   urls <- stringr::str_glue_data(tiles, "{srv_url}/tile/{zoom}/{y-1}/{x}")
 
-  imgs <- purrr::map(urls, get_tile, spec)
+  imgs <- purrr::map(urls, get_tile, spec, verbose)
   args <- tile_positions %>%
     dplyr::mutate(grob = purrr::map(imgs, function(x) {
       if(alpha < 1) {
         if(dim(x)[3] < 4) {
-          message("Adding alpha channel to tile image.")
+          if(verbose) message("Adding alpha channel to tile image.")
           x_after_alpha <- abind::abind(x, x[,,1])
           x_after_alpha[,,4] <- alpha
           } else {

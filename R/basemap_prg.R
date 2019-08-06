@@ -52,13 +52,14 @@ show_map_services <- function() {
 #' @param size longer side of the downloaded image in pixels
 #' @param alpha transparency of the tile
 #' @param buffer distance between feature end and image end; for EPSG 5514 in meters.
+#' @param verbose display information on image URLs and image processing.
 #'
 #' @return list including raster annotation layers for ggplot2
 #' @examples
 #' @export
 #'
 prg_basemap <- function(data, image_service = "ortofoto", layer = '',
-                     size = 900, alpha = 1, buffer = 0) {
+                     size = 900, alpha = 1, buffer = 0, verbose = F) {
   stopifnot(image_service %in% names(pragr:::image_services),
             dplyr::between(alpha, 0, 1),
             sf::st_crs(data)$epsg %in% c(5514, 102067),
@@ -67,7 +68,7 @@ prg_basemap <- function(data, image_service = "ortofoto", layer = '',
   service_spec <- pragr:::image_services[[image_service]]
   if(layer != '') layer <- stringr::str_glue("show:{layer}")
   if(layer %in% names(service_spec[['maxsizes']])) {
-    message('restricting size to server max for layer')
+    if(verbose) message('restricting size to server max for layer')
     maxsize <- min(service_spec[['maxsizes']][[layer]], size)
   } else {
     maxsize <- min(5000, size)
@@ -84,12 +85,12 @@ prg_basemap <- function(data, image_service = "ortofoto", layer = '',
   img_h_new <- newdims[2] %>% floor()
   url <- stringr::str_glue("https://mpp.praha.eu/arcgis/rest/services/{service_spec[['url']]}?bbox={bbox_uz}&&size={img_w_new},{img_h_new}&layers={layer}&time=&format=png&pixelType=C128&noData=&noDataInterpretation=esriNoDataMatchAny&interpolation=+RSP_BilinearInterpolation&compression=&compressionQuality=&bandIds=&mosaicRule=&renderingRule=&f=image&dpi=200&bboxSR=102067&imageSR=102067")
   tmpfile <- tempfile()
-  utils::download.file(url, tmpfile)
+  utils::download.file(url, tmpfile, quiet = !verbose)
   x <- png::readPNG(tmpfile)
   # https://stackoverflow.com/questions/11357926/r-add-alpha-value-to-png-image
   if(alpha < 1) {
     if(dim(x)[3] < 4) {
-      message("Adding alpha channel to basemap image.")
+      if(verbose) message("Adding alpha channel to basemap image.")
       x_after_alpha <- abind::abind(x, x[,,1])
       x_after_alpha[,,4] <- alpha
     } else {

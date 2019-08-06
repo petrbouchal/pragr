@@ -15,14 +15,14 @@ lk <- lokality %>% filter(CISLO_TXT %in% c('041', '001')) %>%
   st_simplify(preserveTopology = T,dTolerance = 15)
 
 ggplot() +
-  prg_tile(data = lk, zoom = 10, alpha = .5, buffer = 800,
+  prg_tile(data = lk, zoom = 10, alpha = .5, buffer = 800, verbose = T,
            tile_service = 'https://mpp.praha.eu/arcgis/rest/services/PUP/PUP_v4/ImageServer') +
   geom_sf(data = lk, fill = alpha("red", 0.6), colour = NA) +
   # geom_sf(data = lk %>% st_buffer(800), fill = NA, colour = "black") +
   theme_void()
 
 ggplot() +
-  prg_basemap(data = lk, alpha = .5, size = 450, buffer = 300,
+  prg_basemap(data = lk, alpha = .5, size = 450, buffer = 300, verbose = T,
            image_service = 'archiv', layer = 8) +
   geom_sf(data = lk, colour = alpha("red", 0.3), fill = NA) +
   theme_void()

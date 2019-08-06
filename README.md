@@ -77,18 +77,6 @@ ggplot() +
            tile_service = 'orto') + 
   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
   theme_void()
-#> https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16217
-#> https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16218
-#> https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17098/16219
-#> https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16217
-#> https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16218
-#> https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/tile/10/17097/16219
-#> Adding alpha channel to tile image.
-#> Adding alpha channel to tile image.
-#> Adding alpha channel to tile image.
-#> Adding alpha channel to tile image.
-#> Adding alpha channel to tile image.
-#> Adding alpha channel to tile image.
 ```
 
 <img src="man/figures/README-example-tiles-1.png" width="100%" />
@@ -99,7 +87,6 @@ ggplot() +
               image_service = 'archiv', layer = 6) + 
   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
   theme_void()
-#> Adding alpha channel to basemap image.
 ```
 
 <img src="man/figures/README-example-base-1.png" width="100%" />
@@ -154,7 +141,7 @@ Common
 
 `prg_basemap`
 
-  - [ ] add `verbose` parameter
+  - [x] add `verbose` parameter
   - [ ] rewrite to use JSON spec (sizing, image format)
   - [ ] allow ‘max’ as a value of the size parameter
   - [ ] implement url option for service parameter
@@ -165,7 +152,7 @@ Common
 
 `prg_tile`
 
-  - [ ] add `verbose` parameter
+  - [x] add `verbose` parameter
   - [x] implement alpha in prg\_tile
   - [ ] check URL parameters in tile
   - [ ] implement automatic zooming for tiles
@@ -183,7 +170,7 @@ Minor enhancements
 
 # Acknowledgments
 
-  - Most importantly, IPR Praha for the providing dataopen \!
+  - Most importantly, IPR Praha for providing the open data \!
   - The approach draws heavily on code provided by
     @[yutannihilation](https://github.com/yutannihilation) in her \[blog
     post\]
