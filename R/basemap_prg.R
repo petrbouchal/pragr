@@ -35,7 +35,7 @@ image_services <- list(ortofoto = list(url = "MAP/letecke_snimky_posledni_snimko
 
 #' Show map services available in `basemap_prg()`
 #'
-#' @return a data frame with name and URL
+#' @return a data frame containing name and URL of each service
 #' @export
 show_map_services <- function() {
   tibble::data_frame(name = names(pragr:::image_services),

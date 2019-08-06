@@ -150,7 +150,7 @@ Minor enhancements
 
 # Acknowledgments
 
-- Most importantly, IPR Praha for the providing dataopen !
+- Most importantly, IPR Praha for providing the open data !
 - The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her [blog post]
 - logo designed using the 📦 bunny by @[dmi3kno](https://github.com/dmi3kno) following his [blog post]([https://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/])
 - font in logo is Trivia Serif by [František Štorm](https://stormtype.com)
