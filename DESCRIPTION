@@ -2,7 +2,7 @@ Package: pragr
 Title: Tools for visualising Prague data
 Version: 0.1.0.9000
 Authors@R: person("Petr", "Bouchal", email = "pbouchal@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: Use Prague geodata in R
 Depends: R (>= 3.5)
 License: MIT + file LICENSE
 Encoding: UTF-8
