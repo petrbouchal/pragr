@@ -124,49 +124,11 @@ the tile/basemap functions.
 
 ## Note on geodata about Prague
 
+\[To be added\]
+
 # See also:
 
   - [CzechData](https://github.com/JanCaha/CzechData)
-
-# TODO
-
-Common
-
-  - [ ] improve temp file saving so that conflicts are minimised
-  - [ ] implement cache expiry (do not redownload before N days)
-  - [ ] generalise image caching logic
-  - [ ] merge and reorganise service spec list
-  - [ ] expose list of all services via a dedicated function
-  - [ ] add notes on data sources, Leaflet etc.
-
-`prg_basemap`
-
-  - [x] add `verbose` parameter
-  - [ ] rewrite to use JSON spec (sizing, image format)
-  - [ ] allow ‘max’ as a value of the size parameter
-  - [ ] implement url option for service parameter
-  - [ ] make prg\_basemap resilient to JPEGs
-  - [ ] check URL paramteres in base
-  - [x] test alpha logic in basemap
-  - [ ] implement automatic choice/choice cascade of format for base
-
-`prg_tile`
-
-  - [x] add `verbose` parameter
-  - [x] implement alpha in prg\_tile
-  - [ ] check URL parameters in tile
-  - [ ] implement automatic zooming for tiles
-  - [ ] implement automatic choice/choice cascade of format for tile
-
-Minor enhancements
-
-  - [ ] reexport CzechData fns + data relevant to Prague
-  - [ ] create CzechData wrappers for Prague (settlement, cadastre,
-    registers/conversion tab les)
-  - [ ] expose precise 5514 CRS
-  - [ ] expose/reexport Prague codes
-  - [ ] expose Prague bbox
-  - [x] Prague-shaped favicon/hex icon?
 
 # Acknowledgments
 
