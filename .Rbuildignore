@@ -9,3 +9,4 @@
 ^temp$
 ^_pkgdown\.yml$
 ^pkgdown$
+^renv$

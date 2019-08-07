@@ -6,4 +6,3 @@ repos:
     -   id: no-browser-statement
     -   id: roxygenize
     -   id: use-tidy-description
-    -   id: deps-in-desc
