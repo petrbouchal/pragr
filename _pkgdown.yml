@@ -2,4 +2,4 @@ destination: docs
 url: https://petrbouchal.github.io/pragr
 development:
   mode: auto
-  version_label: danger
+  version_label: warning

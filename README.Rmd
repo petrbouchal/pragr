@@ -41,9 +41,9 @@ Currently, the 📦 enables you to do two things:
 
 The basic logic of these two functions is that given a simple feature dataset, they provide the tiles or image to create the base map for those coordinates.
 
-It relies on the REST API of ArcGis map/image services that power the geoportal:
+It relies on the REST API of ArcGis map/image services that power the geoportal, using documentation for the following operations (endpoints):
 
-, using documentation for the following operations (endpoints): [Image Tile endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
+- [Image Tile endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
 - [Export Image endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
 - [Export Map (image) endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 

@@ -19,7 +19,7 @@ Currently, it makes Prague raster geodata accessible for use in R via 📦
 
 ## Installation
 
-You can install the current version of pr`agr f`rom GitHub with:
+You can install the current version of `pragr` from GitHub with:
 
 ``` r
 remotes::install_github("petrbouchal/pragr")
@@ -38,15 +38,14 @@ dataset, they provide the tiles or image to create the base map for
 those coordinates.
 
 It relies on the REST API of ArcGis map/image services that power the
-geoportal:
+geoportal, using documentation for the following operations (endpoints):
 
-, using documentation for the following operations (endpoints): [Image
-Tile
-endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
-- [Export Image
-endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
-- [Export Map (image)
-endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
+  - [Image Tile
+    endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
+  - [Export Image
+    endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
+  - [Export Map (image)
+    endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
 The approach draws heavily on code provided by
 @[yutannihilation](https://github.com/yutannihilation) in his [blog
@@ -62,8 +61,22 @@ CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 ``` r
 library(pragr)
 library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 library(sf)
+#> Linking to GEOS 3.6.1, GDAL 2.1.3, PROJ 4.9.3
 library(ggplot2)
+#> 
+#> Attaching package: 'ggplot2'
+#> The following object is masked from 'package:crayon':
+#> 
+#>     %+%
 ```
 
 ``` r
