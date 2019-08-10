@@ -84,14 +84,14 @@ tile_services <- list(
 #' @export
 #'
 prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0, verbose = F) {
-  service_is_url <- !(tile_service %in% names(pragr:::tile_services)) &
+  service_is_url <- !(tile_service %in% names(tile_services)) &
     stringr::str_detect(tile_service, "http[s]+://.*/(Image|Map)Server")
-  stopifnot((tile_service %in% names(pragr:::tile_services) | service_is_url),
+  stopifnot((tile_service %in% names(tile_services) | service_is_url),
             dplyr::between(alpha, 0, 1),
             sf::st_crs(data)$epsg %in% c(5514, 102067),
             buffer >= 0, is.numeric(buffer),
             any(c('sf', 'sfc', 'sfg') %in% class(data)))
-  url <- if (service_is_url) tile_service else pragr:::tile_services[[tile_service]][['url']]
+  url <- if (service_is_url) tile_service else tile_services[[tile_service]][['url']]
   data <- data %>% sf::st_buffer(buffer)
   b <- sf::st_bbox(data)
   spec <- jsonlite::fromJSON(stringr::str_glue("{url}?f=pjson"))
