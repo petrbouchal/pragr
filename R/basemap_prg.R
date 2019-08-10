@@ -8,23 +8,23 @@ resize_to_longside <- function(dimc, maxsize) {
   } else { dimc }
 }
 
-image_services <- list(ortofoto = list(url = "MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/exportImage",
+image_services <- list(ortofoto = list(url = "https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/exportImage",
                                   maxsizes = 5000),
-                  dsm = list(url = 'MAP/DSM_HLS/ImageServer/exportImage',
+                  dsm = list(url = 'https://mpp.praha.eu/arcgis/rest/services/MAP/DSM_HLS/ImageServer/exportImage',
                              maxsizes = 5000),
-                  zakladni = list(url = 'MAP/Zakladni_mapa/MapServer/export',
+                  zakladni = list(url = 'https://mpp.praha.eu/arcgis/rest/services/MAP/Zakladni_mapa/MapServer/export',
                                   maxsizes = 5000),
-                  ortofoto_mimovegetacni = list(url = 'MAP/mimovegetacni_snimkovani_cache/ImageServer/exportImage',
+                  ortofoto_mimovegetacni = list(url = 'https://mpp.praha.eu/arcgis/rest/services/MAP/mimovegetacni_snimkovani_cache/ImageServer/exportImage',
                                   maxsizes = 5000),
-                  cisarske_otisky = list(url = 'ARCH/Cisarske_otisky_1440/ImageServer/exportImage',
+                  cisarske_otisky = list(url = 'https://mpp.praha.eu/arcgis/rest/services/ARCH/Cisarske_otisky_1440/ImageServer/exportImage',
                                   maxsizes = 5000),
-                  archiv = list(url = 'ARCH/Mapove_podklady_archiv/MapServer/export',
+                  archiv = list(url = 'https://mpp.praha.eu/arcgis/rest/services/ARCH/Mapove_podklady_archiv/MapServer/export',
                                   maxsizes = c(`show:8` = 900,
                                                `show:1011` = 900)),
-                  orto_archiv = list(url = "MAP/Ortofotomapa_archiv/MapServer/export",
+                  orto_archiv = list(url = "https://mpp.praha.eu/arcgis/rest/services/MAP/Ortofotomapa_archiv/MapServer/export",
                                   maxsizes = 5000),
-                  uzemni_plan = list(url = 'PUP/PUP_v4/ImageServer/exportImage'),
-                  uap = list(url = 'UAP/UAP_platne/MapServer/export',
+                  uzemni_plan = list(url = 'https://mpp.praha.eu/arcgis/rest/services/PUP/PUP_v4/ImageServer/exportImage'),
+                  uap = list(url = 'https://mpp.praha.eu/arcgis/rest/services/UAP/UAP_platne/MapServer/export',
                              maxsizes = 4096))
 
 # tiletypes$orto_archiv$maxsizes[x]
@@ -38,8 +38,8 @@ image_services <- list(ortofoto = list(url = "MAP/letecke_snimky_posledni_snimko
 #' @return a data frame containing name and URL of each service
 #' @export
 show_map_services <- function() {
-  tibble::data_frame(name = names(pragr:::image_services),
-             URL = purrr::map_chr(pragr:::image_services, `[[`, 'url'))
+  tibble::data_frame(name = names(image_services),
+             URL = purrr::map_chr(image_services, `[[`, 'url'))
 }
 
 #' Prague base maps for ggplot2
@@ -60,12 +60,16 @@ show_map_services <- function() {
 #'
 prg_basemap <- function(data, image_service = "ortofoto", layer = '',
                      size = 900, alpha = 1, buffer = 0, verbose = F) {
-  stopifnot(image_service %in% names(pragr:::image_services),
+  service_is_url <- !(image_service %in% names(image_services)) &
+    stringr::str_detect(image_service, "http[s]+://.*/(Image|Map)Server")
+  stopifnot((image_service %in% names(image_services) | service_is_url),
             dplyr::between(alpha, 0, 1),
             sf::st_crs(data)$epsg %in% c(5514, 102067),
             buffer >= 0, is.numeric(buffer),
             any(c('sf', 'sfc', 'sfg') %in% class(data)))
-  service_spec <- pragr:::image_services[[image_service]]
+  service_spec <- if(service_is_url) {list(url = image_service,
+                                         maxsizes = 5000)} else {
+                                           image_services[[image_service]]}
   if(layer != '') layer <- stringr::str_glue("show:{layer}")
   if(layer %in% names(service_spec[['maxsizes']])) {
     if(verbose) message('restricting size to server max for layer')
@@ -80,10 +84,10 @@ prg_basemap <- function(data, image_service = "ortofoto", layer = '',
   distx <- abs(bbx_uz$xmin - bbx_uz$xmax) %>% unname()
   img_w = round(distx * 1.3)
   img_h = round(img_w * ratio)
-  newdims <- pragr:::resize_to_longside(c(img_w, img_h), maxsize)
+  newdims <- resize_to_longside(c(img_w, img_h), maxsize)
   img_w_new <- newdims[1] %>% floor()
   img_h_new <- newdims[2] %>% floor()
-  url <- stringr::str_glue("https://mpp.praha.eu/arcgis/rest/services/{service_spec[['url']]}?bbox={bbox_uz}&&size={img_w_new},{img_h_new}&layers={layer}&time=&format=png&pixelType=C128&noData=&noDataInterpretation=esriNoDataMatchAny&interpolation=+RSP_BilinearInterpolation&compression=&compressionQuality=&bandIds=&mosaicRule=&renderingRule=&f=image&dpi=200&bboxSR=102067&imageSR=102067")
+  url <- stringr::str_glue("{service_spec[['url']]}?bbox={bbox_uz}&&size={img_w_new},{img_h_new}&layers={layer}&time=&format=png&pixelType=C128&noData=&noDataInterpretation=esriNoDataMatchAny&interpolation=+RSP_BilinearInterpolation&compression=&compressionQuality=&bandIds=&mosaicRule=&renderingRule=&f=image&dpi=200&bboxSR=102067&imageSR=102067")
   tmpfile <- tempfile()
   utils::download.file(url, tmpfile, quiet = !verbose)
   x <- png::readPNG(tmpfile)

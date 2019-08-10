@@ -13,11 +13,12 @@ BugReports: https://github.com/petrbouchal/pragr/issues
 Depends: 
     R (>= 3.5)
 Imports: 
-    CzechData (>= 0.2.2),
     abind,
     curl,
+    CzechData (>= 0.2.2),
     dplyr,
     ggplot2,
+    grDevices,
     grid,
     here,
     httr,
@@ -31,7 +32,8 @@ Imports:
     stringr,
     tibble,
     tidyr,
-    usethis
+    usethis,
+    utils
 Suggests: 
     ggsn,
     pkgdown,
