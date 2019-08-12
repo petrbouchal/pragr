@@ -11,6 +11,8 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
 status](https://travis-ci.org/petrbouchal/pragr.svg?branch=master)](https://travis-ci.org/petrbouchal/pragr)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/pragr)](https://CRAN.R-project.org/package=pragr)
 <!-- badges: end -->
 
 📦 `pragr` aims to provide tools for visualising data about Prague.
