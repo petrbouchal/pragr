@@ -67,9 +67,8 @@ prg_basemap <- function(data, image_service = "ortofoto", layer = '',
             sf::st_crs(data)$epsg %in% c(5514, 102067),
             buffer >= 0, is.numeric(buffer),
             any(c('sf', 'sfc', 'sfg') %in% class(data)))
-  service_spec <- if(service_is_url) {list(url = image_service,
-                                         maxsizes = 5000)} else {
-                                           image_services[[image_service]]}
+  url <- if (service_is_url) image_service else image_services[[image_service]][['url']]
+  service_spec <- jsonlite::fromJSON(stringr::str_glue("{url}?f=pjson"))
   if(layer != '') layer <- stringr::str_glue("show:{layer}")
   if(layer %in% names(service_spec[['maxsizes']])) {
     if(verbose) message('restricting size to server max for layer')
