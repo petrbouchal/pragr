@@ -504,13 +504,6 @@ Version=0.1-7
 Source=CRAN
 Hash=2facb7d8929420c91d1ddc8d4636f787
 
-[R/Package/pragr]
-Package=pragr
-Version=0.1.0.9000
-Source=unknown
-Remotes=JanCaha/CzechData
-Hash=b1e94f6c24e44f9c4d3d7f278c21b171
-
 [R/Package/prettyunits]
 Package=prettyunits
 Version=1.0.2
