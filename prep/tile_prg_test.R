@@ -30,12 +30,12 @@ ggplot() +
 
 ggplot() +
   prg_basemap(data = lk, alpha = .5, size = 450, buffer = 300, verbose = T,
-           image_service = 'https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/exportImage', layer = 8) +
+           image_service = 'https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer', layer = 8) +
   geom_sf(data = lk, colour = alpha("red", 0.3), fill = NA) +
   theme_void()
 
 ggplot() +
-  prg_basemap(data = lk, alpha = .5, size = 450, buffer = 1000,
-           image_service = 'ortofoto', layer = 8) +
+  prg_basemap(data = lk, alpha = .5, width = 450, buffer = 1000,
+           image_service = 'orto', layer = 8) +
   geom_sf(data = lk, colour = alpha("red", 0.3), fill = NA) +
   theme_void()

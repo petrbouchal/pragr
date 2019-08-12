@@ -1,32 +1,3 @@
-resize_to_longside <- function(dimc, maxsize) {
-  if(max(dimc) > maxsize) {
-    ratio_x <- maxsize/dimc[1]
-    ratio_y <- maxsize/dimc[2]
-
-    ratio = min(ratio_x, ratio_y)
-    c(dimc[1] * ratio, dimc[2] * ratio)
-  } else { dimc }
-}
-
-image_services <- list(ortofoto = list(url = "https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/exportImage",
-                                  maxsizes = 5000),
-                  dsm = list(url = 'https://mpp.praha.eu/arcgis/rest/services/MAP/DSM_HLS/ImageServer/exportImage',
-                             maxsizes = 5000),
-                  zakladni = list(url = 'https://mpp.praha.eu/arcgis/rest/services/MAP/Zakladni_mapa/MapServer/export',
-                                  maxsizes = 5000),
-                  ortofoto_mimovegetacni = list(url = 'https://mpp.praha.eu/arcgis/rest/services/MAP/mimovegetacni_snimkovani_cache/ImageServer/exportImage',
-                                  maxsizes = 5000),
-                  cisarske_otisky = list(url = 'https://mpp.praha.eu/arcgis/rest/services/ARCH/Cisarske_otisky_1440/ImageServer/exportImage',
-                                  maxsizes = 5000),
-                  archiv = list(url = 'https://mpp.praha.eu/arcgis/rest/services/ARCH/Mapove_podklady_archiv/MapServer/export',
-                                  maxsizes = c(`show:8` = 900,
-                                               `show:1011` = 900)),
-                  orto_archiv = list(url = "https://mpp.praha.eu/arcgis/rest/services/MAP/Ortofotomapa_archiv/MapServer/export",
-                                  maxsizes = 5000),
-                  uzemni_plan = list(url = 'https://mpp.praha.eu/arcgis/rest/services/PUP/PUP_v4/ImageServer/exportImage'),
-                  uap = list(url = 'https://mpp.praha.eu/arcgis/rest/services/UAP/UAP_platne/MapServer/export',
-                             maxsizes = 4096))
-
 # tiletypes$orto_archiv$maxsizes[x]
 # tile_type <- 'stare'
 # layer_long <- str_glue('show:{8}')
@@ -49,7 +20,7 @@ show_map_services <- function() {
 #' @param data sf data frame from which to extract the bounding box
 #' @param image_service map service from which to draw the map; `prg_endpoints` provides details.
 #' @param layer layer from map service to use, see https://mpp.praha.eu/arcgis/rest/services/
-#' @param size longer side of the downloaded image in pixels
+#' @param width width in pixels, in effect sets image resolution; integer or "max"
 #' @param alpha transparency of the tile
 #' @param buffer distance between feature end and image end; for EPSG 5514 in meters.
 #' @param verbose display information on image URLs and image processing.
@@ -59,34 +30,45 @@ show_map_services <- function() {
 #' @export
 #'
 prg_basemap <- function(data, image_service = "ortofoto", layer = '',
-                     size = 900, alpha = 1, buffer = 0, verbose = F) {
-  service_is_url <- !(image_service %in% names(image_services)) &
+                     width = 900, alpha = 1, buffer = 0, verbose = F) {
+  image_services <- prg_endpoints[prg_endpoints$type == "image",]
+  service_is_url <- !(image_service %in% image_services$name) &
     stringr::str_detect(image_service, "http[s]+://.*/(Image|Map)Server")
-  stopifnot((image_service %in% names(image_services) | service_is_url),
+  stopifnot((image_service %in% image_services$name | service_is_url),
+            is.numeric(width) | width == "max",
             dplyr::between(alpha, 0, 1),
             sf::st_crs(data)$epsg %in% c(5514, 102067),
             buffer >= 0, is.numeric(buffer),
             any(c('sf', 'sfc', 'sfg') %in% class(data)))
-  url <- if (service_is_url) image_service else image_services[[image_service]][['url']]
-  service_spec <- jsonlite::fromJSON(stringr::str_glue("{url}?f=pjson"))
-  if(layer != '') layer <- stringr::str_glue("show:{layer}")
-  if(layer %in% names(service_spec[['maxsizes']])) {
-    if(verbose) message('restricting size to server max for layer')
-    maxsize <- min(service_spec[['maxsizes']][[layer]], size)
+  if (service_is_url) {
+    url <- image_service
+    endpoint <- if (stringr::str_detect(image_service, "MapServer")) "export" else "exportImage"
   } else {
-    maxsize <- min(5000, size)
-  }
+    url <- image_services$url[image_services$name == image_service]
+    endpoint <- image_services$endpoint[image_services$name == image_service]
+    }
+  service_spec <- jsonlite::fromJSON(stringr::str_glue("{url}?f=pjson"))
+  if(layer != '') layer_for_url <- stringr::str_glue("show:{layer}") else
+    layer_for_url <- layer
   data <- data %>% sf::st_buffer(buffer)
   bbx_uz <- sf::st_bbox(data)
   bbox_uz <- sf::st_bbox(data) %>% paste0(collapse = ",")
   ratio <- ((bbx_uz$ymin - bbx_uz$ymax)/(bbx_uz$xmin - bbx_uz$xmax)) %>% unname()
   distx <- abs(bbx_uz$xmin - bbx_uz$xmax) %>% unname()
-  img_w = round(distx * 1.3)
-  img_h = round(img_w * ratio)
-  newdims <- resize_to_longside(c(img_w, img_h), maxsize)
+  img_w = round(width)
+  if (width == "max") {
+    img_w <- service_spec$maxImageWidth
+    img_h <- img_w * ratio
+  } else {
+    img_w = round(width)
+    img_h = round(img_w * ratio)
+  }
+  newdims <- constrain_dimensions(img_w, img_h,
+                                  service_spec$maxImageWidth, service_spec$maxImageHeight,
+                                  verbose)
   img_w_new <- newdims[1] %>% floor()
   img_h_new <- newdims[2] %>% floor()
-  url <- stringr::str_glue("{service_spec[['url']]}?bbox={bbox_uz}&&size={img_w_new},{img_h_new}&layers={layer}&time=&format=png&pixelType=C128&noData=&noDataInterpretation=esriNoDataMatchAny&interpolation=+RSP_BilinearInterpolation&compression=&compressionQuality=&bandIds=&mosaicRule=&renderingRule=&f=image&dpi=200&bboxSR=102067&imageSR=102067")
+  url <- stringr::str_glue("{url}/{endpoint}?bbox={bbox_uz}&&size={img_w_new},{img_h_new}&layers={layer_for_url}&time=&format=png&pixelType=C128&noData=&noDataInterpretation=esriNoDataMatchAny&interpolation=+RSP_BilinearInterpolation&compression=&compressionQuality=&bandIds=&mosaicRule=&renderingRule=&f=image&dpi=200&bboxSR=102067&imageSR=102067")
   tmpfile <- tempfile()
   utils::download.file(url, tmpfile, quiet = !verbose)
   x <- png::readPNG(tmpfile)
