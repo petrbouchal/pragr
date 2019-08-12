@@ -65,7 +65,7 @@ get_tile <- function(url, spec, verbose) {
 #' Include raster tiles for Prague in ggplot2
 #'
 #' @param data sf data frame from which to extract the bounding box
-#' @param tile_service map service from which to draw the map, or a URL of a service.
+#' @param tile_service map service from which to draw the map (see `prg_endpoints`), or a URL of a service.
 #' @param zoom zoom level, from 0 to the service's limit
 #' @param alpha transparency of the tiles.
 #' @param buffer distance between feature end and tile end; for EPSG 5514 in meters.

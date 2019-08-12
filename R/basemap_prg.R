@@ -47,7 +47,7 @@ show_map_services <- function() {
 #' Include raster maps from Prague geoportal in your ggplot map
 #'
 #' @param data sf data frame from which to extract the bounding box
-#' @param image_service map service from which to draw the map; `show_map_services()` provides a list.
+#' @param image_service map service from which to draw the map; `prg_endpoints` provides details.
 #' @param layer layer from map service to use, see https://mpp.praha.eu/arcgis/rest/services/
 #' @param size longer side of the downloaded image in pixels
 #' @param alpha transparency of the tile

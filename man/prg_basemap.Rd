@@ -10,7 +10,7 @@ prg_basemap(data, image_service = "ortofoto", layer = "", size = 900,
 \arguments{
 \item{data}{sf data frame from which to extract the bounding box}
 
-\item{image_service}{map service from which to draw the map; \code{show_map_services()} provides a list.}
+\item{image_service}{map service from which to draw the map; \code{prg_endpoints} provides details.}
 
 \item{layer}{layer from map service to use, see https://mpp.praha.eu/arcgis/rest/services/}
 

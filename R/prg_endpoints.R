@@ -15,6 +15,7 @@
 #'   \item{\code{endpoint}}{character. endpoint. Used internally}
 #'   \item{\code{url}}{character. URL, used internally but also points to human readable interface.}
 #' }
+#' @export
 "prg_endpoints"
 prg_endpoints <- tibble::tribble(~name, ~type, ~description, ~endpoint, ~url,
                          "orto", "tile", "", "",

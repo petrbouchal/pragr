@@ -10,7 +10,7 @@ prg_tile(data, tile_service, zoom = 6, alpha = 1, buffer = 0,
 \arguments{
 \item{data}{sf data frame from which to extract the bounding box}
 
-\item{tile_service}{map service from which to draw the map, or a URL of a service.}
+\item{tile_service}{map service from which to draw the map (see \code{prg_endpoints}), or a URL of a service.}
 
 \item{zoom}{zoom level, from 0 to the service's limit}
 
