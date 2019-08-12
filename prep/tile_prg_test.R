@@ -22,6 +22,13 @@ ggplot() +
   theme_void()
 
 ggplot() +
+  prg_tile(data = lk, zoom = 10, alpha = .5, buffer = 800, verbose = T,
+           tile_service = 'orto') +
+  geom_sf(data = lk, fill = alpha("red", 0.6), colour = NA) +
+  # geom_sf(data = lk %>% st_buffer(800), fill = NA, colour = "black") +
+  theme_void()
+
+ggplot() +
   prg_basemap(data = lk, alpha = .5, size = 450, buffer = 300, verbose = T,
            image_service = 'https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/exportImage', layer = 8) +
   geom_sf(data = lk, colour = alpha("red", 0.3), fill = NA) +
