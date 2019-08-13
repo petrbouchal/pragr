@@ -8,6 +8,13 @@
 
 <title>Changelog • pragr</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -31,6 +38,9 @@
 
 
 <meta property="og:title" content="Changelog" />
+
+<meta property="og:image" content="https://petrbouchal.github.io/pragr/logo.png" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -60,7 +70,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pragr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -103,6 +113,15 @@
       <small>Source: <a href='https://github.com/petrbouchal/pragr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="pragr-0-1-1" class="section level1">
+<h1 class="page-header">
+<a href="#pragr-0-1-1" class="anchor"></a>pragr 0.1.1</h1>
+<ul>
+<li>improved file handling in raster data functions</li>
+<li>improved sizing in prg_basemap()</li>
+<li>streamlined interface to existing map services in raster functions</li>
+</ul>
+</div>
     <div id="pragr-0-1-0" class="section level1">
 <h1 class="page-header">
 <a href="#pragr-0-1-0" class="anchor"></a>pragr 0.1.0</h1>
@@ -116,6 +135,7 @@
 <ul>
 <li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
 <li>basic project infrastructure</li>
+<li>added a <code>verbose</code> parameter to prg_*()</li>
 </ul>
 </div>
   </div>
@@ -124,6 +144,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#pragr-0-1-1">0.1.1</a></li>
         <li><a href="#pragr-0-1-0">0.1.0</a></li>
         <li><a href="#pragr-0-0-0-9000">0.0.0.9000</a></li>
       </ul>

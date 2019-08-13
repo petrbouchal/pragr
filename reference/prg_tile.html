@@ -8,6 +8,13 @@
 
 <title>Prague tiles for ggplot2 plots — prg_tile • pragr</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -33,6 +40,8 @@
 <meta property="og:title" content="Prague tiles for ggplot2 plots — prg_tile" />
 
 <meta property="og:description" content="Include raster tiles for Prague in ggplot2" />
+
+<meta property="og:image" content="https://petrbouchal.github.io/pragr/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -63,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pragr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -113,7 +122,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>prg_tile</span>(<span class='no'>data</span>, <span class='no'>tile_service</span>, <span class='kw'>zoom</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>buffer</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
+    <pre class="usage"><span class='fu'>prg_tile</span>(<span class='no'>data</span>, <span class='no'>tile_service</span>, <span class='kw'>zoom</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>buffer</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -124,7 +134,7 @@
     </tr>
     <tr>
       <th>tile_service</th>
-      <td><p>map service from which to draw the map, or a URL of a service.</p></td>
+      <td><p>map service from which to draw the map (see <code>prg_endpoints</code>), or a URL of a service.</p></td>
     </tr>
     <tr>
       <th>zoom</th>
@@ -137,6 +147,10 @@
     <tr>
       <th>buffer</th>
       <td><p>distance between feature end and tile end; for EPSG 5514 in meters.</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>display information on tile URLs and image processing.</p></td>
     </tr>
     </table>
     
