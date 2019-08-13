@@ -25,3 +25,22 @@ constrain_dimensions <- function(width, height, max_width, max_height, verbose) 
   if (verbose & constraining) message("Downsizing image to max size")
   return(c(new_width, new_height))
 }
+
+raster_temp_path <- function(url, layer = 0,
+                             size = 0, image_ext = "png", bbox = c(0,0,0,0)) {
+  service_id <- str_extract(url, "(?<=services/).*(?=(/(Image)|(Map)Server))") %>%
+    str_replace("_", "-") %>%
+    str_replace("/", "_")
+
+  bbox_str <- str_c(bbox, collapse = "-")
+
+  tile <- str_detect(url, "/\\d+/\\d+/\\d+")
+
+  if(tile) tileid <- str_extract(url, "/\\d+/\\d+/\\d+") %>%
+    str_replace_all("/", "-") %>%
+    str_remove("^-")
+  if(tile) filename <- stringr::str_glue("{service_id}__{layer}__{tileid}")
+  else filename <- stringr::str_glue("{service_id}__{layer}__{size}__{bbox_str}")
+
+  return(filename)
+}

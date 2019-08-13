@@ -31,7 +31,7 @@ krovak2xy <- function(x, y, zoom, spec) {
               y = ceiling(y_out)))
 }
 
-get_tile <- function(url, spec, verbose) {
+get_tile <- function(url, spec, bbox, verbose) {
   # build a local path
   if(verbose) print(url)
   if (stringr::str_detect(spec$tileInfo$format, "JP"))
@@ -44,8 +44,7 @@ get_tile <- function(url, spec, verbose) {
   else
     { stop(stringr::str_glue("Unknown tile format: {spec$tileInfo$format}")) }
 
-  path <- stringr::str_extract(url, "/\\d+/\\d+/\\d+") %>%
-    stringr::str_replace_all("/", "_")
+  path <- raster_temp_path(url, bbox = bbox)
   local_img <- here::here(file.path("temp", "tiles", paste0(path, ".", image_ext)))
 
   if (!file.exists(local_img)) {
@@ -100,7 +99,7 @@ prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0, verbos
   tiles$srv_url <- url
   urls <- stringr::str_glue_data(tiles, "{srv_url}/tile/{zoom}/{y-1}/{x}")
 
-  imgs <- purrr::map(urls, get_tile, spec, verbose)
+  imgs <- purrr::map(urls, get_tile, spec, b, verbose)
   args <- tile_positions %>%
     dplyr::mutate(grob = purrr::map(imgs, function(x) {
       if(alpha < 1) {

@@ -69,9 +69,19 @@ prg_basemap <- function(data, image_service = "ortofoto", layer = '',
   img_w_new <- newdims[1] %>% floor()
   img_h_new <- newdims[2] %>% floor()
   url <- stringr::str_glue("{url}/{endpoint}?bbox={bbox_uz}&&size={img_w_new},{img_h_new}&layers={layer_for_url}&time=&format=png&pixelType=C128&noData=&noDataInterpretation=esriNoDataMatchAny&interpolation=+RSP_BilinearInterpolation&compression=&compressionQuality=&bandIds=&mosaicRule=&renderingRule=&f=image&dpi=200&bboxSR=102067&imageSR=102067")
-  tmpfile <- tempfile()
-  utils::download.file(url, tmpfile, quiet = !verbose)
-  x <- png::readPNG(tmpfile)
+  path <- raster_temp_path(url, bbox = bbx_uz)
+  local_img <- here::here(file.path("temp", "tiles", paste0(path, ".", "png")))
+
+  if (!file.exists(local_img)) {
+    dir.create(dirname(local_img), showWarnings = FALSE, recursive = TRUE)
+
+    # add header
+    h <- curl::new_handle()
+    curl::handle_setheaders(h, `User-Agent` = "R script")
+
+    curl::curl_download(url, destfile = local_img, quiet = !verbose)
+  }
+  x <- png::readPNG(local_img)
   # https://stackoverflow.com/questions/11357926/r-add-alpha-value-to-png-image
   if(alpha < 1) {
     if(dim(x)[3] < 4) {
