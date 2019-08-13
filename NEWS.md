@@ -1,4 +1,8 @@
-# pragr (development version)
+# pragr 0.1.1
+
+* improved file handling in raster data functions
+* improved sizing in prg_basemap()
+* streamlined interface to existing map services in raster functions
 
 # pragr 0.1.0
 
