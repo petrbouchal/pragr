@@ -4,8 +4,8 @@
 \alias{prg_tile}
 \title{Prague tiles for ggplot2 plots}
 \usage{
-prg_tile(data, tile_service, zoom = 6, alpha = 1, buffer = 0,
-  verbose = F)
+prg_tile(data, tile_service = "orto", zoom = 6, alpha = 1,
+  buffer = 0, verbose = F)
 }
 \arguments{
 \item{data}{sf data frame from which to extract the bounding box}

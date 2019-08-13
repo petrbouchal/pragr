@@ -74,7 +74,7 @@ get_tile <- function(url, spec, bbox, verbose) {
 #' @examples
 #' @export
 #'
-prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0, verbose = F) {
+prg_tile <- function(data, tile_service = "orto", zoom = 6, alpha = 1, buffer = 0, verbose = F) {
   tile_services <- prg_endpoints[prg_endpoints$type == "tile",]
   service_is_url <- !(tile_service %in% tile_services$name) &
     stringr::str_detect(tile_service, "http[s]+://.*/(Image|Map)Server")

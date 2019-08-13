@@ -29,7 +29,7 @@ show_map_services <- function() {
 #' @examples
 #' @export
 #'
-prg_basemap <- function(data, image_service = "ortofoto", layer = '',
+prg_basemap <- function(data, image_service = "orto", layer = '',
                      width = 900, alpha = 1, buffer = 0, verbose = F) {
   image_services <- prg_endpoints[prg_endpoints$type == "image",]
   service_is_url <- !(image_service %in% image_services$name) &

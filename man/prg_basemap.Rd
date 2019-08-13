@@ -4,8 +4,8 @@
 \alias{prg_basemap}
 \title{Prague base maps for ggplot2}
 \usage{
-prg_basemap(data, image_service = "ortofoto", layer = "",
-  width = 900, alpha = 1, buffer = 0, verbose = F)
+prg_basemap(data, image_service = "orto", layer = "", width = 900,
+  alpha = 1, buffer = 0, verbose = F)
 }
 \arguments{
 \item{data}{sf data frame from which to extract the bounding box}
