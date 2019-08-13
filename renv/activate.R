@@ -2,7 +2,7 @@
 local({
 
   # the requested version of renv
-  version <- "0.5.0-4"
+  version <- "0.6.0-98"
 
   # load the 'utils' package eagerly -- this ensures that renv shims, which
   # mask 'utils' packages, will come first on the search path
