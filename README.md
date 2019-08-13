@@ -1,9 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pragr <a href='https:/petrbouchal.github.io/pragr'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
-
-# pragr: use Prague geodata in R
+# pragr: use Prague geodata in R <a href='https:/petrbouchal.github.io/pragr'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
 
 <!-- badges: start -->
 
@@ -63,7 +61,16 @@ CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 ``` r
 library(pragr)
 library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 library(sf)
+#> Linking to GEOS 3.6.1, GDAL 2.1.3, PROJ 4.9.3
 library(ggplot2)
 ```
 

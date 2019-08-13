@@ -28,17 +28,17 @@ constrain_dimensions <- function(width, height, max_width, max_height, verbose) 
 
 raster_temp_path <- function(url, layer = 0,
                              size = 0, image_ext = "png", bbox = c(0,0,0,0)) {
-  service_id <- str_extract(url, "(?<=services/).*(?=(/(Image)|(Map)Server))") %>%
-    str_replace("_", "-") %>%
-    str_replace("/", "_")
+  service_id <- stringr::str_extract(url, "(?<=services/).*(?=(/(Image)|(Map)Server))") %>%
+    stringr::str_replace("_", "-") %>%
+    stringr::str_replace("/", "_")
 
-  bbox_str <- str_c(bbox, collapse = "-")
+  bbox_str <- stringr::str_c(bbox, collapse = "-")
 
-  tile <- str_detect(url, "/\\d+/\\d+/\\d+")
+  tile <- stringr::str_detect(url, "/\\d+/\\d+/\\d+")
 
-  if(tile) tileid <- str_extract(url, "/\\d+/\\d+/\\d+") %>%
-    str_replace_all("/", "-") %>%
-    str_remove("^-")
+  if(tile) tileid <- stringr::str_extract(url, "/\\d+/\\d+/\\d+") %>%
+    stringr::str_replace_all("/", "-") %>%
+    stringr::str_remove("^-")
   if(tile) filename <- stringr::str_glue("{service_id}__{layer}__{tileid}")
   else filename <- stringr::str_glue("{service_id}__{layer}__{size}__{bbox_str}")
 
