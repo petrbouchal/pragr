@@ -77,7 +77,7 @@ ggplot() +
 ```{r example-base}
 ggplot() +
   prg_basemap(data = praha1, alpha = .8, buffer = 200,
-              image_service = 'archiv', layer = 6) + 
+              image_service = 'mapy_archiv', layer = 6) + 
   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
   theme_void()
 ```

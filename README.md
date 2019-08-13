@@ -63,22 +63,8 @@ CRS measured in meters, specifically the Krovak crs (EPSG 5514).
 ``` r
 library(pragr)
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 library(sf)
-#> Linking to GEOS 3.6.1, GDAL 2.1.3, PROJ 4.9.3
 library(ggplot2)
-#> 
-#> Attaching package: 'ggplot2'
-#> The following object is masked from 'package:crayon':
-#> 
-#>     %+%
 ```
 
 ``` r
@@ -99,7 +85,7 @@ ggplot() +
 ``` r
 ggplot() +
   prg_basemap(data = praha1, alpha = .8, buffer = 200,
-              image_service = 'archiv', layer = 6) + 
+              image_service = 'mapy_archiv', layer = 6) + 
   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
   theme_void()
 ```

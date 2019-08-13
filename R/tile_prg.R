@@ -31,7 +31,7 @@ krovak2xy <- function(x, y, zoom, spec) {
               y = ceiling(y_out)))
 }
 
-get_tile <- function(url, spec, verbose) {
+get_tile <- function(url, spec, bbox, verbose) {
   # build a local path
   if(verbose) print(url)
   if (stringr::str_detect(spec$tileInfo$format, "JP"))
@@ -44,8 +44,7 @@ get_tile <- function(url, spec, verbose) {
   else
     { stop(stringr::str_glue("Unknown tile format: {spec$tileInfo$format}")) }
 
-  path <- stringr::str_extract(url, "/\\d+/\\d+/\\d+") %>%
-    stringr::str_replace_all("/", "_")
+  path <- raster_temp_path(url, bbox = bbox)
   local_img <- here::here(file.path("temp", "tiles", paste0(path, ".", image_ext)))
 
   if (!file.exists(local_img)) {
@@ -60,20 +59,12 @@ get_tile <- function(url, spec, verbose) {
   image_fn(local_img)
 }
 
-tile_services <- list(
-  orto = list(url = "https://mpp.praha.eu/arcgis/rest/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer"),
-  orto_2003 = list(url = "https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services/Ortofotomapa_Prahy_2003/MapServer"),
-  orto_1945 = list(url = "https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services/Ortofotomapa_Prahy_1945/MapServer"),
-  mpp_z02 = list(url = "https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services/Z02_Hlavni_vykres/MapServer")
-)
-
-
 #' Prague tiles for ggplot2 plots
 #'
 #' Include raster tiles for Prague in ggplot2
 #'
 #' @param data sf data frame from which to extract the bounding box
-#' @param tile_service map service from which to draw the map, or a URL of a service.
+#' @param tile_service map service from which to draw the map (see `prg_endpoints`), or a URL of a service.
 #' @param zoom zoom level, from 0 to the service's limit
 #' @param alpha transparency of the tiles.
 #' @param buffer distance between feature end and tile end; for EPSG 5514 in meters.
@@ -84,14 +75,15 @@ tile_services <- list(
 #' @export
 #'
 prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0, verbose = F) {
-  service_is_url <- !(tile_service %in% names(pragr:::tile_services)) &
+  tile_services <- prg_endpoints[prg_endpoints$type == "tile",]
+  service_is_url <- !(tile_service %in% tile_services$name) &
     stringr::str_detect(tile_service, "http[s]+://.*/(Image|Map)Server")
-  stopifnot((tile_service %in% names(pragr:::tile_services) | service_is_url),
+  stopifnot((tile_service %in% tile_services$name | service_is_url),
             dplyr::between(alpha, 0, 1),
             sf::st_crs(data)$epsg %in% c(5514, 102067),
             buffer >= 0, is.numeric(buffer),
             any(c('sf', 'sfc', 'sfg') %in% class(data)))
-  url <- if (service_is_url) tile_service else pragr:::tile_services[[tile_service]][['url']]
+  url <- if (service_is_url) tile_service else tile_services$url[tile_services$name == tile_service]
   data <- data %>% sf::st_buffer(buffer)
   b <- sf::st_bbox(data)
   spec <- jsonlite::fromJSON(stringr::str_glue("{url}?f=pjson"))
@@ -107,7 +99,7 @@ prg_tile <- function(data, tile_service, zoom = 6, alpha = 1, buffer = 0, verbos
   tiles$srv_url <- url
   urls <- stringr::str_glue_data(tiles, "{srv_url}/tile/{zoom}/{y-1}/{x}")
 
-  imgs <- purrr::map(urls, get_tile, spec, verbose)
+  imgs <- purrr::map(urls, get_tile, spec, b, verbose)
   args <- tile_positions %>%
     dplyr::mutate(grob = purrr::map(imgs, function(x) {
       if(alpha < 1) {
