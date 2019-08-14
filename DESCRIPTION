@@ -6,7 +6,9 @@ Authors@R:
            family = "Bouchal",
            role = c("aut", "cre"),
            email = "pbouchal@gmail.com")
-Description: Use Prague geodata in R
+Description: This package aims to make Prague geodata available in R for
+    visualisation. Currently, it provides access to raster map layers
+    provided by the Prague geoportal.
 License: MIT + file LICENSE
 URL: https://github.com/petrbouchal/pragr
 BugReports: https://github.com/petrbouchal/pragr/issues
