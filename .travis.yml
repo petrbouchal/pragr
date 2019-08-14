@@ -9,6 +9,7 @@ r_packages:
   - sf
   - rgdal
   - rgeos
+  - covr
 
 addons:
   apt:
@@ -24,7 +25,6 @@ addons:
       - libjq-dev
 
 r_github_packages:
-  - r-lib/covr
   - r-quantities/errors
   - JanCaha/CzechData
 
