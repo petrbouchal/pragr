@@ -12,3 +12,4 @@
 ^renv$
 ^\.pre-commit-config\.yaml$
 ^renv\.lock$
+.Rprofile
