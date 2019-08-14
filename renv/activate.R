@@ -4,10 +4,6 @@ local({
   # the requested version of renv
   version <- "0.5.0-4"
 
-  # signal that we're loading renv during R startup
-  Sys.setenv("RENV_R_INITIALIZING" = "true")
-  on.exit(Sys.unsetenv("RENV_R_INITIALIZING"), add = TRUE)
-
   # load the 'utils' package eagerly -- this ensures that renv shims, which
   # mask 'utils' packages, will come first on the search path
   library(utils, lib.loc = .Library)
@@ -26,36 +22,13 @@ local({
 
   }
 
-  # helper for sourcing the user profile (if any)
-  # respect R_PROFILE_USER when sourcing user profile
-  profile <- Sys.getenv("R_PROFILE_USER", unset = "~/.Rprofile")
-  source_user_profile <- function() {
-
-    if (!file.exists(profile))
-      return(FALSE)
-
-    # avoid recursion, in case user has activated a project in home directory
-    # (may occur in some Docker deployment configurations)
+  # source the user profile if any, respecting R_PROFILE_USER
+  profile <- Sys.getenv("R_PROFILE_USER", unset = path.expand("~/.Rprofile"))
+  if (file.exists(profile)) {
     current <- normalizePath(".Rprofile", winslash = "/", mustWork = FALSE)
-    if (identical(normalizePath(profile, winslash = "/"), current))
-      return(FALSE)
-
-    # source with error handler
-    status <- tryCatch(source(profile), error = identity)
-    if (!inherits(status, "error"))
-      return(TRUE)
-
-    # report any errors to the user
-    prefix <- sprintf("Error sourcing %s:", profile)
-    message <- paste(prefix, conditionMessage(status))
-    warning(simpleWarning(message))
-
+    if (!identical(profile, current))
+      source(profile)
   }
-
-  # load user profile now -- needs to happen before renv is loaded,
-  # as otherwise the user profile could clobber the library paths
-  # that renv tries to set up for the project
-  source_user_profile()
 
   # figure out root for renv installation
   default <- switch(
@@ -75,7 +48,7 @@ local({
 
   # failed to find renv locally; we'll try to install from GitHub.
   # first, set up download options as appropriate (try to use GITHUB_PAT)
-  install_renv <- function() {
+  try({
 
     message("Failed to find installation of renv -- attempting to bootstrap...")
 
@@ -105,25 +78,6 @@ local({
       on.exit(do.call(base::options, saved), add = TRUE)
     }
 
-    # fix up repos
-    repos <- getOption("repos")
-    on.exit(options(repos = repos), add = TRUE)
-    repos[repos == "@CRAN@"] <- "https://cran.rstudio.com"
-    options(repos = repos)
-
-    # check for renv on CRAN matching this version
-    db <- as.data.frame(available.packages(), stringsAsFactors = FALSE)
-    if ("renv" %in% rownames(db)) {
-      entry <- db["renv", ]
-      if (identical(entry$Version, version)) {
-        message("* Installing renv ", version, " ... ", appendLF = FALSE)
-        dir.create(path, showWarnings = FALSE, recursive = TRUE)
-        utils::install.packages("renv", lib = path, quiet = TRUE)
-        message("Done!")
-        return(TRUE)
-      }
-    }
-
     # try to download renv
     message("* Downloading renv ", version, " ... ", appendLF = FALSE)
     prefix <- "https://api.github.com"
@@ -139,9 +93,7 @@ local({
     utils::install.packages(destfile, repos = NULL, type = "source", lib = path, quiet = TRUE)
     message("Done!")
 
-  }
-
-  try(install_renv())
+  })
 
   # try again to load
   if (requireNamespace("renv", lib.loc = path, quietly = TRUE)) {
