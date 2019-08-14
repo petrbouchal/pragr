@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pragr</a>
-        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9000</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9000</span>
       </span>
     </div>
 
@@ -122,8 +122,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>prg_tile</span>(<span class='no'>data</span>, <span class='no'>tile_service</span>, <span class='kw'>zoom</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>buffer</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
+    <pre class="usage"><span class='fu'>prg_tile</span>(<span class='no'>data</span>, <span class='kw'>tile_service</span> <span class='kw'>=</span> <span class='st'>"orto"</span>, <span class='kw'>zoom</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>buffer</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <th>tile_service</th>
-      <td><p>map service from which to draw the map, or a URL of a service.</p></td>
+      <td><p>map service from which to draw the map (see <code>prg_endpoints</code>), or a URL of a service.</p></td>
     </tr>
     <tr>
       <th>zoom</th>
