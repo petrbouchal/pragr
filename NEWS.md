@@ -1,3 +1,5 @@
+# pragr (development version)
+
 # pragr 0.1.1
 
 * improved file handling in raster data functions
