@@ -10,7 +10,7 @@ mpp_krovak <- "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813
 xy2krovak <- function(tileid_row, tileid_col, zoom, spec) {
   origin_x <- spec$tileInfo$origin$x
   origin_y <- spec$tileInfo$origin$y
-  lod_resolution <- spec$tileInfo$lods %>% dplyr::filter(level == zoom) %>% dplyr::pull(resolution)
+  lod_resolution <- spec$tileInfo$lods %>% dplyr::filter(.data$level == zoom) %>% dplyr::pull(.data$resolution)
   tilesize_cols <- spec$tileInfo$cols
   tilesize_rows <- spec$tileInfo$rows
   c_xmin <- tileid_col * tilesize_cols * lod_resolution + origin_x
@@ -22,7 +22,7 @@ xy2krovak <- function(tileid_row, tileid_col, zoom, spec) {
 krovak2xy <- function(x, y, zoom, spec) {
   origin_x <- spec$tileInfo$origin$x
   origin_y <- spec$tileInfo$origin$y
-  lod_resolution <- spec$tileInfo$lods %>% dplyr::filter(level == zoom) %>% dplyr::pull(resolution)
+  lod_resolution <- spec$tileInfo$lods %>% dplyr::filter(.data$level == zoom) %>% dplyr::pull(.data$resolution)
   tilesize_cols <- spec$tileInfo$cols
   tilesize_rows <- spec$tileInfo$rows
   x_out <- (x - origin_x)/lod_resolution/tilesize_cols

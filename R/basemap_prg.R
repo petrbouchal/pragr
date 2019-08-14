@@ -3,16 +3,6 @@
 # layer_long <- str_glue('show:{8}')
 # x %in% names(tiletypes[[tile_type]][['maxsizes']])
 
-
-#' Show map services available in `basemap_prg()`
-#'
-#' @return a data frame containing name and URL of each service
-#' @export
-show_map_services <- function() {
-  tibble::data_frame(name = names(image_services),
-             URL = purrr::map_chr(image_services, `[[`, 'url'))
-}
-
 #' Prague base maps for ggplot2
 #'
 #' Include raster maps from Prague geoportal in your ggplot map

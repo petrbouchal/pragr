@@ -8,7 +8,9 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right'}}
 
-Use Prague geodata in R
+This package aims to make Prague geodata available in R for
+    visualisation. Currently, it provides access to raster map layers
+    provided by the Prague geoportal.
 }
 \seealso{
 Useful links:
