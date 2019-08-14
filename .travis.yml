@@ -7,6 +7,7 @@ warnings_are_errors: false
 r_packages:
   - sp
   - sf
+  - errors
   - rgdal
   - rgeos
   - covr
@@ -25,7 +26,6 @@ addons:
       - libjq-dev
 
 r_github_packages:
-  - r-quantities/errors
   - JanCaha/CzechData
 
 cache: packages
