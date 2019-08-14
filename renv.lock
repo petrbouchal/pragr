@@ -17,11 +17,11 @@ Package=CzechData
 Version=0.2.2
 Source=GitHub
 RemoteType=github
-RemoteUsername=JanCaha
+RemoteHost=api.github.com
 RemoteRepo=CzechData
+RemoteUsername=JanCaha
 RemoteRef=master
 RemoteSha=34cd9bd3aa8571b83bb10befb11baf02546ad101
-RemoteHost=api.github.com
 Hash=1add5d24a2afb1f3faa0644e59403d2f
 
 [R/Package/DBI]
@@ -534,6 +534,19 @@ Version=0.3.2
 Source=CRAN
 Hash=c360ab7eabd6e38a83f2475eb97c6344
 
+[R/Package/ragg]
+Package=ragg
+Version=0.0.1
+Source=GitHub
+Remotes=thomasp85/systemfonts
+RemoteType=github
+RemoteHost=api.github.com
+RemoteRepo=ragg
+RemoteUsername=thomasp85
+RemoteRef=thomasp85/ragg
+RemoteSha=53ed180ae10a68309fa1e19331d38ee57e93c883
+Hash=d892f262209c136a37815e6c68a1fd6c
+
 [R/Package/raster]
 Package=raster
 Version=2.9-5
@@ -677,6 +690,18 @@ Package=sys
 Version=3.2
 Source=CRAN
 Hash=272daf1b3ba287a42d02e33c89870eae
+
+[R/Package/systemfonts]
+Package=systemfonts
+Version=0.1.0
+Source=GitHub
+RemoteType=github
+RemoteHost=api.github.com
+RemoteRepo=systemfonts
+RemoteUsername=thomasp85
+RemoteRef=thomasp85/systemfonts
+RemoteSha=cdc6a3647e9ad004614c895ff9de7c26bafc6659
+Hash=0602f301ca6a843cce4096725cc5773e
 
 [R/Package/tibble]
 Package=tibble
