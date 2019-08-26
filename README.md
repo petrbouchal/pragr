@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pragr: use Prague geodata in R <a href='https:/petrbouchal.github.io/pragr'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
+# pragr: use Prague geodata in R <a href='https://petrbouchal.github.io/pragr'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
 
 <!-- badges: start -->
 
