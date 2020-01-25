@@ -24,6 +24,8 @@ knitr::opts_chunk$set(
 
 📦 `pragr` aims to provide tools for visualising data about Prague. Currently, it makes Prague raster geodata accessible for use in R via 📦 `ggplot2`. 
 
+It also provides a set of utilities and shortcuts for making handling data about Prague easier.
+
 ## Installation
 You can install the current version of `pragr` from GitHub with:
 

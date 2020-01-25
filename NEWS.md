@@ -1,5 +1,7 @@
 # pragr (development version)
 
+* added `prg_ico`
+
 # pragr 0.1.1
 
 * improved file handling in raster data functions

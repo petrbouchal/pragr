@@ -3,6 +3,7 @@
 export("%>%")
 export(prg_basemap)
 export(prg_endpoints)
+export(prg_ico)
 export(prg_kod)
 export(prg_tile)
 importFrom(magrittr,"%>%")

@@ -17,6 +17,9 @@ status](https://www.r-pkg.org/badges/version/pragr)](https://CRAN.R-project.org/
 Currently, it makes Prague raster geodata accessible for use in R via 📦
 `ggplot2`.
 
+It also provides a set of utilities and shortcuts for making handling
+data about Prague easier.
+
 ## Installation
 
 You can install the current version of `pragr` from GitHub with:
