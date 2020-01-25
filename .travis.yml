@@ -25,8 +25,8 @@ install:
   - Rscript -e "renv::restore()"
 
 script:
-- R CMD build .
-- R CMD check *tar.gz
+# - R CMD build .
+- R CMD check
 
 deploy:
   provider: script
