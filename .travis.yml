@@ -24,9 +24,9 @@ cache:
 install:
   - Rscript -e "renv::restore()"
 
-script:
+# script:
 # - R CMD build .
-- R CMD check
+# - R CMD check *tar.gz
 
 deploy:
   provider: script
