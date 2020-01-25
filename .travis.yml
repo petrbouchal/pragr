@@ -2,16 +2,6 @@
 
 language: R
 
-warnings_are_errors: false
-
-r_packages:
-  - sp
-  - sf
-  - errors
-  - rgdal
-  - rgeos
-  - covr
-
 addons:
   apt:
     packages:
@@ -25,11 +15,18 @@ addons:
       - protobuf-compiler
       - libjq-dev
 
-r_github_packages:
-  - JanCaha/CzechData
+cache:
+  directories:
+  - $HOME/.local/share/renv
+  - $TRAVIS_BUILD_DIR/renv/library
 
-cache: packages
-before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
+install:
+  - Rscript -e "renv::restore()"
+
+script:
+- R CMD build .
+- R CMD check *tar.gz
+
 deploy:
   provider: script
   script: Rscript -e 'pkgdown::deploy_site_github()'
