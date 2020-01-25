@@ -15,6 +15,7 @@ addons:
       - protobuf-compiler
       - libjq-dev
 
+before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
 cache:
   directories:
   - $HOME/.local/share/renv
