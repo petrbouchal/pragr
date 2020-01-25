@@ -5,4 +5,5 @@ development:
   version_label: warning
 template:
   params:
-    ganalytics: UA-156460113-2
+    ganalytics: "UA-156460113-2"
+
