@@ -6,9 +6,9 @@ Authors@R:
            family = "Bouchal",
            role = c("aut", "cre"),
            email = "pbouchal@gmail.com")
-Description: This package aims to make Prague geodata available in R for
+Description: A bridge between Prague geodata and R to enable
     visualisation. Currently, it provides access to raster map layers
-    provided by the Prague geoportal.
+    provided by the Prague geoportal and several utilities.
 License: MIT + file LICENSE
 URL: https://github.com/petrbouchal/pragr
 BugReports: https://github.com/petrbouchal/pragr/issues
@@ -39,8 +39,12 @@ Imports:
     utils (>= 3.6.0)
 Suggests: 
     ggsn,
+    knitr,
     pkgdown,
-    ragg
+    ragg,
+    rmarkdown
+VignetteBuilder: 
+    knitr
 Remotes: 
     JanCaha/CzechData
 Encoding: UTF-8
