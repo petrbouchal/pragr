@@ -12,3 +12,5 @@
 ^renv$
 ^\.pre-commit-config\.yaml$
 ^renv\.lock$
+^doc$
+^Meta$
