@@ -4,6 +4,9 @@ language: R
 
 addons:
   apt:
+    update: true
+    sources:
+      - sourceline: 'ppa:opencpu/imagemagick'
     packages:
       - libudunits2-dev
       - libgdal-dev
@@ -14,6 +17,7 @@ addons:
       - libprotobuf-dev
       - protobuf-compiler
       - libjq-dev
+      - libmagick++-dev
 
 before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
 cache:

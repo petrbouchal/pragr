@@ -566,13 +566,6 @@
       "Repository": "CRAN",
       "Hash": "4eee69679a577666cf7967dad31bc486"
     },
-    "magick": {
-      "Package": "magick",
-      "Version": "2.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "c84d4acbc7da7638dbd0076d5b069330"
-    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "1.5",
@@ -805,15 +798,10 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "0.4.0.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "rlang",
-      "RemoteUsername": "r-lib",
-      "RemoteRef": "master",
-      "RemoteSha": "b0905dbfbc49aac2183c5b79b8231600a563581d",
-      "Hash": "350f4a564152cee557a03bfde0a4f481"
+      "Version": "0.4.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "09a36f36a13436be327dad3d000c8dd3"
     },
     "rmarkdown": {
       "Package": "rmarkdown",
