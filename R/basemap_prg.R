@@ -18,6 +18,16 @@
 #' @return list including raster annotation layers for ggplot2
 #' @family Mapping
 #' @examples
+#' \dontrun{
+#' praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>%
+#'   filter(nazev == 'Praha 1')
+#'
+#' ggplot() +
+#'   prg_basemap(data = praha1, alpha = .8, buffer = 200,
+#'               image_service = 'mapy_archiv', layer = 6) +
+#'   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
+#'   theme_void()
+#' }
 #' @export
 #'
 prg_basemap <- function(data, image_service = "orto", layer = '',

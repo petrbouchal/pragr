@@ -71,7 +71,19 @@ get_tile <- function(url, spec, bbox, verbose) {
 #' @param verbose display information on tile URLs and image processing.
 #'
 #' @return list including raster annotation layers for ggplot2
+#' @family Mapping
 #' @examples
+#' \dontrun{
+#' praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>%
+#'   filter(nazev == 'Praha 1')
+#'
+#' ggplot() +
+#' prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
+#'          tile_service = 'orto') +
+#'   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
+#'   theme_void()
+#' }
+#'
 #' @export
 #'
 prg_tile <- function(data, tile_service = "orto", zoom = 6, alpha = 1, buffer = 0, verbose = F) {
