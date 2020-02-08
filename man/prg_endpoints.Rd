@@ -20,4 +20,9 @@ Contains information on a selection of available Prague raster map services.
 Can be used manually to inspect services and is used internally by
 prg_tile() and prg_basemap() for retrieving data from servers.
 }
+\seealso{
+Other Mapping: \code{\link{prg_basemap}},
+  \code{\link{prg_tile}}
+}
+\concept{Mapping}
 \keyword{datasets}
