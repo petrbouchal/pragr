@@ -7,7 +7,8 @@
 \format{character vector of length 1
 \describe{
 Prague kraj code
-}}
+}
+#' @family Codes and metadata}
 \usage{
 prg_kraj
 }

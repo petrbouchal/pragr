@@ -26,3 +26,21 @@ list including raster annotation layers for ggplot2
 \description{
 Include raster tiles for Prague in ggplot2
 }
+\examples{
+\dontrun {
+
+praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) \%>\%
+  filter(nazev == 'Praha 1')
+
+ggplot() +
+prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
+         tile_service = 'orto') +
+  geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
+  theme_void()
+}
+}
+\seealso{
+Other Mapping: \code{\link{prg_basemap}},
+  \code{\link{prg_endpoints}}
+}
+\concept{Mapping}

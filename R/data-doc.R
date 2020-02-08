@@ -6,7 +6,7 @@
 #' \describe{
 #'   Prague RUIAN code
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_kod"
 
 #' Prague ICO code
@@ -17,7 +17,7 @@
 #' \describe{
 #'   Prague ICO code
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_ico"
 
 #' Prague NUTS2 code
@@ -28,7 +28,7 @@
 #' \describe{
 #'   Prague NUTS2 code
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_nuts2"
 
 #' Prague NUTS3 code
@@ -39,7 +39,7 @@
 #' \describe{
 #'   Prague NUTS3 code
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_nuts3"
 
 #' Prague LAU1 code
@@ -50,7 +50,7 @@
 #' \describe{
 #'   Prague LAU1 code. Comes from CZSO registry 109 - OKRES_LAU.
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_lau1"
 
 #' Prague 'okres' code
@@ -61,7 +61,7 @@
 #' \describe{
 #'   Prague okres code
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_okres"
 
 #' Prague 'kraj' code
@@ -72,7 +72,7 @@
 #' \describe{
 #'   Prague kraj code
 #' }
-#' @export
+#' #' @family Codes and metadata
 "prg_kraj"
 
 #' Prague 'okres LAU' code
@@ -84,7 +84,7 @@
 #' \describe{
 #'   Prague okres (NUTS) code.
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_okres_nuts"
 
 #' Prague code in OECD database of Functional Urban Areas
@@ -97,7 +97,7 @@
 #' \describe{
 #'   Prague code in OECD Functional Urban Area database.
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_fua_oecd"
 
 #' Prague code in OECD CITIES database of data on Functional Urban Areas
@@ -110,5 +110,27 @@
 #' \describe{
 #'   Prague code in OECD Functional Urban Area database.
 #' }
-#' @export
+#' @family Codes and metadata
 "prg_metro_oecd"
+
+#' Prague bbox in EPSG 4326 (WGS 84)
+#'
+#' Prague bbox in EPSG 4326 (WGS 84)
+#'
+#' @format named numeric of class `bbox`, length 4
+#' \describe{
+#'   Prague RUIAN code
+#' }
+#' @family Codes and metadata
+"prg_bbox_wgs84"
+
+#' Prague bbox in EPSG 5514 (Krovak)
+#'
+#' Prague bbox in EPSG 5514 (Krovak)
+#'
+#' @format named numeric of class `bbox`, length 4
+#' \describe{
+#'   Prague RUIAN code
+#' }
+#' @family Codes and metadata
+"prg_bbox_krovak"

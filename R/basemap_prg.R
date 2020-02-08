@@ -16,6 +16,7 @@
 #' @param verbose display information on image URLs and image processing.
 #'
 #' @return list including raster annotation layers for ggplot2
+#' @family Mapping
 #' @examples
 #' @export
 #'
