@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Prague base maps for ggplot2 — prg_basemap • pragr</title>
+<title>Prague NUTS2 code — prg_nuts2 • pragr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Prague base maps for ggplot2 — prg_basemap" />
+<meta property="og:title" content="Prague NUTS2 code — prg_nuts2" />
 
-<meta property="og:description" content="Include raster maps from Prague geoportal in your ggplot map" />
+<meta property="og:description" content="Prague NUTS2 code" />
 
 <meta property="og:image" content="https://petrbouchal.github.io/pragr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -125,86 +125,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Prague base maps for ggplot2</h1>
-    <small class="dont-index">Source: <a href='https://github.com/petrbouchal/pragr/blob/master/R/basemap_prg.R'><code>R/basemap_prg.R</code></a></small>
-    <div class="hidden name"><code>prg_basemap.Rd</code></div>
+    <h1>Prague NUTS2 code</h1>
+    <small class="dont-index">Source: <a href='https://github.com/petrbouchal/pragr/blob/master/R/data-doc.R'><code>R/data-doc.R</code></a></small>
+    <div class="hidden name"><code>prg_nuts2.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Include raster maps from Prague geoportal in your ggplot map</p>
+    <p>Prague NUTS2 code</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>prg_basemap</span>(<span class='no'>data</span>, <span class='kw'>image_service</span> <span class='kw'>=</span> <span class='st'>"orto"</span>, <span class='kw'>layer</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>900</span>,
-  <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>buffer</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>data</th>
-      <td><p>sf data frame from which to extract the bounding box</p></td>
-    </tr>
-    <tr>
-      <th>image_service</th>
-      <td><p>map service from which to draw the map; <code>prg_endpoints</code> provides details.</p></td>
-    </tr>
-    <tr>
-      <th>layer</th>
-      <td><p>layer from map service to use, see https://mpp.praha.eu/arcgis/rest/services/</p></td>
-    </tr>
-    <tr>
-      <th>width</th>
-      <td><p>width in pixels, in effect sets image resolution; integer or "max"</p></td>
-    </tr>
-    <tr>
-      <th>alpha</th>
-      <td><p>transparency of the tile</p></td>
-    </tr>
-    <tr>
-      <th>buffer</th>
-      <td><p>distance between feature end and image end; for EPSG 5514 in meters.</p></td>
-    </tr>
-    <tr>
-      <th>verbose</th>
-      <td><p>display information on image URLs and image processing.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <pre class="usage"><span class='no'>prg_nuts2</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>list including raster annotation layers for ggplot2</p>
+    <p>character vector of length 1</p><dl class='dl-horizontal'>
+Prague NUTS2 code
+
+</dl>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other Mapping: <code><a href='prg_endpoints.html'>prg_endpoints</a></code>,
-  <code><a href='prg_tile.html'>prg_tile</a></code></p></div>
+    <div class='dont-index'><p>Other Codes and metadata: <code><a href='prg_bbox_krovak.html'>prg_bbox_krovak</a></code>,
+  <code><a href='prg_bbox_wgs84.html'>prg_bbox_wgs84</a></code>, <code><a href='prg_fua_oecd.html'>prg_fua_oecd</a></code>,
+  <code><a href='prg_ico.html'>prg_ico</a></code>, <code><a href='prg_kod.html'>prg_kod</a></code>,
+  <code><a href='prg_lau1.html'>prg_lau1</a></code>, <code><a href='prg_metro_oecd.html'>prg_metro_oecd</a></code>,
+  <code><a href='prg_nuts3.html'>prg_nuts3</a></code>, <code><a href='prg_okres_nuts.html'>prg_okres_nuts</a></code>,
+  <code><a href='prg_okres.html'>prg_okres</a></code></p></div>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>praha1</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>CzechData</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/CzechData/man/load_RUIAN_settlement.html'>load_RUIAN_settlement</a></span>(<span class='no'>prg_kod</span>, <span class='st'>"MOMC_P"</span>, <span class='kw'>WGS84</span> <span class='kw'>=</span> <span class='no'>F</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span>(<span class='no'>nazev</span> <span class='kw'>==</span> <span class='st'>'Praha 1'</span>)
-
-<span class='fu'>ggplot</span>() +
-  <span class='fu'>prg_basemap</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>praha1</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.8</span>, <span class='kw'>buffer</span> <span class='kw'>=</span> <span class='fl'>200</span>,
-              <span class='kw'>image_service</span> <span class='kw'>=</span> <span class='st'>'mapy_archiv'</span>, <span class='kw'>layer</span> <span class='kw'>=</span> <span class='fl'>6</span>) +
-  <span class='fu'>geom_sf</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>praha1</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'>alpha</span>(<span class='st'>"red"</span>, <span class='fl'>0.6</span>), <span class='kw'>colour</span> <span class='kw'>=</span> <span class='fl'>NA</span>) +
-  <span class='fu'>theme_void</span>()
-}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
+      <li><a href="#format">Format</a></li>
 
       <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

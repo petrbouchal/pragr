@@ -85,7 +85,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pragr</a>
-        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9000</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Not on CRAN. Stable versions in github tags/releases, dev version on master branch.">0.1.1.9000</span>
       </span>
     </div>
 
@@ -172,7 +172,23 @@
 
     <p>list including raster annotation layers for ggplot2</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
+    <div class='dont-index'><p>Other Mapping: <code><a href='prg_basemap.html'>prg_basemap</a></code>,
+  <code><a href='prg_endpoints.html'>prg_endpoints</a></code></p></div>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='no'>praha1</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>CzechData</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/CzechData/man/load_RUIAN_settlement.html'>load_RUIAN_settlement</a></span>(<span class='no'>prg_kod</span>, <span class='st'>"MOMC_P"</span>, <span class='kw'>WGS84</span> <span class='kw'>=</span> <span class='no'>F</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span>(<span class='no'>nazev</span> <span class='kw'>==</span> <span class='st'>'Praha 1'</span>)
+
+<span class='fu'>ggplot</span>() +
+<span class='fu'>prg_tile</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>praha1</span>, <span class='kw'>zoom</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>.7</span>, <span class='kw'>buffer</span> <span class='kw'>=</span> <span class='fl'>200</span>,
+         <span class='kw'>tile_service</span> <span class='kw'>=</span> <span class='st'>'orto'</span>) +
+  <span class='fu'>geom_sf</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>praha1</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='fu'>alpha</span>(<span class='st'>"red"</span>, <span class='fl'>0.6</span>), <span class='kw'>colour</span> <span class='kw'>=</span> <span class='fl'>NA</span>) +
+  <span class='fu'>theme_void</span>()
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -180,7 +196,11 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
