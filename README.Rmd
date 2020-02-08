@@ -58,6 +58,8 @@ Currently, the 📦 enables you to do two things:
 1) Add raster tiles from the Prague geoopen data portal to a `ggplot2` object (`prg_tile()`)
 2) Add other raster layer to a `ggplot2` object (`prg_basemap()`)
 
+Additionally, it provides quick access to a number of codes that identify Prague in various administrative or statistical registers.
+
 The basic logic of these two functions is that given a simple feature dataset, they provide the tiles or image to create the base map for those coordinates.
 
 It relies on the REST API of ArcGis map/image services that power the geoportal, using documentation for the following operations (endpoints):

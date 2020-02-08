@@ -16,7 +16,7 @@ status](https://www.r-pkg.org/badges/version/pragr)](https://CRAN.R-project.org/
 > Note: this is the documentation for the latest released version (the
 > github release). Documentation for the current development version
 > (reflecting the state of the master branch) is at
-> <https://petrbouchal.github.io/pragr/dev>
+> <https://petrbouchal.github.io/pragr/dev>.
 
 `pragr` aims to provide tools for visualising data about Prague.
 Currently, it makes Prague raster geodata accessible for use in R via
@@ -40,6 +40,9 @@ Currently, the 📦 enables you to do two things:
 1)  Add raster tiles from the Prague geoopen data portal to a `ggplot2`
     object (`prg_tile()`)
 2)  Add other raster layer to a `ggplot2` object (`prg_basemap()`)
+
+Additionally, it provides quick access to a number of codes that
+identify Prague in various administrative or statistical registers.
 
 The basic logic of these two functions is that given a simple feature
 dataset, they provide the tiles or image to create the base map for
@@ -87,6 +90,9 @@ praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>%
   filter(nazev == 'Praha 1')
 ```
 
+Note that the possible values of the `tile_service` and `image_service`
+parameters can be found in `prg_endpoints`.
+
 ``` r
 ggplot() +
   prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
@@ -96,6 +102,9 @@ ggplot() +
 ```
 
 <img src="man/figures/README-example-tiles-1.png" width="100%" />
+
+The `layer` parameter can take values that need you can find by
+inspecting the given image service (see note on sources below).
 
 ``` r
 ggplot() +
