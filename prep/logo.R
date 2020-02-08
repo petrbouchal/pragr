@@ -1,6 +1,7 @@
 library(CzechData)
-library(tidyverse)
-# pak::pkg_install("dmi3kno/bunny")
+library(ggplot2)
+library(dplyr)
+# pak::renv::install("dmi3kno/bunny")
 library(bunny)
 library(magick)
 
@@ -41,6 +42,12 @@ img_hex <- hex_canvas %>%
 img_hex %>%
   image_convert("png") %>%
   image_write("prep/logo.png")
+
+img_hex %>%
+  image_convert(format = "rgb", colorspace = "cmyk", matte = T) %>%
+  image_scale("1200x1200") %>%
+  image_write(here::here("prep", "logo_hex_print.png"), density = 1200, format = "png")
+
 img_hex %>%
   image_scale("300x300")
 
