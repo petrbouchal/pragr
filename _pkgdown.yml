@@ -3,7 +3,16 @@ url: https://petrbouchal.github.io/pragr
 development:
   mode: auto
   version_label: warning
+  version_tooltip: "Not on CRAN. Stable versions in github tags/releases, dev version on master branch."
 template:
   params:
     ganalytics: "UA-156460113-2"
-
+reference:
+- title: Mapping
+  desc:  Functions for drawing maps based on Prague's open geospatial data.
+  contents:
+  - has_concept("Mapping")
+- title: Codes and metadata
+  desc:  Codes and metadata describing Prague of identifying Prague and related entities in various datasets.
+  contents:
+  - has_concept("Codes and metadata")
