@@ -1,7 +1,7 @@
 ---
 output: github_document
 ---
-  
+
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -22,7 +22,25 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/pragr)](https://CRAN.R-project.org/package=pragr)
 <!-- badges: end -->
 
-📦 `pragr` aims to provide tools for visualising data about Prague. Currently, it makes Prague raster geodata accessible for use in R via 📦 `ggplot2`. 
+```{r, results='asis', echo=FALSE}
+
+if(pkgdown:::dev_mode(pkgdown:::read_desc()$get_version()) == "devel") {
+  meta_dest <- pkgdown:::read_meta(".")$development$destination
+  meta_base_url <- pkgdown:::read_meta(".")$url
+  if(is.null(meta_dest)) {
+    dst <- "dev"
+  } else {
+    dst <- meta_dest
+  }
+  
+  devurl <- paste0(meta_base_url, "/", dst)
+  
+  cat(paste0("> Note: this is the documentation for the latest released version (the github release). Documentation for the current development version (reflecting the state of the master branch) is at [", devurl, "](", devurl,")."))
+}
+
+```
+
+`pragr` aims to provide tools for visualising data about Prague. Currently, it makes Prague raster geodata accessible for use in R via `ggplot2`. 
 
 It also provides a set of utilities and shortcuts for making handling data about Prague easier.
 
@@ -66,6 +84,8 @@ praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>%
   filter(nazev == 'Praha 1')
 ```
 
+Note that the possible values of the `tile_service` and `image_service` parameters can be found in `prg_endpoints`.
+
 ```{r example-tiles}
 ggplot() +
   prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
@@ -73,6 +93,8 @@ ggplot() +
   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
   theme_void()
 ```
+
+The `layer` parameter can take values that need you can find by inspecting the given image service (see note on sources below).
 
 ```{r example-base}
 ggplot() +
@@ -109,6 +131,8 @@ For some of the services, shortcut notation is implemented for use in the tile/b
 # See also:
 
 - [CzechData](https://github.com/JanCaha/CzechData)
+- [czso](https://github.com/petrbouchal/czso)
+
 
 # Acknowledgments
 

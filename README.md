@@ -13,8 +13,13 @@ status](https://travis-ci.org/petrbouchal/pragr.svg?branch=master)](https://trav
 status](https://www.r-pkg.org/badges/version/pragr)](https://CRAN.R-project.org/package=pragr)
 <!-- badges: end -->
 
-📦 `pragr` aims to provide tools for visualising data about Prague.
-Currently, it makes Prague raster geodata accessible for use in R via 📦
+> Note: this is the documentation for the latest released version (the
+> github release). Documentation for the current development version
+> (reflecting the state of the master branch) is at
+> <https://petrbouchal.github.io/pragr/dev>
+
+`pragr` aims to provide tools for visualising data about Prague.
+Currently, it makes Prague raster geodata accessible for use in R via
 `ggplot2`.
 
 It also provides a set of utilities and shortcuts for making handling
@@ -140,6 +145,7 @@ the tile/basemap functions.
 # See also:
 
   - [CzechData](https://github.com/JanCaha/CzechData)
+  - [czso](https://github.com/petrbouchal/czso)
 
 # Acknowledgments
 
