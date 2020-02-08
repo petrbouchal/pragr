@@ -2,7 +2,7 @@
 #'
 #' Prague RUIAN code
 #'
-#' @format character verctor of length 1
+#' @format character vector of length 1
 #' \describe{
 #'   Prague RUIAN code
 #' }
@@ -15,7 +15,7 @@ usethis::use_data(prg_kod, overwrite = T)
 #'
 #' Prague ICO code
 #'
-#' @format character verctor of length 1
+#' @format character vector of length 1
 #' \describe{
 #'   Prague ICO code
 #' }
