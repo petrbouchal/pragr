@@ -77,6 +77,13 @@
       "Repository": "CRAN",
       "Hash": "a0356f14b4a68dd51a67c5d469d40c70"
     },
+    "RcppArmadillo": {
+      "Package": "RcppArmadillo",
+      "Version": "0.9.800.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "27675edaa1a76ee38c28b3d1bbe8d60c"
+    },
     "RgoogleMaps": {
       "Package": "RgoogleMaps",
       "Version": "1.4.3",
@@ -715,10 +722,10 @@
     },
     "purrr": {
       "Package": "purrr",
-      "Version": "0.3.2",
+      "Version": "0.3.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "adeb65b9e6bf7b2e1f9ca8252c2530ed"
+      "Hash": "22aca7d1181718e927d403a8c2d69d62"
     },
     "ragg": {
       "Package": "ragg",
@@ -962,15 +969,10 @@
     },
     "usethis": {
       "Package": "usethis",
-      "Version": "1.5.1.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "usethis",
-      "RemoteUsername": "r-lib",
-      "RemoteRef": "r-lib/usethis",
-      "RemoteSha": "b2414200c2c941b5a5d168a48cc4ca44d397e809",
-      "Hash": "a216ea584b920a4fe8823463b8576d6c"
+      "Version": "1.5.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "30ee6fa315a020d5db6f28adbb7fea83"
     },
     "utf8": {
       "Package": "utf8",
