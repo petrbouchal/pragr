@@ -134,3 +134,29 @@
 #' }
 #' @family Codes and metadata
 "prg_bbox_krovak"
+
+
+# Hexogram ----------------------------------------------------------------
+
+#' Equal-area hexogram of Prague districts
+#'
+#' DATASET_DESCRIPTION
+#'
+#' @format A data frame with 57 rows and 20 variables:
+#'
+#' @format A data frame with 57 rows and 11 variables:
+#' \describe{
+#'   \item{\code{kod}}{character. DESCRIPTION.}
+#'   \item{\code{nazev}}{character. DESCRIPTION.}
+#'   \item{\code{mop_kod}}{character. DESCRIPTION.}
+#'   \item{\code{spo_kod}}{character. DESCRIPTION.}
+#'   \item{\code{pou_kod}}{character. DESCRIPTION.}
+#'   \item{\code{okres_kod}}{character. DESCRIPTION.}
+#'   \item{\code{CENTROIX}}{double. DESCRIPTION.}
+#'   \item{\code{CENTROIY}}{double. DESCRIPTION.}
+#'   \item{\code{row}}{integer. DESCRIPTION.}
+#'   \item{\code{col}}{integer. DESCRIPTION.}
+#'   \item{\code{geometry}}{list. DESCRIPTION.}
+#' }
+"district_hexogram"
+
