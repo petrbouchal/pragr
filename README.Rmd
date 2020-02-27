@@ -42,7 +42,7 @@ if(pkgdown:::dev_mode(pkgdown:::read_desc()$get_version()) == "devel") {
 
 `pragr` aims to provide tools for visualising data about Prague. Currently, it makes Prague raster geodata accessible for use in R via `ggplot2`. 
 
-It also provides a set of utilities and shortcuts for making handling data about Prague easier.
+It also provides a set of utilities and shortcuts to simplify handling data about Prague.
 
 ## Installation
 You can install the current version of `pragr` from GitHub with:
@@ -58,9 +58,7 @@ Currently, the 📦 enables you to do two things:
 1) Add raster tiles from the Prague geoopen data portal to a `ggplot2` object (`prg_tile()`)
 2) Add other raster layer to a `ggplot2` object (`prg_basemap()`)
 
-Additionally, it provides quick access to a number of codes that identify Prague in various administrative or statistical registers.
-
-The basic logic of these two functions is that given a simple feature dataset, they provide the tiles or image to create the base map for those coordinates.
+The basic logic of the two core functions is that given a simple feature dataset, they provide the tiles or image to create the base map for those coordinates.
 
 It relies on the REST API of ArcGis map/image services that power the geoportal, using documentation for the following operations (endpoints):
 
@@ -68,11 +66,18 @@ It relies on the REST API of ArcGis map/image services that power the geoportal,
 - [Export Image endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
 - [Export Map (image) endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
+Additionally, the package provides
+
+- quick access to a number of codes that identify Prague in various administrative or statistical registers.
+- a function for downloading official Prague admin geodata (admin boundaries etc.)
+
+## Credit, inspiration and extensibility
+
 The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in his [blog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
 
-The approach should be generalisable to other ArcGis-driven servers with the same REST API, though the package as it now is assumes a projected CRS measured in meters, specifically the Krovak crs (EPSG 5514).
+The approach should be generalisable to other ArcGIS-driven servers with the same REST API, though the package as it now is assumes a projected CRS measured in meters, specifically the Krovak CRS (EPSG 5514).
 
-# Usage
+## Usage
 
 ```{r setup}
 library(pragr)
@@ -106,7 +111,7 @@ ggplot() +
   theme_void()
 ```
 
-# What's in a name?
+## What's in a name?
 
 The name of the package refers to [Karel Prager](https://en.wikipedia.org/wiki/Karel_Prager), a renowned Czech modernist architect. Among other things, he designed - and for a long time worked in - the office buildings in which the [Institute for Planning and Development](https://iprpraha.cz), Prague's public urban planning body, is housed today.
 
@@ -114,7 +119,7 @@ The institute's excellent data team develops and maintains the data and software
 
 Prag is of course how the city was once called by its many German-speaking inhabitants.
 
-# Data sources:
+## Data sources:
 
 Most map/image services are accessible via <http://www.geoportalpraha.cz/cs/clanek/22/mapove-sluzby>
 
@@ -128,7 +133,7 @@ For some of the services, shortcut notation is implemented for use in the tile/b
 
 ## Note on geodata about Prague
 
-[To be added]
+See [vignette](articles/data-sources.html) or `vignette("data-sources", package = "pragr")`.
 
 # See also:
 

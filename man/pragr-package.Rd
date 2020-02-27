@@ -6,7 +6,7 @@
 \alias{pragr-package}
 \title{pragr: Tools for visualising Prague data}
 \description{
-\if{html}{\figure{logo.png}{options: align='right'}}
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
 A bridge between Prague geodata and R to enable
     visualisation. Currently, it provides access to raster map layers

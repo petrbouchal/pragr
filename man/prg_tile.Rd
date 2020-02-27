@@ -4,8 +4,14 @@
 \alias{prg_tile}
 \title{Prague tiles for ggplot2 plots}
 \usage{
-prg_tile(data, tile_service = "orto", zoom = 6, alpha = 1,
-  buffer = 0, verbose = F)
+prg_tile(
+  data,
+  tile_service = "orto",
+  zoom = 6,
+  alpha = 1,
+  buffer = 0,
+  verbose = F
+)
 }
 \arguments{
 \item{data}{sf data frame from which to extract the bounding box}
@@ -40,7 +46,8 @@ prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
 
 }
 \seealso{
-Other Mapping: \code{\link{prg_basemap}},
-  \code{\link{prg_endpoints}}
+Other Mapping: 
+\code{\link{prg_basemap}()},
+\code{\link{prg_endpoints}}
 }
 \concept{Mapping}

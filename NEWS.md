@@ -2,6 +2,10 @@
 
 * added `district_hexogram`, an equal-area hex grid for Prague city districts 
 * added `prg_ico`
+* added other `prg_*` codes that identify Prague in various registers
+* added basic examples to core functions
+* improved documentation incl. pkgdown site
+* clarified and added detail to README
 
 # pragr 0.1.1
 

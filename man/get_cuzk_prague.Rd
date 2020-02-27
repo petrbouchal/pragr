@@ -4,8 +4,11 @@
 \alias{get_cuzk_prague}
 \title{Download GML geodata file for Prague from CUZK}
 \usage{
-get_cuzk_prague(date = strftime(lubridate::rollback(Sys.Date()), format =
-  "\%Y\%m\%d"), path = ".", cachetime = 32)
+get_cuzk_prague(
+  date = strftime(lubridate::rollback(Sys.Date()), format = "\%Y\%m\%d"),
+  path = ".",
+  cachetime = 32
+)
 }
 \arguments{
 \item{date}{Date of file, must be last day of month. Defaults to end of previous month.}
