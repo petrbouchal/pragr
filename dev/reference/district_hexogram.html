@@ -41,7 +41,8 @@
 
 <meta property="og:title" content="Equal-area hexogram of Prague districts — district_hexogram" />
 
-<meta property="og:description" content="DATASET_DESCRIPTION" />
+<meta property="og:description" content="Equal-area hexogram of 57 Prague districts. Best representation possible
+though some district tiles neighbor districts they do not in reality." />
 
 <meta property="og:image" content="https://petrbouchal.github.io/pragr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -132,7 +133,8 @@
 
     <div class="ref-description">
     
-    <p>DATASET_DESCRIPTION</p>
+    <p>Equal-area hexogram of 57 Prague districts. Best representation possible
+though some district tiles neighbor districts they do not in reality.</p>
     
     </div>
 
@@ -140,7 +142,21 @@
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 57 rows and 20 variables:</p>
+    <p>A data frame with 57 rows and 11 variables:</p><dl class='dl-horizontal'>
+<dt><code>kod</code></dt><dd><p>character. RUIAN code.</p></dd>
+<dt><code>nazev</code></dt><dd><p>character. Full name.</p></dd>
+<dt><code>label</code></dt><dd><p>character. Three-character unique label.</p></dd>
+<dt><code>mop_kod</code></dt><dd><p>character. Prague district code.</p></dd>
+<dt><code>spo_kod</code></dt><dd><p>character. Admin district code.</p></dd>
+<dt><code>pou_kod</code></dt><dd><p>character. Higher-level unit code.</p></dd>
+<dt><code>okres_kod</code></dt><dd><p>character. District code.</p></dd>
+<dt><code>CENTROIX</code></dt><dd><p>double. X coordinate of centroid.</p></dd>
+<dt><code>CENTROIY</code></dt><dd><p>double. Y coordinate of centroid.</p></dd>
+<dt><code>row</code></dt><dd><p>integer. row number.</p></dd>
+<dt><code>col</code></dt><dd><p>integer. column number.</p></dd>
+<dt><code>geometry</code></dt><dd><p>list. geometry.</p></dd>
+
+</dl>
     
 
   </div>
