@@ -55,7 +55,21 @@ regplot2 <- tm_shape(district_hexogram0) +
 regplot2
 
 district_hexogram <- district_hexogram0 %>%
-  select(kod, nazev, mop_kod, spo_kod, pou_kod, okres_kod,
+  mutate(label = str_remove(nazev, "Praha-") %>%
+           str_replace("Přední ", "Př") %>%
+           str_replace("Dolní ", "D") %>%
+           str_replace("Praha ", "P") %>%
+           str_replace("Kolo", "Kl") %>%
+           str_sub(1, 3)) %>%
+  select(kod, nazev, label, mop_kod, spo_kod, pou_kod, okres_kod,
          CENTROIX, CENTROIY, row, col)
+table(district_hexogram$label)
+length(unique(district_hexogram$label)) == nrow(district_hexogram)
+
+regplotx <- tm_shape(district_hexogram) +
+  tm_polygons("row", palette = "viridis", border.col = "white") +
+  tm_text("label")
+
+regplotx
 
 usethis::use_data(district_hexogram, overwrite = T)
