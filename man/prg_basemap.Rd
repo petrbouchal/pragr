@@ -49,6 +49,7 @@ ggplot() +
 }
 \seealso{
 Other Mapping: 
+\code{\link{district_hexogram}},
 \code{\link{prg_endpoints}},
 \code{\link{prg_tile}()}
 }

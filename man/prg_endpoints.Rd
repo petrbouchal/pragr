@@ -21,8 +21,10 @@ Can be used manually to inspect services and is used internally by
 prg_tile() and prg_basemap() for retrieving data from servers.
 }
 \seealso{
-Other Mapping: \code{\link{prg_basemap}},
-  \code{\link{prg_tile}}
+Other Mapping: 
+\code{\link{district_hexogram}},
+\code{\link{prg_basemap}()},
+\code{\link{prg_tile}()}
 }
 \concept{Mapping}
 \keyword{datasets}

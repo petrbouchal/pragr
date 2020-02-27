@@ -23,8 +23,14 @@
 district_hexogram
 }
 \description{
-Equal-area hexogram of 57 Prague districts. Best representation possible
+Equal-area hexogram of 57 Prague districts. Best available representation
 though some district tiles neighbor districts they do not in reality.
 }
-\concept{Mapping utilities}
+\seealso{
+Other Mapping: 
+\code{\link{prg_basemap}()},
+\code{\link{prg_endpoints}},
+\code{\link{prg_tile}()}
+}
+\concept{Mapping}
 \keyword{datasets}

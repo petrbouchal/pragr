@@ -140,7 +140,7 @@
 
 #' Equal-area hexogram of Prague districts
 #'
-#' Equal-area hexogram of 57 Prague districts. Best representation possible
+#' Equal-area hexogram of 57 Prague districts. Best available representation
 #' though some district tiles neighbor districts they do not in reality.
 #'
 #' @format A data frame with 57 rows and 11 variables:
@@ -158,6 +158,6 @@
 #'   \item{\code{col}}{integer. column number.}
 #'   \item{\code{geometry}}{list. geometry.}
 #' }
-#' @family Mapping utilities
+#' @family Mapping
 "district_hexogram"
 
