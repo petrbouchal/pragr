@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>pragr: Tools for visualising Prague data — pragr-package • pragr</title>
+<title>Prague 'okres LAU' code — prg_okres_nuts • pragr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,12 +39,10 @@
 
 
 
-<meta property="og:title" content="pragr: Tools for visualising Prague data — pragr-package" />
+<meta property="og:title" content="Prague 'okres LAU' code — prg_okres_nuts" />
 
-<meta property="og:description" content="
-A bridge between Prague geodata and R to enable
-    visualisation. Currently, it provides access to raster map layers
-    provided by the Prague geoportal and several utilities." />
+<meta property="og:description" content="Prague 'okres LAU' code. Comes from CZSO register 101 (OKRES_NUTS) - yes these are
+confusing but that is how it is." />
 
 <meta property="og:image" content="https://petrbouchal.github.io/pragr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -128,29 +126,40 @@ A bridge between Prague geodata and R to enable
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>pragr: Tools for visualising Prague data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/petrbouchal/pragr/blob/master/R/pragr-package.R'><code>R/pragr-package.R</code></a></small>
-    <div class="hidden name"><code>pragr-package.Rd</code></div>
+    <h1>Prague 'okres LAU' code</h1>
+    <small class="dont-index">Source: <a href='https://github.com/petrbouchal/pragr/blob/master/R/data-doc.R'><code>R/data-doc.R</code></a></small>
+    <div class="hidden name"><code>prg_okres_nuts.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><img src='figures/logo.png' align='right' alt='logo' width='120' /></p>
-<p>A bridge between Prague geodata and R to enable
-    visualisation. Currently, it provides access to raster map layers
-    provided by the Prague geoportal and several utilities.</p>
+    <p>Prague 'okres LAU' code. Comes from CZSO register 101 (OKRES_NUTS) - yes these are
+confusing but that is how it is.</p>
     
     </div>
 
+    <pre class="usage"><span class='no'>prg_okres_nuts</span></pre>
         
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>character vector of length 1</p><dl class='dl-horizontal'>
+Prague okres (NUTS) code.
+
+</dl>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Useful links:</p><ul>
-<li><p><a href='https://github.com/petrbouchal/pragr'>https://github.com/petrbouchal/pragr</a></p></li>
-<li><p>Report bugs at <a href='https://github.com/petrbouchal/pragr/issues'>https://github.com/petrbouchal/pragr/issues</a></p></li>
-</ul>
-
-</div>
+    <div class='dont-index'><p>Other Codes and metadata: 
+<code><a href='prg_bbox_krovak.html'>prg_bbox_krovak</a></code>,
+<code><a href='prg_bbox_wgs84.html'>prg_bbox_wgs84</a></code>,
+<code><a href='prg_fua_oecd.html'>prg_fua_oecd</a></code>,
+<code><a href='prg_ico.html'>prg_ico</a></code>,
+<code><a href='prg_kod.html'>prg_kod</a></code>,
+<code><a href='prg_lau1.html'>prg_lau1</a></code>,
+<code><a href='prg_metro_oecd.html'>prg_metro_oecd</a></code>,
+<code><a href='prg_nuts2.html'>prg_nuts2</a></code>,
+<code><a href='prg_nuts3.html'>prg_nuts3</a></code>,
+<code><a href='prg_okres.html'>prg_okres</a></code></p></div>
     
 
   </div>
@@ -158,11 +167,11 @@ A bridge between Prague geodata and R to enable
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       
+      <li><a href="#format">Format</a></li>
+
       <li><a href="#see-also">See also</a></li>
           </ul>
 
-    <h2>Author</h2>
-    <p><strong>Maintainer</strong>: Petr Bouchal <a href='mailto:pbouchal@gmail.com'>pbouchal@gmail.com</a></p>
   </div>
 </div>
 
