@@ -1,3 +1,7 @@
+home:
+  title: pragr: An R package for visualising Prague
+  description: Map and analyse Prague using open geospatial data
+
 destination: docs
 url: https://petrbouchal.github.io/pragr
 development:
@@ -7,6 +11,14 @@ development:
 template:
   params:
     ganalytics: "UA-156460113-2"
+  opengraph:
+    image:
+      src: man/figures/card.png
+      alt: "pragr: an R package for analysing and visualising Prague"
+    twitter:
+      creator: "@petrbouchal"
+      card: summary_large_image
+
 reference:
 - title: Mapping
   desc:  Functions for drawing maps based on Prague's open geospatial data.
