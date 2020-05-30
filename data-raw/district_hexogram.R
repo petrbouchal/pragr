@@ -61,7 +61,7 @@ district_hexogram <- district_hexogram0 %>%
            str_replace("Praha ", "P") %>%
            str_replace("Kolo", "Kl") %>%
            str_sub(1, 3)) %>%
-  select(kod, nazev, label, mop_kod, spo_kod, pou_kod, okres_kod,
+  select(kod, nazev, label, mop_kod, sop_kod, pou_kod, okres_kod,
          CENTROIX, CENTROIY, row, col)
 table(district_hexogram$label)
 length(unique(district_hexogram$label)) == nrow(district_hexogram)
