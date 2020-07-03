@@ -14,3 +14,5 @@
 ^renv\.lock$
 ^doc$
 ^Meta$
+^CODE_OF_CONDUCT\.md$
+^\.github$
