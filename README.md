@@ -87,13 +87,8 @@ library(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 library(sf)
-#> Linking to GEOS 3.6.1, GDAL 2.1.3, PROJ 4.9.3
+#> Linking to GEOS 3.7.2, GDAL 2.4.2, PROJ 5.2.0
 library(ggplot2)
-#> 
-#> Attaching package: 'ggplot2'
-#> The following object is masked from 'package:crayon':
-#> 
-#>     %+%
 ```
 
 ``` r
@@ -110,192 +105,6 @@ ggplot() +
            tile_service = 'orto') + 
   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
   theme_void()
-#> Warning in seq.default(from = 1, len = along - 1): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(to = N - 1, len = N - along): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.list)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(len = ncol(arg.dim)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.names)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(from = 1, len = along - 1): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(to = N - 1, len = N - along): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.list)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(len = ncol(arg.dim)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.names)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(from = 1, len = along - 1): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(to = N - 1, len = N - along): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.list)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(len = ncol(arg.dim)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.names)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(from = 1, len = along - 1): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(to = N - 1, len = N - along): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.list)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(len = ncol(arg.dim)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.names)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(from = 1, len = along - 1): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(to = N - 1, len = N - along): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.list)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(len = ncol(arg.dim)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.names)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(from = 1, len = along - 1): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(to = N - 1, len = N - along): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.list)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(len = ncol(arg.dim)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.names)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
 ```
 
 <img src="man/figures/README-example-tiles-1.png" width="100%" />
@@ -309,37 +118,6 @@ ggplot() +
               image_service = 'mapy_archiv', layer = 6) + 
   geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
   theme_void()
-#> Warning in seq.default(from = 1, len = along - 1): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(to = N - 1, len = N - along): partial argument match
-#> of 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.list)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
-#> Warning in seq.default(len = ncol(arg.dim)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(len = N): partial argument match of 'len' to
-#> 'length.out'
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-
-#> Warning in seq.default(along = arg.names): partial argument match of
-#> 'along' to 'along.with'
-#> Warning in seq.default(len = length(arg.names)): partial argument match of
-#> 'len' to 'length.out'
-#> Warning in seq.default(along = perm): partial argument match of 'along' to
-#> 'along.with'
 ```
 
 <img src="man/figures/README-example-base-1.png" width="100%" />
@@ -385,9 +163,9 @@ package = "pragr")`.
   - [CzechData](https://github.com/JanCaha/CzechData)
   - [czso](https://github.com/petrbouchal/czso)
 
-# Acknowledgments
+## Acknowledgments
 
-  - Most importantly, IPR Praha for providing the open data \!
+  - Most importantly, IPR Praha for providing the open data\!
   - The approach draws heavily on code provided by
     @[yutannihilation](https://github.com/yutannihilation) in her \[blog
     post\]
@@ -396,3 +174,9 @@ package = "pragr")`.
     post](%5Bhttps://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/%5D)
   - font in logo is Trivia Serif by [František
     Štorm](https://stormtype.com)
+
+## Code of Conduct
+
+Please note that the pragr project is released with a [Contributor Code
+of Conduct](https://petrbouchal.github.io/pragr/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

@@ -9,6 +9,7 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
+  warning = F,
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
@@ -141,9 +142,13 @@ See [vignette](articles/data-sources.html) or `vignette("data-sources", package 
 - [czso](https://github.com/petrbouchal/czso)
 
 
-# Acknowledgments
+## Acknowledgments
 
-- Most importantly, IPR Praha for providing the open data !
+- Most importantly, IPR Praha for providing the open data!
 - The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her [blog post]
 - logo designed using the 📦 bunny by @[dmi3kno](https://github.com/dmi3kno) following his [blog post]([https://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/])
 - font in logo is Trivia Serif by [František Štorm](https://stormtype.com)
+
+## Code of Conduct
+  
+Please note that the pragr project is released with a [Contributor Code of Conduct](https://petrbouchal.github.io/pragr/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

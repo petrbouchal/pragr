@@ -1,5 +1,5 @@
 home:
-  title: pragr: An R package for visualising Prague
+  title: "pragr: An R package for visualising Prague"
   description: Map and analyse Prague using open geospatial data
 
 destination: docs
