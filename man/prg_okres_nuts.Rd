@@ -4,10 +4,12 @@
 \name{prg_okres_nuts}
 \alias{prg_okres_nuts}
 \title{Prague 'okres LAU' code}
-\format{character vector of length 1
+\format{
+character vector of length 1
 \describe{
 Prague okres (NUTS) code.
-}}
+}
+}
 \usage{
 prg_okres_nuts
 }

@@ -4,10 +4,12 @@
 \name{prg_ico}
 \alias{prg_ico}
 \title{Prague ICO code}
-\format{character vector of length 1
+\format{
+character vector of length 1
 \describe{
 Prague ICO code
-}}
+}
+}
 \usage{
 prg_ico
 }

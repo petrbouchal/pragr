@@ -4,10 +4,12 @@
 \name{prg_kod}
 \alias{prg_kod}
 \title{Prague RUIAN code}
-\format{character vector of length 1
+\format{
+character vector of length 1
 \describe{
 Prague RUIAN code
-}}
+}
+}
 \usage{
 prg_kod
 }

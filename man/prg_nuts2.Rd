@@ -4,10 +4,12 @@
 \name{prg_nuts2}
 \alias{prg_nuts2}
 \title{Prague NUTS2 code}
-\format{character vector of length 1
+\format{
+character vector of length 1
 \describe{
 Prague NUTS2 code
-}}
+}
+}
 \usage{
 prg_nuts2
 }

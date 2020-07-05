@@ -4,11 +4,13 @@
 \name{prg_kraj}
 \alias{prg_kraj}
 \title{Prague 'kraj' code}
-\format{character vector of length 1
+\format{
+character vector of length 1
 \describe{
 Prague kraj code
 }
-#' @family Codes and metadata}
+#' @family Codes and metadata
+}
 \usage{
 prg_kraj
 }

@@ -4,7 +4,8 @@
 \name{district_hexogram}
 \alias{district_hexogram}
 \title{Equal-area hexogram of Prague districts}
-\format{A data frame with 57 rows and 11 variables:
+\format{
+A data frame with 57 rows and 11 variables:
 \describe{
 \item{\code{kod}}{character. RUIAN code.}
 \item{\code{nazev}}{character. Full name.}
@@ -18,7 +19,8 @@
 \item{\code{row}}{integer. row number.}
 \item{\code{col}}{integer. column number.}
 \item{\code{geometry}}{list. geometry.}
-}}
+}
+}
 \usage{
 district_hexogram
 }
@@ -28,6 +30,7 @@ though some district tiles neighbor districts they do not in reality.
 }
 \seealso{
 Other Mapping: 
+\code{\link{district_tilegram}},
 \code{\link{prg_basemap}()},
 \code{\link{prg_endpoints}},
 \code{\link{prg_tile}()}

@@ -4,10 +4,12 @@
 \name{prg_metro_oecd}
 \alias{prg_metro_oecd}
 \title{Prague code in OECD CITIES database of data on Functional Urban Areas}
-\format{character vector of length 1
+\format{
+character vector of length 1
 \describe{
 Prague code in OECD Functional Urban Area database.
-}}
+}
+}
 \usage{
 prg_metro_oecd
 }

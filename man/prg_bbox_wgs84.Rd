@@ -4,10 +4,12 @@
 \name{prg_bbox_wgs84}
 \alias{prg_bbox_wgs84}
 \title{Prague bbox in EPSG 4326 (WGS 84)}
-\format{named numeric of class \code{bbox}, length 4
+\format{
+named numeric of class \code{bbox}, length 4
 \describe{
 Prague RUIAN code
-}}
+}
+}
 \usage{
 prg_bbox_wgs84
 }

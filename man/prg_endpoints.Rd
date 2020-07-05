@@ -4,14 +4,16 @@
 \name{prg_endpoints}
 \alias{prg_endpoints}
 \title{IPR Map Services}
-\format{A data frame with 18 rows and 5 variables:
+\format{
+A data frame with 18 rows and 5 variables:
 \describe{
 \item{\code{name}}{character. Name of the service, to be used as parameter in prg_tile() and prg_basemap()}
 \item{\code{type}}{character. "tile" or "image"}
 \item{\code{description}}{character. Description of the map source}
 \item{\code{endpoint}}{character. endpoint. Used internally}
 \item{\code{url}}{character. URL, used internally but also points to human readable interface.}
-}}
+}
+}
 \usage{
 prg_endpoints
 }

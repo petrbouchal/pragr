@@ -4,10 +4,12 @@
 \name{prg_lau1}
 \alias{prg_lau1}
 \title{Prague LAU1 code}
-\format{character vector of length 1
+\format{
+character vector of length 1
 \describe{
 Prague LAU1 code. Comes from CZSO registry 109 - OKRES_LAU.
-}}
+}
+}
 \usage{
 prg_lau1
 }

@@ -4,10 +4,12 @@
 \name{prg_bbox_krovak}
 \alias{prg_bbox_krovak}
 \title{Prague bbox in EPSG 5514 (Krovak)}
-\format{named numeric of class \code{bbox}, length 4
+\format{
+named numeric of class \code{bbox}, length 4
 \describe{
 Prague RUIAN code
-}}
+}
+}
 \usage{
 prg_bbox_krovak
 }
