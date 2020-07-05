@@ -161,3 +161,28 @@
 #' @family Mapping
 "district_hexogram"
 
+# Tilegram ----------------------------------------------------------------
+
+#' Equal-area tilegram of Prague districts
+#'
+#' Equal-area hexogram of 57 Prague districts. Best available representation
+#' though some district tiles neighbor districts they do not in reality.
+#'
+#' @format A data frame with 57 rows and 11 variables:
+#' \describe{
+#'   \item{\code{kod}}{character. RUIAN code.}
+#'   \item{\code{nazev}}{character. Full name.}
+#'   \item{\code{label}}{character. Three-character unique label.}
+#'   \item{\code{mop_kod}}{character. Prague district code.}
+#'   \item{\code{spo_kod}}{character. Admin district code.}
+#'   \item{\code{pou_kod}}{character. Higher-level unit code.}
+#'   \item{\code{okres_kod}}{character. District code.}
+#'   \item{\code{CENTROIX}}{double. X coordinate of centroid.}
+#'   \item{\code{CENTROIY}}{double. Y coordinate of centroid.}
+#'   \item{\code{row}}{integer. row number.}
+#'   \item{\code{col}}{integer. column number.}
+#'   \item{\code{geometry}}{list. geometry.}
+#' }
+#' @family Mapping
+"district_tilegram"
+

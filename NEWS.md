@@ -1,5 +1,7 @@
 # pragr (development version)
 
+* added `district_tilegram`, an equal-area square grid for Prague city districts 
+
 # pragr 0.2.0
 
 * added `district_hexogram`, an equal-area hex grid for Prague city districts 
