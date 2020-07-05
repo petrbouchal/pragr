@@ -48,3 +48,11 @@ INSPIRE geoportál
 
 - plochy vod? https://geoportal.gov.cz/web/guest/eshop/gallery#mainProductPanelId:productDetailPanelId
 
+# CZSO data on Prague
+
+- VDB výběr demografie pro Prahu https://vdb.czso.cz/vdbvo2/faces/index.jsf?page=vystup-objekt-parametry&pvo=DEM01D-PHA&sp=A&skupId=1372&pvokc=&katalog=30845&z=T
+- Malý lexikon obcí (MČ) https://vdb.czso.cz/vdbvo2/faces/cs/index.jsf?page=vystup-objekt&pvo=RSO0919&pvokc=&filtr=G~F_M~F_Z~F_R~F_P~_S~_U~502_null_&katalog=all&z=T
+- všechny tabulky VDB o MČ https://vdb.czso.cz/vdbvo2/faces/cs/index.jsf?page=statistiky&katalog=all&filtr=G~F_M~F_Z~F_R~F_P~_S~_U~502-_null
+- časové řady v excelech https://www.czso.cz/csu/xa/casove-rady-za-mestske-casti-prahy
+- MČ rozcestník pražské CZSO https://www.czso.cz/csu/xa/mesta_a_obce
+
