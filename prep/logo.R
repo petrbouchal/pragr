@@ -1,4 +1,4 @@
-library(CzechData)
+library(CzechData) # needs CzechData from petrbouchal/CzechData@fix-unzip - has bug fix
 library(ggplot2)
 library(dplyr)
 # pak::renv::install("dmi3kno/bunny")
@@ -21,7 +21,7 @@ vltava <- reky %>%
 
 plot(vltava, max.plot = 1)
 
-hex_canvas <- image_canvas_hex(border_color="grey", border_size = 2, fill_color = "#000000")
+hex_canvas <- image_canvas_hex(border_color = "grey", border_size = 4, fill_color = "#000000")
 hex_border <- image_canvas_hexborder(border_color="grey", border_size = 4)
 hex_canvas
 
@@ -37,7 +37,17 @@ img_hex <- hex_canvas %>%
   bunny::image_compose(praha_for_hex, gravity = "north", offset = "+0+220") %>%
   image_annotate("pragr", size=300, gravity = "south", location = "+0+300",
                  font = "Trivia Serif 10", color = "white") %>%
-  bunny::image_compose(hex_border, gravity = "center", operator = "Over")
+  image_annotate("petrbouchal.gihub.io/pragr", size = 50, gravity = "south", location = "+250+210",
+                 degrees = 330,
+                 font = "sans", color = "grey")
+
+
+img_hex
+
+img_hex %>%
+  image_convert(format = "png", colorspace = "cmyk", matte = T) %>%
+  image_scale("1200x1200") %>%
+  image_write(here::here("prep", "logo_hex_print.png"), density = 1200, format = "png")
 
 img_hex %>%
   image_convert("png") %>%
