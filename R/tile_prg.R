@@ -52,7 +52,7 @@ get_tile <- function(url, spec, bbox, verbose) {
 
     # add header
     h <- curl::new_handle()
-    curl::handle_setheaders(h, `User-Agent` = "R script")
+    curl::handle_setheaders(h, .list = ua_header)
 
     curl::curl_download(url, destfile = local_img, quiet = !verbose)
   }

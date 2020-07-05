@@ -1,3 +1,7 @@
+ua_header <- c("User-Agent" = "github.com/petrbouchal/pragr")
+ua_string <- "github.com/petrbouchal/pragr"
+
+
 constrain_dimensions <- function(width, height, max_width, max_height, verbose) {
   stopifnot(width > 0, height > 0, max_height > 0, max_width > 0)
   constraining <- FALSE
