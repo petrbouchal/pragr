@@ -62,7 +62,8 @@ district_tilegram <- district_tilegram0 %>%
            str_replace("Kolo", "Kl") %>%
            str_sub(1, 3)) %>%
   select(kod, nazev, label, mop_kod, sop_kod, pou_kod, okres_kod,
-         CENTROIX, CENTROIY, row, col)
+         CENTROIX, CENTROIY, row, col) %>%
+  sf::st_as_sf()
 table(district_tilegram$label)
 length(unique(district_tilegram$label)) == nrow(district_tilegram)
 
