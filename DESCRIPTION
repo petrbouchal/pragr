@@ -41,6 +41,9 @@ Imports:
 Suggests: 
     ggsn,
     knitr,
+    leaflet (>= 2.0.3),
+    leaflet.esri (>= 1.0.0),
+    leaflet.extras (>= 1.0.0),
     pkgdown,
     ragg,
     rmarkdown

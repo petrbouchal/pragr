@@ -1,0 +1,32 @@
+---
+title: "Getting started with pragr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with pragr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(pragr)
+```
+
+## Using services identified by URL
+
+```{r}
+prg <- CzechData::load_RUIAN_settlement(pragr::prg_kod)
+```
+
+
+```{r}
+ggplot2::ggplot() +
+  prg_basemap(prg,image_service = "http://mpp.iprpraha.cz/arcgis/rest/services/GEO/IG_mapy/MapServer", buffer = 100)
+```
+

@@ -1,6 +1,12 @@
 # pragr (development version)
 
+## New features
+
 * added `district_tilegram`, an equal-area square grid for Prague city districts 
+
+## Improvements
+
+* new basic vignettes (getting started; using Prague data in {leaflet})
 
 ## Bug fixes
 

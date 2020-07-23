@@ -1,0 +1,42 @@
+---
+title: "Using Prague spatial data in web-based maps"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using Prague spatial data in web-based maps}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(pragr)
+library(sf)
+library(leaflet)
+library(leaflet.esri)
+```
+
+```{r}
+stuz <- st_read("http://mpp.iprpraha.cz/arcgis/rest/services/URK/StavebniUzavery/MapServer/2/query?f=json&where=SHAPE.AREA%3E3&returnGeometry=true&returnIdsOnly=false&outFields=*")
+```
+
+```{r}
+map_srvr_uzavery_dopr <- "http://mpp.iprpraha.cz/arcgis/rest/services/URK/StavebniUzavery/MapServer/3"
+map_srvr_orto <- "http://mpp.praha.eu/arcgis/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/WMSServer"
+```
+
+
+```{r}
+leaflet(stuz %>% st_transform(4326)) %>%
+  setView( 14.5, 50.1, zoom = 12) %>%
+  addPolygons(color = "red") %>%
+  addEsriFeatureLayer(map_srvr_uzavery_dopr) %>%
+  addWMSTiles(map_srvr_orto, layers = "0")
+```
+
