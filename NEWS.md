@@ -2,6 +2,10 @@
 
 * added `district_tilegram`, an equal-area square grid for Prague city districts 
 
+## Bug fixes
+
+* `prg_[tile|basemap]` checking now correctly detects map server URLs passed to `*_service` parameters
+
 # pragr 0.2.0
 
 * added `district_hexogram`, an equal-area hex grid for Prague city districts 

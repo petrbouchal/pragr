@@ -89,7 +89,7 @@ get_tile <- function(url, spec, bbox, verbose) {
 prg_tile <- function(data, tile_service = "orto", zoom = 6, alpha = 1, buffer = 0, verbose = F) {
   tile_services <- prg_endpoints[prg_endpoints$type == "tile",]
   service_is_url <- !(tile_service %in% tile_services$name) &
-    stringr::str_detect(tile_service, "http[s]+://.*/(Image|Map)Server")
+    stringr::str_detect(tile_service, "http[s]?://.*/(Map|Image)Server")
   stopifnot((tile_service %in% tile_services$name | service_is_url),
             dplyr::between(alpha, 0, 1),
             sf::st_crs(data)$epsg %in% c(5514, 102067),
