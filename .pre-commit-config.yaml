@@ -8,3 +8,7 @@ repos:
     -   id: roxygenize
     -   id: use-tidy-description
     -   id: deps-in-desc
+-   repo: https://github.com/petrbouchal/ptrr
+    rev: 3a86aaf608d6e3177dedf9214c7834f0819eb001
+    hooks:
+    -   id: no-view-statement
