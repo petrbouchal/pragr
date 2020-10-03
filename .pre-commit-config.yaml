@@ -1,3 +1,4 @@
+exclude: 'renv'
 repos:
 -   repo: https://github.com/lorenzwalthert/pre-commit-hooks
     rev: v0.0.0.9015
