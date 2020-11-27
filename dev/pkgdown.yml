@@ -1,10 +1,10 @@
 pandoc: 2.7.3
-pkgdown: 1.5.1
+pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   pragr: pragr.html
   web: web.html
-last_built: 2020-07-23T13:47Z
+last_built: 2020-11-27T10:35Z
 urls:
   reference: https://petrbouchal.github.io/pragr/reference
   article: https://petrbouchal.github.io/pragr/articles
