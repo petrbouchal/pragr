@@ -165,7 +165,7 @@
 
 #' Equal-area tilegram of Prague districts
 #'
-#' Equal-area hexogram of 57 Prague districts. Best available representation
+#' Equal-area tilegram of 57 Prague districts. Best available representation
 #' though some district tiles neighbor districts they do not in reality.
 #'
 #' @format A data frame with 57 rows and 11 variables:
