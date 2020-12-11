@@ -16,6 +16,7 @@ A bridge between Prague geodata and R to enable
 Useful links:
 \itemize{
   \item \url{https://github.com/petrbouchal/pragr}
+  \item \url{https://petrbouchal.xyz/pragr/}
   \item Report bugs at \url{https://github.com/petrbouchal/pragr/issues}
 }
 
