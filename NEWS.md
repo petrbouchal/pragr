@@ -7,6 +7,7 @@
 ## Improvements
 
 * new basic vignettes (getting started; using Prague data in {leaflet})
+* updated core map server endpoint URLs to reflect new scheme as per http://app.iprpraha.cz/apl/app/service_viewer/
 
 ## Bug fixes
 
