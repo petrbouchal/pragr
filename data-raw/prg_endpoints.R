@@ -1,23 +1,5 @@
 ## code to prepare `prg_endpoints` dataset goes here
 
-
-#' IPR Map Services
-#'
-#' Contains information on a selection of available Prague raster map services.
-#' Can be used manually to inspect services and is used internally by
-#' prg_tile() and prg_basemap() for retrieving data from servers.
-#'
-#' @format A data frame with 18 rows and 5 variables:
-#' \describe{
-#'   \item{\code{name}}{character. Name of the service, to be used as parameter in prg_tile() and prg_basemap()}
-#'   \item{\code{type}}{character. "tile" or "image"}
-#'   \item{\code{description}}{character. Description of the map source}
-#'   \item{\code{endpoint}}{character. endpoint. Used internally}
-#'   \item{\code{url}}{character. URL, used internally but also points to human readable interface.}
-#' }
-#' @family Mapping
-#' @export
-"prg_endpoints"
 prg_endpoints <- tibble::tribble(~name, ~type, ~description, ~endpoint, ~url,
                          "orto", "tile", "Latest aerial map", "",
                          "https://gs-pub.praha.eu/imgs/rest/services/ort/letecke_snimkovani/ImageServer",

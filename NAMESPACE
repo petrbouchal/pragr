@@ -2,7 +2,6 @@
 
 export("%>%")
 export(prg_basemap)
-export(prg_endpoints)
 export(prg_tile)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)
