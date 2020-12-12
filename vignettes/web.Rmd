@@ -23,7 +23,7 @@ stuz <- st_read("http://mpp.iprpraha.cz/arcgis/rest/services/URK/StavebniUzavery
 
 ```{r}
 map_srvr_uzavery_dopr <- "http://mpp.iprpraha.cz/arcgis/rest/services/URK/StavebniUzavery/MapServer/3"
-map_srvr_orto <- "http://mpp.praha.eu/arcgis/services/MAP/letecke_snimky_posledni_snimkovani_cache/ImageServer/WMSServer"
+map_srvr_orto <- "https://gs-pub.praha.eu/imgs/services/ort/letecke_snimkovani/ImageServer/WMSServer"
 ```
 
 
