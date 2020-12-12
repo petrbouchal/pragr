@@ -47,6 +47,7 @@ prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
 }
 \seealso{
 Other Mapping: 
+\code{\link{district_geofacet}},
 \code{\link{district_hexogram}},
 \code{\link{district_tilegram}},
 \code{\link{prg_basemap}()},

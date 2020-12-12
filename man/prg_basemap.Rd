@@ -49,6 +49,7 @@ ggplot() +
 }
 \seealso{
 Other Mapping: 
+\code{\link{district_geofacet}},
 \code{\link{district_hexogram}},
 \code{\link{district_tilegram}},
 \code{\link{prg_endpoints}},

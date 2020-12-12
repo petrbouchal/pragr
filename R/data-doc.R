@@ -186,6 +186,21 @@
 #' @family Mapping
 "district_tilegram"
 
+# Geofacet grid --------------------------------------------------------------
+
+#' Dataset to be used in the {geofacet} package
+#'
+#' Use this as the `grid` argument to `geofacet::facet_geo()`. The layout corresponds to `district_tilegram`.
+#'
+#' @format A data frame with 57 rows and 11 variables:
+#' \describe{
+#'   \item{\code{code}}{character. RUIAN code. Normally should serve as ID to distribute your data points into grid cells.}
+#'   \item{\code{label}}{character. Three-character unique label.}
+#'   \item{\code{row}}{integer. row number.}
+#'   \item{\code{col}}{integer. column number.}
+#' }
+#' @family Mapping
+"district_geofacet"
 # Map server endpoints ----------------------------------------------------
 
 #' IPR Map Services

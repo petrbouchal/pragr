@@ -3,6 +3,8 @@
 ## New features
 
 * added `district_tilegram`, an equal-area square grid for Prague city districts 
+* added `district_geofacet`, a grid that can be used as an input into the `facet_geo()` 
+function in the `geofacet` package.
 
 ## Improvements
 

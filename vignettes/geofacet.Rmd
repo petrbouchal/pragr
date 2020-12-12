@@ -1,0 +1,45 @@
+---
+title: "geofacet"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geofacet}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(pragr)
+library(CzechData)
+library(geofacet)
+library(ggplot2)
+library(dplyr)
+library(sf)
+```
+
+```{r}
+phamc0 <- CzechData::load_RUIAN_settlement("554782", "MOMC_P")
+
+
+
+mcds <- phamc0 %>% 
+  mutate(area = st_area(geometry) %>% units::drop_units(),
+         h = 1) %>% 
+  st_set_geometry(NULL) %>% 
+  select(code = kod, area, h)
+
+mcds %>% 
+  ggplot(aes(y = area/1e6, x = h)) +
+  geom_col() +
+  facet_geo(~ code, grid = district_geofacet %>% 
+              left_join(district_names %>% select(code = kod, name_label = nazev_short)),
+            label = "name_label")
+
+```
+
