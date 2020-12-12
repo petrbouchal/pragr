@@ -1,10 +1,5 @@
 ---
 title: "Using Prague spatial data in web-based maps"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Using Prague spatial data in web-based maps}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}
