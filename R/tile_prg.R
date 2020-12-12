@@ -47,7 +47,7 @@ get_tile <- function(url, spec, bbox, verbose) {
   { image_fn <- png::readPNG
     image_ext <- "png" }
   else
-    { stop(stringr::str_glue("Unknown tile format: {spec$tileInfo$format}")) }
+    { stop(stringr::str_glue("Unknown tile format: {content_type}")) }
 
   path <- raster_temp_path(url, bbox = bbox)
   local_img <- here::here(file.path("temp", "tiles", paste0(path, ".", image_ext)))
