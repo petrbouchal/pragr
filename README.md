@@ -61,6 +61,9 @@ Additionally, the package provides
     administrative or statistical registers.
   - a function for downloading official Prague admin geodata (admin
     boundaries etc.)
+  - square and hex tiles for equal-area plotting
+  - a grid object suitable for use in the `geofacet::facet_geo()`
+    function.
 
 ## Credit, inspiration and extensibility
 
@@ -87,13 +90,14 @@ library(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 library(sf)
-#> Linking to GEOS 3.7.2, GDAL 2.4.2, PROJ 5.2.0
+#> Linking to GEOS 3.8.1, GDAL 3.1.1, PROJ 6.3.1
 library(ggplot2)
 ```
 
 ``` r
 praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>% 
   filter(nazev == 'Praha 1')
+#> ✓ Data downloaded and unpacked.
 ```
 
 Note that the possible values of the `tile_service` and `image_service`
@@ -109,8 +113,8 @@ ggplot() +
 
 <img src="man/figures/README-example-tiles-1.png" width="100%" />
 
-The `layer` parameter can take values that need you can find by
-inspecting the given image service (see note on sources below).
+The `layer` parameter can take values that you can find by inspecting
+the given image service (see note on sources below).
 
 ``` r
 ggplot() +

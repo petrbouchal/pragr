@@ -56,8 +56,8 @@ remotes::install_github("petrbouchal/pragr")
 
 Currently, the 📦 enables you to do two things:
 
-1) Add raster tiles from the Prague geoopen data portal to a `ggplot2` object (`prg_tile()`)
-2) Add other raster layer to a `ggplot2` object (`prg_basemap()`)
+1. Add raster tiles from the Prague geoopen data portal to a `ggplot2` object (`prg_tile()`)
+2. Add other raster layer to a `ggplot2` object (`prg_basemap()`)
 
 The basic logic of the two core functions is that given a simple feature dataset, they provide the tiles or image to create the base map for those coordinates.
 
@@ -71,6 +71,8 @@ Additionally, the package provides
 
 - quick access to a number of codes that identify Prague in various administrative or statistical registers.
 - a function for downloading official Prague admin geodata (admin boundaries etc.)
+- square and hex tiles for equal-area plotting
+- a grid object suitable for use in the `geofacet::facet_geo()` function.
 
 ## Credit, inspiration and extensibility
 
@@ -96,19 +98,19 @@ Note that the possible values of the `tile_service` and `image_service` paramete
 
 ```{r example-tiles}
 ggplot() +
-  prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
+  prg_tile(data = praha1, zoom = 10, alpha = 1, buffer = 200,
            tile_service = 'orto') + 
-  geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
+  geom_sf(data = praha1, colour = alpha("red", 0.6), fill = NA, shape = "dotted") +
   theme_void()
 ```
 
-The `layer` parameter can take values that need you can find by inspecting the given image service (see note on sources below).
+The `layer` parameter can take values that you can find by inspecting the given image service (see note on sources below).
 
 ```{r example-base}
 ggplot() +
-  prg_basemap(data = praha1, alpha = .8, buffer = 200,
-              image_service = 'mapy_archiv', layer = 6) + 
-  geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
+  prg_basemap(data = praha1, alpha = 1, buffer = 200, width = 1000,
+              image_service = 'cisarske_otisky_1840_velke', layer = 1) + 
+  geom_sf(data = praha1, colour = alpha("red", 0.6), fill = NA, shape = "dotted") +
   theme_void()
 ```
 

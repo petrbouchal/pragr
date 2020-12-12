@@ -385,15 +385,10 @@
     },
     "ggplot2": {
       "Package": "ggplot2",
-      "Version": "3.3.2.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "ggplot2",
-      "RemoteUsername": "tidyverse",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "ac2b5a7bb460179e0cc8c4b3204795317dcfb9b8",
-      "Hash": "20cf91b5693bfa106075d4aeefc7d2e8"
+      "Version": "3.3.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4ded8b439797f7b1693bd3d238d0106b"
     },
     "ggrepel": {
       "Package": "ggrepel",
@@ -905,10 +900,10 @@
     },
     "rmarkdown": {
       "Package": "rmarkdown",
-      "Version": "2.3",
+      "Version": "2.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "202260e1b2c410edc086d5b8f1ed946e"
+      "Hash": "20a0a94af9e8f7040510447763aab3e9"
     },
     "rnaturalearth": {
       "Package": "rnaturalearth",
