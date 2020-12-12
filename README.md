@@ -37,9 +37,9 @@ remotes::install_github("petrbouchal/pragr")
 
 Currently, the 📦 enables you to do two things:
 
-1)  Add raster tiles from the Prague geoopen data portal to a `ggplot2`
+1.  Add raster tiles from the Prague geoopen data portal to a `ggplot2`
     object (`prg_tile()`)
-2)  Add other raster layer to a `ggplot2` object (`prg_basemap()`)
+2.  Add other raster layer to a `ggplot2` object (`prg_basemap()`)
 
 The basic logic of the two core functions is that given a simple feature
 dataset, they provide the tiles or image to create the base map for
@@ -48,21 +48,21 @@ those coordinates.
 It relies on the REST API of ArcGis map/image services that power the
 geoportal, using documentation for the following operations (endpoints):
 
-  - [Image Tile
+-   [Image Tile
     endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
-  - [Export Image
+-   [Export Image
     endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
-  - [Export Map (image)
+-   [Export Map (image)
     endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
 Additionally, the package provides
 
-  - quick access to a number of codes that identify Prague in various
+-   quick access to a number of codes that identify Prague in various
     administrative or statistical registers.
-  - a function for downloading official Prague admin geodata (admin
+-   a function for downloading official Prague admin geodata (admin
     boundaries etc.)
-  - square and hex tiles for equal-area plotting
-  - a grid object suitable for use in the `geofacet::facet_geo()`
+-   square and hex tiles for equal-area plotting
+-   a grid object suitable for use in the `geofacet::facet_geo()`
     function.
 
 ## Credit, inspiration and extensibility
@@ -105,9 +105,9 @@ parameters can be found in `prg_endpoints`.
 
 ``` r
 ggplot() +
-  prg_tile(data = praha1, zoom = 10, alpha = .7, buffer = 200,
+  prg_tile(data = praha1, zoom = 10, alpha = 1, buffer = 200,
            tile_service = 'orto') + 
-  geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
+  geom_sf(data = praha1, colour = alpha("red", 0.6), fill = NA, shape = "dotted") +
   theme_void()
 ```
 
@@ -118,9 +118,9 @@ the given image service (see note on sources below).
 
 ``` r
 ggplot() +
-  prg_basemap(data = praha1, alpha = .8, buffer = 200,
-              image_service = 'mapy_archiv', layer = 6) + 
-  geom_sf(data = praha1, fill = alpha("red", 0.6), colour = NA) +
+  prg_basemap(data = praha1, alpha = 1, buffer = 200, width = 1000,
+              image_service = 'cisarske_otisky_1840_velke', layer = 1) + 
+  geom_sf(data = praha1, colour = alpha("red", 0.6), fill = NA, shape = "dotted") +
   theme_void()
 ```
 
@@ -150,33 +150,33 @@ Most map/image services are accessible via
 
 A more technical route to lists of services is via
 
-  - <https://mpp.praha.eu/arcgis/rest/services/>
-  - <https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services>
-  - <http://mpp.iprpraha.cz/arcgis/rest/services/>
+-   <https://mpp.praha.eu/arcgis/rest/services/>
+-   <https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services>
+-   <http://mpp.iprpraha.cz/arcgis/rest/services/>
 
 For some of the services, shortcut notation is implemented for use in
 the tile/basemap functions.
 
 ## Note on geodata about Prague
 
-See [vignette](articles/data-sources.html) or `vignette("data-sources",
-package = "pragr")`.
+See [vignette](articles/data-sources.html) or
+`vignette("data-sources", package = "pragr")`.
 
 # See also:
 
-  - [CzechData](https://github.com/JanCaha/CzechData)
-  - [czso](https://github.com/petrbouchal/czso)
+-   [CzechData](https://github.com/JanCaha/CzechData)
+-   [czso](https://github.com/petrbouchal/czso)
 
 ## Acknowledgments
 
-  - Most importantly, IPR Praha for providing the open data\!
-  - The approach draws heavily on code provided by
+-   Most importantly, IPR Praha for providing the open data!
+-   The approach draws heavily on code provided by
     @[yutannihilation](https://github.com/yutannihilation) in her \[blog
     post\]
-  - logo designed using the 📦 bunny by
+-   logo designed using the 📦 bunny by
     @[dmi3kno](https://github.com/dmi3kno) following his [blog
     post](%5Bhttps://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/%5D)
-  - font in logo is Trivia Serif by [František
+-   font in logo is Trivia Serif by [František
     Štorm](https://stormtype.com)
 
 ## Code of Conduct
