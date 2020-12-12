@@ -24,11 +24,18 @@ library(pragr)
 prg <- CzechData::load_RUIAN_settlement(pragr::prg_kod)
 ```
 
+```{r}
+plot(prg, max.plot = 1)
+```
+
 
 ```{r}
 ggplot2::ggplot() +
   prg_basemap(prg, image_service = "https://gs-pub.praha.eu/imgs/rest/services/geo/ig_mapy_geologicke_pomery/ImageServer", 
               buffer = 100, width = 2000)
 ```
+
+```{r}
+
 ```
 
