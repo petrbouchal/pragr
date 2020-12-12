@@ -32,13 +32,18 @@ krovak2xy <- function(x, y, zoom, spec) {
 }
 
 get_tile <- function(url, spec, bbox, verbose) {
+
+  resp <- httr::GET(url, httr::add_headers(.headers = ua_header))
+
+  content_type <- resp[['headers']][['content-type']]
+
   # build a local path
   if(verbose) print(url)
-  if (stringr::str_detect(spec$tileInfo$format, "JP"))
+  if (stringr::str_detect(content_type, "jpe?g"))
   { image_fn <- jpeg::readJPEG
     image_ext <- "jpg"
     }
-  else if (stringr::str_detect(spec$tileInfo$format, "PNG"))
+  else if (stringr::str_detect(content_type, "png"))
   { image_fn <- png::readPNG
     image_ext <- "png" }
   else
@@ -49,12 +54,7 @@ get_tile <- function(url, spec, bbox, verbose) {
 
   if (!file.exists(local_img)) {
     dir.create(dirname(local_img), showWarnings = FALSE, recursive = TRUE)
-
-    # add header
-    h <- curl::new_handle()
-    curl::handle_setheaders(h, .list = ua_header)
-
-    curl::curl_download(url, destfile = local_img, quiet = !verbose)
+    writeBin(resp[['content']], local_img)
   }
   image_fn(local_img)
 }
