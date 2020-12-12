@@ -22,6 +22,7 @@ Other Codes and metadata:
 \code{\link{prg_fua_oecd}},
 \code{\link{prg_ico}},
 \code{\link{prg_kod}},
+\code{\link{prg_kraj}},
 \code{\link{prg_lau1}},
 \code{\link{prg_metro_oecd}},
 \code{\link{prg_nuts2}},

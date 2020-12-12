@@ -72,7 +72,7 @@
 #' \describe{
 #'   Prague kraj code
 #' }
-#' #' @family Codes and metadata
+#' @family Codes and metadata
 "prg_kraj"
 
 #' Prague 'okres LAU' code
