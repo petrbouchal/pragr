@@ -20,7 +20,6 @@ library(pragr)
 library(sf)
 library(leaflet)
 library(leaflet.esri)
-library(webshot)
 ```
 
 ```{r}
