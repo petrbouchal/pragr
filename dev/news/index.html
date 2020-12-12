@@ -111,6 +111,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/geofacet.html">geofacet</a>
+    </li>
+    <li>
       <a href="../articles/web.html">Using Prague spatial data in web-based maps</a>
     </li>
   </ul>
@@ -151,6 +154,8 @@
 <a href="#new-features" class="anchor"></a>New features</h2>
 <ul>
 <li>added <code>district_tilegram</code>, an equal-area square grid for Prague city districts</li>
+<li>added <code>district_geofacet</code>, a grid that can be used as an input into the <code><a href="https://rdrr.io/pkg/geofacet/man/facet_geo.html">facet_geo()</a></code> function in the <code>geofacet</code> package.</li>
+<li>added <code>district_names</code>, a tibble with various forms of Prague’s district names and their codes</li>
 </ul>
 </div>
 <div id="improvements" class="section level2">
@@ -158,6 +163,9 @@
 <a href="#improvements" class="anchor"></a>Improvements</h2>
 <ul>
 <li>new basic vignettes (getting started; using Prague data in {leaflet})</li>
+<li>updated core map server endpoint URLs to reflect new scheme as per <a href="http://app.iprpraha.cz/apl/app/service_viewer/" class="uri">http://app.iprpraha.cz/apl/app/service_viewer/</a>
+</li>
+<li>updated image type detection to work with new servers</li>
 </ul>
 </div>
 <div id="bug-fixes" class="section level2">
