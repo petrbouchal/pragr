@@ -26,6 +26,7 @@ prg_tile() and prg_basemap() for retrieving data from servers.
 Other Mapping: 
 \code{\link{district_geofacet}},
 \code{\link{district_hexogram}},
+\code{\link{district_names}},
 \code{\link{district_tilegram}},
 \code{\link{prg_basemap}()},
 \code{\link{prg_tile}()}

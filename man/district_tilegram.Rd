@@ -32,6 +32,7 @@ though some district tiles neighbor districts they do not in reality.
 Other Mapping: 
 \code{\link{district_geofacet}},
 \code{\link{district_hexogram}},
+\code{\link{district_names}},
 \code{\link{prg_basemap}()},
 \code{\link{prg_endpoints}},
 \code{\link{prg_tile}()}

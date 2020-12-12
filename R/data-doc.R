@@ -201,6 +201,25 @@
 #' }
 #' @family Mapping
 "district_geofacet"
+
+# District names --------------------------------------------------------------
+
+#' Table of several variants of each districts names, with code
+#'
+#' For when a shorter label is needed or for linking with other data by name.
+#'
+#' @format A data frame with 57 rows and 11 variables:
+#' \describe{
+#'   \item{\code{kod}}{character. RUIAN code.}
+#'   \item{\code{label}}{character. Three-character unique label.}
+#'   \item{\code{nazev}}{integer. row number.}
+#'   \item{\code{nazev_medium}}{integer. row number.}
+#'   \item{\code{nazev_short}}{integer. row number.}
+#'   \item{\code{nazev_spaced}}{integer. row number.}
+#' }
+#' @family Mapping
+"district_names"
+
 # Map server endpoints ----------------------------------------------------
 
 #' IPR Map Services
