@@ -1,6 +1,6 @@
 Package: pragr
 Title: Tools for visualising Prague data
-Version: 0.2.0.9000
+Version: 0.3.0
 Authors@R: 
     person(given = "Petr",
            family = "Bouchal",
@@ -11,15 +11,14 @@ Description: A bridge between Prague geodata and R to enable
     visualisation. Currently, it provides access to raster map layers
     provided by the Prague geoportal and several utilities.
 License: MIT + file LICENSE
-URL: https://github.com/petrbouchal/pragr,
-    https://petrbouchal.xyz/pragr/
+URL: https://github.com/petrbouchal/pragr, https://petrbouchal.xyz/pragr/
 BugReports: https://github.com/petrbouchal/pragr/issues
 Depends: 
     R (>= 3.5)
 Imports: 
+    CzechData (>= 0.2.2),
     abind (>= 1.4.5),
     curl (>= 4.0),
-    CzechData (>= 0.2.2),
     dplyr (>= 0.8.3),
     geofacet (>= 0.2.0),
     ggplot2 (>= 3.2.0),
