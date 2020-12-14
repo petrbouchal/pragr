@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Table of several variants of each districts names, with code — district_names • pragr</title>
+<title>Median age — district_age_median • pragr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   
   <script src="../extra.js"></script>
 
-<meta property="og:title" content="Table of several variants of each districts names, with code — district_names" />
-<meta property="og:description" content="For when a shorter label is needed or for linking with other data by name." />
+<meta property="og:title" content="Median age — district_age_median" />
+<meta property="og:description" content="DATASET_DESCRIPTION" />
 <meta property="og:image" content="https://petrbouchal.github.io/pragr/reference/figures/card.png" />
 <meta property="og:image:alt" content="pragr: an R package for analysing and visualising Prague" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -143,39 +143,28 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Table of several variants of each districts names, with code</h1>
+    <h1>Median age</h1>
     <small class="dont-index">Source: <a href='https://github.com/petrbouchal/pragr/blob/master/R/data-doc.R'><code>R/data-doc.R</code></a></small>
-    <div class="hidden name"><code>district_names.Rd</code></div>
+    <div class="hidden name"><code>district_age_median.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>For when a shorter label is needed or for linking with other data by name.</p>
+    <p>DATASET_DESCRIPTION</p>
     </div>
 
-    <pre class="usage"><span class='va'>district_names</span></pre>
+    <pre class="usage"><span class='va'>district_age_median</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 57 rows and 11 variables:</p><dl>
-<dt><code>kod</code></dt><dd><p>character. RUIAN code.</p></dd>
-<dt><code>label</code></dt><dd><p>character. Three-character unique label.</p></dd>
-<dt><code>nazev</code></dt><dd><p>integer. full name.</p></dd>
-<dt><code>name_medium</code></dt><dd><p>integer. shortened name.</p></dd>
-<dt><code>name_short</code></dt><dd><p>integer. short name.</p></dd>
-<dt><code>name_spaced</code></dt><dd><p>integer. full name with spaced dash.</p></dd>
+    <p>A data frame with 1539 rows and 4 variables:</p><dl>
+<dt><code>sex</code></dt><dd><p>character. Sex</p></dd>
+<dt><code>year</code></dt><dd><p>integer. Year, 2011-2019</p></dd>
+<dt><code>median_age</code></dt><dd><p>double. Median age.</p></dd>
+<dt><code>KOD_ZUJ</code></dt><dd><p>character. district code (ZUJ code, CZSO codelist 51 http://apl.czso.cz/iSMS/cisdet.jsp?kodcis=51)</p></dd>
 
 </dl>
 
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Other Mapping: 
-<code><a href='district_geofacet.html'>district_geofacet</a></code>,
-<code><a href='district_hexogram.html'>district_hexogram</a></code>,
-<code><a href='district_tilegram.html'>district_tilegram</a></code>,
-<code><a href='prg_basemap.html'>prg_basemap</a>()</code>,
-<code><a href='prg_endpoints.html'>prg_endpoints</a></code>,
-<code><a href='prg_tile.html'>prg_tile</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

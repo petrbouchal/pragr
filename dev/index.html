@@ -139,6 +139,7 @@
 <li>a function for downloading official Prague admin geodata (admin boundaries etc.)</li>
 <li>square and hex tiles for equal-area plotting</li>
 <li>a grid object suitable for use in the <code><a href="https://rdrr.io/pkg/geofacet/man/facet_geo.html">geofacet::facet_geo()</a></code> function.</li>
+<li>basic demographic data about Prague districts</li>
 </ul>
 </div>
 <div id="credit-inspiration-and-extensibility" class="section level2">
@@ -198,24 +199,31 @@
 <p>Most map/image services are accessible via <a href="http://www.geoportalpraha.cz/cs/clanek/22/mapove-sluzby" class="uri">http://www.geoportalpraha.cz/cs/clanek/22/mapove-sluzby</a></p>
 <p>A more technical route to lists of services is via</p>
 <ul>
-<li><a href="https://mpp.praha.eu/arcgis/rest/services/" class="uri">https://mpp.praha.eu/arcgis/rest/services/</a></li>
-<li><a href="https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services" class="uri">https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services</a></li>
-<li><a href="http://mpp.iprpraha.cz/arcgis/rest/services/" class="uri">http://mpp.iprpraha.cz/arcgis/rest/services/</a></li>
+<li>
+<a href="https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services" class="uri">https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services</a> for all tile services, including the in-preparation Metropolitan Plan</li>
+<li>
+<a href="http://gs-pub.iprpraha.cz/arcgis/rest/services/" class="uri">http://gs-pub.iprpraha.cz/arcgis/rest/services/</a> for most tile, image as well as feature servers</li>
+<li>
+<a href="https://gs.iprpraha.cz/arcgis/rest/services/" class="uri">https://gs.iprpraha.cz/arcgis/rest/services/</a> for undocumented services, including the Atlas 5000 map collection which contains data from the 2016 ÚAP (Core Spatial Analytics) report for Prague, in the <a href="https://gs.iprpraha.cz/arcgis/rest/services/uap"><code>/uap/</code> collection</a> The <a href="https://gs.iprpraha.cz/arcgis/rest/services/urk"><code>/urk/</code> collection</a> contains some interesting data (incl. construction limits (<a href="https://gs.iprpraha.cz/arcgis/rest/services/urk/StavebniUzavery/MapServer">stavební uzávěry</a>) or the spread of the build-up area over time (<a href="https://gs.iprpraha.cz/arcgis/rest/services/urk/vyvoj_prahy/MapServer">vývoj Prahy</a>)).</li>
 </ul>
-<p>For some of the services, shortcut notation is implemented for use in the tile/basemap functions.</p>
+<p>Many of these services can be used in WMS mode, i.e. as tiles for <code>leaflet</code> maps, or as feature layers for webmaps - see the <a href="/articles/web.html">web article</a> for an example.</p>
+<p>There has recently been a migration from the “mpp.<em>" servers to the "gs<span class="math display"> − <em>p</em><em>u</em><em>b</em></span></em>” servers; see <a href="http://app.iprpraha.cz/apl/app/service_viewer/" class="uri">http://app.iprpraha.cz/apl/app/service_viewer/</a> for the translation. Some services still run on <a href="http://mpp.iprpraha.cz/arcgis/rest/services" class="uri">http://mpp.iprpraha.cz/arcgis/rest/services</a> but presumably these will go away at some point. For now, this is the only place where the full current Spatial plan lives (<a href="http://mpp.iprpraha.cz/arcgis/rest/services/PUP" class="uri">http://mpp.iprpraha.cz/arcgis/rest/services/PUP</a>).</p>
+<p>For some of the services, shortcut notation is implemented for use in the tile/basemap functions. See <code>prg_endpoints</code>. <strong>Not all endpoint metadata in <code>prg_endoints</code> has been updated to reflect the new URLs.</strong></p>
 </div>
 <div id="note-on-geodata-about-prague" class="section level2">
 <h2 class="hasAnchor">
 <a href="#note-on-geodata-about-prague" class="anchor"></a>Note on geodata about Prague</h2>
-<p>See <a href="articles/data-sources.html">vignette</a> or <code>vignette("data-sources", package = "pragr")</code>.</p>
+<p>There will be a <a href="articles/data-sources.html">vignette</a> or <code>vignette("data-sources", package = "pragr")</code>.</p>
 </div>
 </div>
 <div id="see-also" class="section level1">
 <h1 class="hasAnchor">
 <a href="#see-also" class="anchor"></a>See also:</h1>
 <ul>
-<li><a href="https://github.com/JanCaha/CzechData">CzechData</a></li>
+<li><a href="https://jancaha.github.io/CzechData">CzechData</a></li>
+<li><a href="https://github.com/jlacko/RCzechia">RCzechia</a></li>
 <li><a href="https://github.com/petrbouchal/czso">czso</a></li>
+<li><a href="https://dieghernan.github.io/giscoR/">GiscoR</a></li>
 </ul>
 <div id="acknowledgments" class="section level2">
 <h2 class="hasAnchor">
