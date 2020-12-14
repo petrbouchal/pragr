@@ -4,7 +4,22 @@
     <loc>https://petrbouchal.github.io/pragr/index.html</loc>
   </url>
   <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/district_age_median.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/district_age_structure.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/district_geofacet.html</loc>
+  </url>
+  <url>
     <loc>https://petrbouchal.github.io/pragr/reference/district_hexogram.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/district_names.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/reference/district_tilegram.html</loc>
   </url>
   <url>
     <loc>https://petrbouchal.github.io/pragr/reference/get_cuzk_prague.html</loc>
@@ -59,5 +74,14 @@
   </url>
   <url>
     <loc>https://petrbouchal.github.io/pragr/reference/prg_tile.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/articles/geofacet.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/articles/pragr.html</loc>
+  </url>
+  <url>
+    <loc>https://petrbouchal.github.io/pragr/articles/web.html</loc>
   </url>
 </urlset>

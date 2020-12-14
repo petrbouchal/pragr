@@ -1,7 +1,11 @@
-pandoc: '2.2'
-pkgdown: 1.4.1
+pandoc: 2.11.2
+pkgdown: 1.6.1
 pkgdown_sha: ~
-articles: {}
+articles:
+  geofacet: geofacet.html
+  pragr: pragr.html
+  web: web.html
+last_built: 2020-12-14T13:42Z
 urls:
   reference: https://petrbouchal.github.io/pragr/reference
   article: https://petrbouchal.github.io/pragr/articles
