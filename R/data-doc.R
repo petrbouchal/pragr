@@ -212,10 +212,10 @@
 #' \describe{
 #'   \item{\code{kod}}{character. RUIAN code.}
 #'   \item{\code{label}}{character. Three-character unique label.}
-#'   \item{\code{nazev}}{integer. row number.}
-#'   \item{\code{nazev_medium}}{integer. row number.}
-#'   \item{\code{nazev_short}}{integer. row number.}
-#'   \item{\code{nazev_spaced}}{integer. row number.}
+#'   \item{\code{nazev}}{integer. full name.}
+#'   \item{\code{name_medium}}{integer. shortened name.}
+#'   \item{\code{name_short}}{integer. short name.}
+#'   \item{\code{name_spaced}}{integer. full name with spaced dash.}
 #' }
 #' @family Mapping
 "district_names"
