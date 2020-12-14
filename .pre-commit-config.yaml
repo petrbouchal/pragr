@@ -1,7 +1,7 @@
 exclude: 'renv'
 repos:
 -   repo: https://github.com/lorenzwalthert/pre-commit-hooks
-    rev: v0.0.0.9015
+    rev: v0.1.3
     hooks:
     -   id: parsable-R
     -   id: no-browser-statement
@@ -9,6 +9,6 @@ repos:
     -   id: use-tidy-description
     -   id: deps-in-desc
 -   repo: https://github.com/petrbouchal/ptrr
-    rev: 3a86aaf608d6e3177dedf9214c7834f0819eb001
+    rev: ab1268e
     hooks:
     -   id: no-view-statement
