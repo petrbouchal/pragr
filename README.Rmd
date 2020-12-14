@@ -73,6 +73,7 @@ Additionally, the package provides
 - a function for downloading official Prague admin geodata (admin boundaries etc.)
 - square and hex tiles for equal-area plotting
 - a grid object suitable for use in the `geofacet::facet_geo()` function.
+- basic demographic data about Prague districts
 
 ## Credit, inspiration and extensibility
 
@@ -128,20 +129,26 @@ Most map/image services are accessible via <http://www.geoportalpraha.cz/cs/clan
 
 A more technical route to lists of services is via
 
-- <https://mpp.praha.eu/arcgis/rest/services/>
-- <https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services>
-- <http://mpp.iprpraha.cz/arcgis/rest/services/>
+- <https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services> for all tile services, including the in-preparation Metropolitan Plan
+- <http://gs-pub.iprpraha.cz/arcgis/rest/services/> for most tile, image as well as feature servers
+- <https://gs.iprpraha.cz/arcgis/rest/services/> for undocumented services, including the Atlas 5000 map collection which contains data from the 2016 ÚAP (Core Spatial Analytics) report for Prague, in the [`/uap/` collection](https://gs.iprpraha.cz/arcgis/rest/services/uap) The [`/urk/` collection](https://gs.iprpraha.cz/arcgis/rest/services/urk) contains some interesting data (incl. construction limits ([stavební uzávěry](https://gs.iprpraha.cz/arcgis/rest/services/urk/StavebniUzavery/MapServer)) or the spread of the build-up area over time ([vývoj Prahy](https://gs.iprpraha.cz/arcgis/rest/services/urk/vyvoj_prahy/MapServer))).
 
-For some of the services, shortcut notation is implemented for use in the tile/basemap functions.
+Many of these services can be used in WMS mode, i.e. as tiles for `leaflet` maps, or as feature layers for webmaps - see the [web article](/articles/web.html) for an example.
+
+There has recently been a migration from the "mpp.*" servers to the "gs[-pub]*" servers; see <http://app.iprpraha.cz/apl/app/service_viewer/> for the translation. Some services still run on <http://mpp.iprpraha.cz/arcgis/rest/services> but presumably these will go away at some point. For now, this is the only place where the full current Spatial plan lives (<http://mpp.iprpraha.cz/arcgis/rest/services/PUP>).
+
+For some of the services, shortcut notation is implemented for use in the tile/basemap functions. See `prg_endpoints`. **Not all endpoint metadata in `prg_endoints` has been updated to reflect the new URLs.**
 
 ## Note on geodata about Prague
 
-See [vignette](articles/data-sources.html) or `vignette("data-sources", package = "pragr")`.
+There will be a [vignette](articles/data-sources.html) or `vignette("data-sources", package = "pragr")`.
 
 # See also:
 
-- [CzechData](https://github.com/JanCaha/CzechData)
+- [CzechData](https://jancaha.github.io/CzechData)
+- [RCzechia](https://github.com/jlacko/RCzechia)
 - [czso](https://github.com/petrbouchal/czso)
+- [GiscoR](https://dieghernan.github.io/giscoR/)
 
 
 ## Acknowledgments
