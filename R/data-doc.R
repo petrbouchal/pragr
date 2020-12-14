@@ -238,3 +238,37 @@
 #' }
 #' @family Mapping
 "prg_endpoints"
+
+
+# District demographics ---------------------------------------------------
+
+#' District population by age and sex
+#'
+#' Population of each of the 57 districts by 5-year age groups and sex, 2011-2019, from the Czech Statistical Office
+#'
+#' Source: https://www.czso.cz/csu/xa/casove-rady-za-mestske-casti-prahy
+#'
+#' @format A data frame with 9747 rows and 5 variables:
+#' \describe{
+#'   \item{\code{KOD_ZUJ}}{character. district code (ZUJ code, CZSO codelist 51 http://apl.czso.cz/iSMS/cisdet.jsp?kodcis=51)}
+#'   \item{\code{KOD_SO}}{character. admin. district code (CZSO codelist 72 - CISSOP http://apl.czso.cz/iSMS/cisdet.jsp?kodcis=72)}
+#'   \item{\code{count}}{double. number of residents.}
+#'   \item{\code{age}}{integer. 5-year age group, except 85+.}
+#'   \item{\code{year}}{integer. Year; data for 31. 12.}
+#'   \item{\code{sex}}{character. Sex.}
+#' }
+"district_age_structure"
+
+
+#' Median age
+#'
+#' DATASET_DESCRIPTION
+#'
+#' @format A data frame with 1539 rows and 4 variables:
+#' \describe{
+#'   \item{\code{sex}}{character. Sex}
+#'   \item{\code{year}}{integer. Year, 2011-2019}
+#'   \item{\code{median_age}}{double. Median age.}
+#'   \item{\code{KOD_ZUJ}}{character. district code (ZUJ code, CZSO codelist 51 http://apl.czso.cz/iSMS/cisdet.jsp?kodcis=51)}
+#' }
+"district_age_median"
