@@ -4,13 +4,15 @@
 
 * added `district_tilegram`, an equal-area square grid for Prague city districts 
 * added `district_geofacet`, a grid that can be used as an input into the `facet_geo()` 
-function in the `geofacet` package.
+function in the `geofacet` package. See the `geofacet` vignette for examples.
 * added `district_names`, a tibble with various forms of Prague's district names and their codes
+* added basic demographic data for Prague districts: population and median age by age and sex, 2011-19. See the `geofacet` vignette for examples.
 
 ## Improvements
 
 * new basic vignettes (getting started; using Prague data in {leaflet})
 * updated core map server endpoint URLs to reflect new scheme as per http://app.iprpraha.cz/apl/app/service_viewer/
+* improved documentation on which services are at which URLs
 * updated image type detection to work with new servers
 
 ## Bug fixes
