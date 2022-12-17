@@ -40,7 +40,7 @@ jobs:
           use-public-rspm: true
 
       - name: Install system deps
-        run: sudo apt-get -y update && apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev
+        run: sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
