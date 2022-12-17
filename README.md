@@ -9,9 +9,13 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/pragr)](https://CRAN.R-project.org/package=pragr)
-[![R build
-status](https://github.com/petrbouchal/pragr/workflows/R-CMD-check/badge.svg)](https://github.com/petrbouchal/pragr/actions)
+[![R-CMD-check](https://github.com/petrbouchal/pragr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/petrbouchal/pragr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
+
+> Note: this is the documentation for the latest released version (the
+> github release). Documentation for the current development version
+> (reflecting the state of the master branch) is at
+> <https://petrbouchal.github.io/pragr/dev>.
 
 `pragr` aims to provide tools for visualising data about Prague.
 Currently, it makes Prague raster geodata accessible for use in R via
