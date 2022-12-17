@@ -2,9 +2,9 @@ library(tidyverse)
 
 tmp_age <- tempfile(fileext = ".xlsx")
 
-download.file("https://www.czso.cz/documents/11236/42782002/1_PHA_VEK_obyv_mc.xlsx/bd17f345-5517-4248-b1db-0896eec3c4bf?version=1.3",
+download.file("https://www.czso.cz/documents/11236/37543548/1_PHA_VEK_obyv_mc.xlsx/30cf56c3-cf58-410c-bfd5-92e80284417a?version=1.5",
               destfile = tmp_age)
-# https://www.czso.cz/csu/xa/casove-rady-za-mestske-casti-prahys
+# https://www.czso.cz/csu/xa/casove-rady-za-mestske-casti-prahy > věkové složení
 
 ranges_structure <- c(Total = "E4:W61",
                       Male = "Y4:AQ61",

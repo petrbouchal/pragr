@@ -1,5 +1,9 @@
 # pragr (development version)
 
+## Improvements
+
+* updated demographic statistics
+
 # pragr 0.3.0
 
 ## New features
