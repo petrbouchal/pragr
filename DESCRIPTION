@@ -1,6 +1,6 @@
 Package: pragr
 Title: Tools for visualising Prague data
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R: 
     person(given = "Petr",
            family = "Bouchal",
