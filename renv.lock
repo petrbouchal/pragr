@@ -22,6 +22,7 @@
       "Hash": "0cf9f7dc878ce167e505b09e42a9de7d",
       "Requirements": [
         "curl",
+        "digest",
         "dplyr",
         "fs",
         "glue",
