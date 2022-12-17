@@ -10,6 +10,12 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   warning = F,
+  dev = "ragg_png",
+  fig.width = 10,
+  out.width = "100%",
+  dpi = 300,
+  fig.asp = .7,
+  fig.retina = 3,
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
@@ -25,7 +31,7 @@ knitr::opts_chunk$set(
 
 ```{r, results='asis', echo=FALSE}
 
-if(pkgdown:::dev_mode(pkgdown:::read_desc()$get_version()) == "devel") {
+if(pkgdown:::dev_mode(pkgdown:::read_desc()$get_version(), pkgdown:::read_desc()$get_version()) == "devel") {
   meta_dest <- pkgdown:::read_meta(".")$development$destination
   meta_base_url <- pkgdown:::read_meta(".")$url
   if(is.null(meta_dest)) {

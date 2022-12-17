@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
   dev = "ragg_png",
   fig.width = 10,
   out.width = "100%",
+  dpi = 300,
+  fig.retina = 3,
   fig.asp = .7,
   comment = "#>"
 )
@@ -49,7 +51,7 @@ ggplot(d_age) +
               left_join(district_names %>% select(code, 
                                                   name_label = name_short)),
             label = "name_label") +
-  theme_minimal(base_family = "Unit Pro", base_size = 9) +
+  theme_minimal(base_family = "Roboto", base_size = 9) +
   theme(text = element_text(colour = "grey90", face = "bold"), 
         plot.background = element_rect(fill = "grey10"),
         panel.grid = element_blank(), 
@@ -74,7 +76,7 @@ ggplot(d_median) +
   facet_geo(~ code, grid = district_geofacet %>% 
               left_join(district_names %>% select(code, name_label = name_short)),
             label = "name_label") +
-  theme_minimal(base_size = 9, base_family = "Unit Pro") +
+  theme_minimal(base_size = 9, base_family = "Roboto") +
   theme(text = element_text(colour = "grey90", face = "bold"), 
         plot.background = element_rect(fill = "grey10"),
         panel.grid = element_blank(), 

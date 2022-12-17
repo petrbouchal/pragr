@@ -3,6 +3,8 @@
 ## Improvements
 
 * updated demographic statistics
+* fixed URLs to map services in vignettes
+* improved quality of visuals
 
 # pragr 0.3.0
 
