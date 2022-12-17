@@ -6,11 +6,9 @@
 \alias{pragr-package}
 \title{pragr: Tools for visualising Prague data}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-A bridge between Prague geodata and R to enable
-    visualisation. Currently, it provides access to raster map layers
-    provided by the Prague geoportal and several utilities.
+A bridge between Prague geodata and R to enable visualisation. Currently, it provides access to raster map layers provided by the Prague geoportal and several utilities.
 }
 \seealso{
 Useful links:
