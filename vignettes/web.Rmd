@@ -18,11 +18,11 @@ library(leaflet.esri)
 ```
 
 ```{r}
-stuz <- st_read("http://mpp.iprpraha.cz/arcgis/rest/services/URK/StavebniUzavery/MapServer/2/query?f=json&where=SHAPE.AREA%3E3&returnGeometry=true&returnIdsOnly=false&outFields=*")
+stuz <- st_read("https://gs-pub.praha.eu/arcgis/rest/services/urk/stavebni_uzavery/MapServer/1/query?f=json&where=SHAPE.AREA%3E3&returnGeometry=true&returnIdsOnly=false&outFields=*")
 ```
 
 ```{r}
-map_srvr_uzavery_dopr <- "http://mpp.iprpraha.cz/arcgis/rest/services/URK/StavebniUzavery/MapServer/3"
+map_srvr_uzavery_dopr <- "https://gs-pub.praha.eu/arcgis/rest/services/urk/stavebni_uzavery/MapServer/1"
 map_srvr_orto <- "https://gs-pub.praha.eu/imgs/services/ort/letecke_snimkovani/ImageServer/WMSServer"
 ```
 
