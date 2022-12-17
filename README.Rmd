@@ -77,7 +77,7 @@ Additionally, the package provides
 
 ## Credit, inspiration and extensibility
 
-The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in his [blog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
+The approach draws heavily on code provided by @[yutannihilation](https://github.com/yutannihilation) in her [blog post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using OpenStreetMap tiles in 📦 `ggplot2`.
 
 The approach should be generalisable to other ArcGIS-driven servers with the same REST API, though the package as it now is assumes a projected CRS measured in meters, specifically the Krovak CRS (EPSG 5514).
 

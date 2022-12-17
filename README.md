@@ -13,11 +13,6 @@ status](https://www.r-pkg.org/badges/version/pragr)](https://CRAN.R-project.org/
 status](https://github.com/petrbouchal/pragr/workflows/R-CMD-check/badge.svg)](https://github.com/petrbouchal/pragr/actions)
 <!-- badges: end -->
 
-> Note: this is the documentation for the latest released version (the
-> github release). Documentation for the current development version
-> (reflecting the state of the master branch) is at
-> <https://petrbouchal.github.io/pragr/dev>.
-
 `pragr` aims to provide tools for visualising data about Prague.
 Currently, it makes Prague raster geodata accessible for use in R via
 `ggplot2`.
@@ -48,28 +43,28 @@ those coordinates.
 It relies on the REST API of ArcGis map/image services that power the
 geoportal, using documentation for the following operations (endpoints):
 
--   [Image Tile
-    endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
--   [Export Image
-    endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
--   [Export Map (image)
-    endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
+- [Image Tile
+  endpoint](https://developers.arcgis.com/rest/services-reference/image-tile.htm)
+- [Export Image
+  endoint](https://developers.arcgis.com/rest/services-reference/export-image.htm)
+- [Export Map (image)
+  endpoint](https://developers.arcgis.com/rest/services-reference/export-map.htm)
 
 Additionally, the package provides
 
--   quick access to a number of codes that identify Prague in various
-    administrative or statistical registers.
--   a function for downloading official Prague admin geodata (admin
-    boundaries etc.)
--   square and hex tiles for equal-area plotting
--   a grid object suitable for use in the `geofacet::facet_geo()`
-    function.
--   basic demographic data about Prague districts
+- quick access to a number of codes that identify Prague in various
+  administrative or statistical registers.
+- a function for downloading official Prague admin geodata (admin
+  boundaries etc.)
+- square and hex tiles for equal-area plotting
+- a grid object suitable for use in the `geofacet::facet_geo()`
+  function.
+- basic demographic data about Prague districts
 
 ## Credit, inspiration and extensibility
 
 The approach draws heavily on code provided by
-@[yutannihilation](https://github.com/yutannihilation) in his [blog
+@[yutannihilation](https://github.com/yutannihilation) in her [blog
 post](https://yutani.rbind.io/post/2018-06-09-plot-osm-tiles/) on using
 OpenStreetMap tiles in 📦 `ggplot2`.
 
@@ -91,14 +86,15 @@ library(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 library(sf)
-#> Linking to GEOS 3.8.1, GDAL 3.1.1, PROJ 6.3.1
+#> Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
 library(ggplot2)
 ```
 
 ``` r
 praha1 <- CzechData::load_RUIAN_settlement(prg_kod, "MOMC_P", WGS84 = F) %>% 
   filter(nazev == 'Praha 1')
-#> ✓ Data downloaded and unpacked.
+#> ℹ Using cached data.
+#> ✔ Data unpacked.
 ```
 
 Note that the possible values of the `tile_service` and `image_service`
@@ -151,29 +147,27 @@ Most map/image services are accessible via
 
 A more technical route to lists of services is via
 
--   <https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services>
-    for all tile services, including the in-preparation Metropolitan
-    Plan
--   <http://gs-pub.iprpraha.cz/arcgis/rest/services/> for most tile,
-    image as well as feature servers
--   <https://gs.iprpraha.cz/arcgis/rest/services/> for undocumented
-    services, including the Atlas 5000 map collection which contains
-    data from the 2016 ÚAP (Core Spatial Analytics) report for Prague,
-    in the [`/uap/`
-    collection](https://gs.iprpraha.cz/arcgis/rest/services/uap) The
-    [`/urk/`
-    collection](https://gs.iprpraha.cz/arcgis/rest/services/urk)
-    contains some interesting data (incl. construction limits ([stavební
-    uzávěry](https://gs.iprpraha.cz/arcgis/rest/services/urk/StavebniUzavery/MapServer))
-    or the spread of the build-up area over time ([vývoj
-    Prahy](https://gs.iprpraha.cz/arcgis/rest/services/urk/vyvoj_prahy/MapServer))).
+- <https://tiles.arcgis.com/tiles/SBTXIEUGWbqzUecw/arcgis/rest/services>
+  for all tile services, including the in-preparation Metropolitan Plan
+- <http://gs-pub.iprpraha.cz/arcgis/rest/services/> for most tile, image
+  as well as feature servers
+- <https://gs.iprpraha.cz/arcgis/rest/services/> for undocumented
+  services, including the Atlas 5000 map collection which contains data
+  from the 2016 ÚAP (Core Spatial Analytics) report for Prague, in the
+  [`/uap/` collection](https://gs.iprpraha.cz/arcgis/rest/services/uap)
+  The [`/urk/`
+  collection](https://gs.iprpraha.cz/arcgis/rest/services/urk) contains
+  some interesting data (incl. construction limits ([stavební
+  uzávěry](https://gs.iprpraha.cz/arcgis/rest/services/urk/StavebniUzavery/MapServer))
+  or the spread of the build-up area over time ([vývoj
+  Prahy](https://gs.iprpraha.cz/arcgis/rest/services/urk/vyvoj_prahy/MapServer))).
 
 Many of these services can be used in WMS mode, i.e. as tiles for
 `leaflet` maps, or as feature layers for webmaps - see the [web
 article](/articles/web.html) for an example.
 
-There has recently been a migration from the “mpp.*" servers to the
-"gs\[-pub\]*” servers; see
+There has recently been a migration from the “mpp.*” servers to the
+”gs\[-pub\]*” servers; see
 <http://app.iprpraha.cz/apl/app/service_viewer/> for the translation.
 Some services still run on <http://mpp.iprpraha.cz/arcgis/rest/services>
 but presumably these will go away at some point. For now, this is the
@@ -191,22 +185,22 @@ There will be a [vignette](articles/data-sources.html) or
 
 # See also:
 
--   [CzechData](https://jancaha.github.io/CzechData)
--   [RCzechia](https://github.com/jlacko/RCzechia)
--   [czso](https://github.com/petrbouchal/czso)
--   [GiscoR](https://dieghernan.github.io/giscoR/)
+- [CzechData](https://jancaha.github.io/CzechData)
+- [RCzechia](https://github.com/jlacko/RCzechia)
+- [czso](https://github.com/petrbouchal/czso)
+- [GiscoR](https://dieghernan.github.io/giscoR/)
 
 ## Acknowledgments
 
--   Most importantly, IPR Praha for providing the open data!
--   The approach draws heavily on code provided by
-    @[yutannihilation](https://github.com/yutannihilation) in her \[blog
-    post\]
--   logo designed using the 📦 bunny by
-    @[dmi3kno](https://github.com/dmi3kno) following his [blog
-    post](%5Bhttps://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/%5D)
--   font in logo is Trivia Serif by [František
-    Štorm](https://stormtype.com)
+- Most importantly, IPR Praha for providing the open data!
+- The approach draws heavily on code provided by
+  @[yutannihilation](https://github.com/yutannihilation) in her \[blog
+  post\]
+- logo designed using the 📦 bunny by
+  @[dmi3kno](https://github.com/dmi3kno) following his [blog
+  post](%5Bhttps://www.ddrive.no/post/making-hex-and-twittercard-with-bunny-and-magick/%5D)
+- font in logo is Trivia Serif by [František
+  Štorm](https://stormtype.com)
 
 ## Code of Conduct
 
