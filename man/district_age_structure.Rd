@@ -24,4 +24,9 @@ Population of each of the 57 districts by 5-year age groups and sex, 2011-2019, 
 \details{
 Source: https://www.czso.cz/csu/xa/casove-rady-za-mestske-casti-prahy
 }
+\seealso{
+Other Statistics: 
+\code{\link{district_age_median}}
+}
+\concept{Statistics}
 \keyword{datasets}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{district_age_median}
 \alias{district_age_median}
-\title{Median age}
+\title{Median age by district}
 \format{
 A data frame with 1539 rows and 4 variables:
 \describe{
@@ -17,6 +17,14 @@ A data frame with 1539 rows and 4 variables:
 district_age_median
 }
 \description{
-DATASET_DESCRIPTION
+Median age of each of the 57 districts by 5-year age groups and sex, 2011-2019, from the Czech Statistical Office
 }
+\details{
+Source: https://www.czso.cz/csu/xa/casove-rady-za-mestske-casti-prahy
+}
+\seealso{
+Other Statistics: 
+\code{\link{district_age_structure}}
+}
+\concept{Statistics}
 \keyword{datasets}

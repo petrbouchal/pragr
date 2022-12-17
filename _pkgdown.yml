@@ -26,3 +26,7 @@ reference:
   desc:  Codes and metadata describing Prague of identifying Prague and related entities in various datasets.
   contents:
   - has_concept("Codes and metadata")
+- title: Statistics
+  desc:  Pre-processed statistics on Prague districts.
+  contents:
+  - has_concept("Statistics")
