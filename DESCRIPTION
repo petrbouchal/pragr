@@ -16,7 +16,7 @@ BugReports: https://github.com/petrbouchal/pragr/issues
 Depends: 
     R (>= 3.5)
 Imports: 
-    CzechData (>= 0.2.2),
+    CzechData (>= 0.5.5),
     abind (>= 1.4.5),
     curl (>= 4.0),
     dplyr (>= 0.8.3),
@@ -26,7 +26,7 @@ Imports:
     grid (>= 3.6.0),
     here (>= 0.1),
     httr (>= 1.4.0),
-    jpeg (>= 0.1.8),
+    jpeg (>= 0.1-10),
     jsonlite (>= 1.6),
     lubridate (>= 1.7.4),
     magrittr (>= 1.5),
